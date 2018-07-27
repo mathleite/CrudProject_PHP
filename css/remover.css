@@ -1,4 +1,4 @@
-footer, header {
+header {
 
   width: 80%;
   margin: 0 auto;
@@ -26,14 +26,8 @@ header#cabecalho-topo {
     align-items: center;
     display: flex;
 } */
-h1#nome-projeto {
+h1#nome-projeto, a#nomeProjeto {
     color: #F9F9F9;
-    font-family: 'Source Code Pro', monospace;
-}
-
-h2#cadastrar {
-    margin-top: 35px;
-    color: #202124;
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -43,8 +37,6 @@ main#principal {
     display: flex;
     align-items: center;
     flex-direction: column;
-
-
 }
 
 div#container {
@@ -60,14 +52,14 @@ a {
     text-decoration: none;
 }
 
-a#link-menuUm {
+a#voltar {
     margin-left: 50px;
     margin-top: 4px;
     font-size: 15px;
     padding: 6px;
-    border: 1px solid #202124;
+    border: 1px solid red;
     border-radius: 5px;
-    color: #202124;
+    color: red;
 }
 form#formulario {
     margin-top: 40px;
@@ -76,6 +68,17 @@ form#formulario {
 i.material-icons {
     color: white;
 
+}
+
+h2#remover {
+    margin-left:0;
+    color: 202124;
+    font-family: 'Source Code Pro', monospace;
+}
+
+small {
+    color: 202124;
+    font-family: 'Source Code Pro', monospace;
 }
 
 button {

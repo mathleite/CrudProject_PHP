@@ -1,5 +1,5 @@
 <?php
-
+require '../vendor/autoload.php';
 $nomeProduto = $_POST['nomeProduto'];
 $Categoria = $_POST['categoria'];
 $fornecedor = $_POST['nomeFornecedor'];
@@ -11,16 +11,11 @@ if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor)) {
 }
 
 try {
-    $conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
-    $comando = $conexao->prepare("INSERT INTO produto(nome, categoria, nome_fornecedor) VALUES(:NOME, :CATEGORIA,
-    :NOME_FORNECEDOR)");
-    $comando->bindParam(":NOME", $nomeProduto);
-    $comando->bindParam(":CATEGORIA", $Categoria);
-    $comando->bindParam(":NOME_FORNECEDOR", $fornecedor);
-    $comando->execute();
+    $conexao = new Conexao();
+    $conexao->cadastar($nomeProduto, $Categoria, $fornecedor);
 
     echo "<p>Dados salvos com sucesso!</p>".PHP_EOL;
-    echo "<a href='http://localhost/classes/Listagem.php'>voltar</p>";
+    echo "<a href='http://localhost/classes/Listagem.php'>Ver produtos</p>";
 } catch (\Exception $e) {
     throw new \Exception("Cadastro feito com sucesso", 1);
 

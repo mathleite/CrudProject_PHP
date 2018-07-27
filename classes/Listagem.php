@@ -1,7 +1,8 @@
 <?php
-$conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
-$comando = $conexao->prepare("SELECT * FROM produto");
-    while($itens = mysql_fetch_array($comando)) {
-        echo $itens['nome']."<br>".$itens['categoria']."<br>".$itens['nome_fornecedor']."<br>";
+require '../vendor/autoload.php';
+$comando = new Conexao();
+$comando->listar();
 
-}
+?>
+
+<a href="../index.html"><input type="submit" name="volar" value="Voltar para a Home"></a>

@@ -19,18 +19,23 @@ class Conexao
         $comando->execute();
     }
 
-    public function listar()
+    public function listar(): array
     {
-        $comando = $this->conexao->prepare('SELECT * FROM produto ORDER BY  id ASC ');
+        $sql = "
+        SELECT
+            p.id,
+            p.nome,
+            p.categoria,
+            p.nome_fornecedor
+        FROM 
+            produto p
+        ORDER BY 
+            p.id ASC
+        ";
+        $comando = $this->conexao->prepare($sql);
         $comando->execute();
 
-
-            if ($comando->rowCount() > 0) {
-                $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
-                print_r($resultado);
-            }
-
-
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

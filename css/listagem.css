@@ -20,7 +20,7 @@ main#principal {
     align-items: center;
 }
 
-a {
+a#link-projeto {
     color: #F9F9F9;
     text-decoration: none;
 }

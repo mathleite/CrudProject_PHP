@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/classes/Cadastro.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Cadastro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/Conexao.php" beforeDir="false" afterPath="$PROJECT_DIR$/BD/Conexao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Listagem.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Listagem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cadastro.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cadastro.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/listagem.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/listagem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/listagem.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/listagem.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,16 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Listagem.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Listagem.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/Listagem.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="cadastro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/cadastro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="447">
+              <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -38,35 +31,8 @@
       <file leaf-file-name="Conexao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BD/Conexao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listagem.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html/listagem.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="109" lean-forward="true" selection-start-line="15" selection-start-column="109" selection-end-line="15" selection-end-column="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listagem.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/listagem.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="29" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="33" selection-start-line="33" selection-end-line="38" selection-end-column="1" />
+            <state relative-caret-position="421">
+              <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -88,9 +54,10 @@
       <list>
         <option value="$PROJECT_DIR$/html/cadastro.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/BD/Conexao.php" />
         <option value="$PROJECT_DIR$/css/listagem.css" />
         <option value="$PROJECT_DIR$/html/listagem.html" />
+        <option value="$PROJECT_DIR$/BD/Conexao.php" />
+        <option value="$PROJECT_DIR$/classes/Listagem.php" />
       </list>
     </option>
   </component>
@@ -139,6 +106,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -164,12 +132,12 @@
       <updated>1532692872888</updated>
       <workItem from="1532692874207" duration="644000" />
       <workItem from="1532702417328" duration="86000" />
-      <workItem from="1532702504808" duration="7021000" />
+      <workItem from="1532702504808" duration="12723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7751000" />
+    <option name="totallyTimeSpent" value="13453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -223,13 +191,6 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/BD/Conexao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -237,8 +198,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Listagem.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/css/listagem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -254,17 +219,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/listagem.css">
+    <entry file="file://$PROJECT_DIR$/html/listagem.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="29" />
+        <state relative-caret-position="307">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/listagem.html">
+    <entry file="file://$PROJECT_DIR$/BD/Conexao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="109" lean-forward="true" selection-start-line="15" selection-start-column="109" selection-end-line="15" selection-end-column="114" />
+        <state relative-caret-position="421">
+          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Listagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
         </state>
       </provider>
     </entry>

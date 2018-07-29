@@ -1,19 +1,13 @@
-<?php
-require '../vendor/autoload.php';
-$nomeProduto = $_POST['nomeProduto'];
-$Categoria = $_POST['categoria'];
-$fornecedor = $_POST['nomeFornecedor'];
-?>
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="icon" href="../cloud.ico/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
@@ -45,7 +39,7 @@ $fornecedor = $_POST['nomeFornecedor'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.html">
+                        <a class="nav-link" href="../classes/listagem.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -63,26 +57,28 @@ $fornecedor = $_POST['nomeFornecedor'];
                 <h1 class="h2">Cadastrar Produto</h1>
 
             </div>
-            <?php
-            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor)) {
-                echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.html'>
-    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
-                exit;
-            }
+            <h4>Forneça os dados necessários</h4>
 
-            try {
-                $conexao = new Conexao();
-                $conexao->cadastar($nomeProduto, $Categoria, $fornecedor);
+            <br>
 
-                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
-                echo "</form>";
-            } catch (\Exception $e) {
-                throw new \Exception("Cadastro feito com sucesso", 1);
+            <form id="formulario" action="../classes/Cadastro.php" method="post">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
+                    </div>
+                    <div class="col">
+                        <input type="text"  name="categoria" class="form-control" placeholder="Categoria">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="nomeFornecedor" class="form-control" placeholder="Fornecedor">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-success">Cadastrar</button>
+            </form>
 
-            }
-            ?>
+
 
         </main>
     </div>
@@ -91,9 +87,7 @@ $fornecedor = $_POST['nomeFornecedor'];
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../js/bootstrap.min.js"></script>
 
@@ -108,5 +102,3 @@ $fornecedor = $_POST['nomeFornecedor'];
 
 </body>
 </html>
-
-

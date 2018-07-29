@@ -1,19 +1,20 @@
 <?php
 require '../vendor/autoload.php';
-$nomeProduto = $_POST['nomeProduto'];
-$Categoria = $_POST['categoria'];
-$fornecedor = $_POST['nomeFornecedor'];
+
+$comando = new Conexao();
+$arrayProdutos = $comando->listar();
 ?>
+
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="icon" href="../cloud.ico/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
@@ -60,29 +61,53 @@ $fornecedor = $_POST['nomeFornecedor'];
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Cadastrar Produto</h1>
-
             </div>
-            <?php
-            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor)) {
-                echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.html'>
-    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
-                exit;
-            }
+            <h4>Tabela de Produtos</h4>
 
-            try {
-                $conexao = new Conexao();
-                $conexao->cadastar($nomeProduto, $Categoria, $fornecedor);
+            <br>
+            <form method="post">
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>nome</th>
+                    <th>Categoria</th>
+                    <th>Fornecedor</th>
+                </tr>
+                </thead>
 
-                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
-                echo "</form>";
-            } catch (\Exception $e) {
-                throw new \Exception("Cadastro feito com sucesso", 1);
+                <tbody>
 
-            }
-            ?>
+                <?php
+                if(isset($_POST['selecionado'])){
+                    $comando = new Conexao();
+                    $deletar = $comando->deletar();
+                    header("Refresh: 0");
+
+                }
+                ?>
+                <?php foreach ($arrayProdutos as $value) {  ?>
+                    <tr>
+                        <th scope="row"><?= $value['id']; ?></th>
+                        <td><?= $value['nome']; ?></td>
+                        <td><?= $value['categoria']; ?></td>
+                        <td><?= $value['fornecedor']; ?></td>
+                        <?php $valorId = $value['id'] ?>
+                        <?php echo "<td><div class=\"form-check\">
+                            <input class=\"form-check-input position-static\" type=\"checkbox\" name=selecionado[]     
+                            id=\"blankCheckbox\" value=$valorId aria-label=\"...\"></div></td>\"";?>
+
+                    </tr>
+                <?php } ?>
+
+                </tbody>
+                <br>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </table>
+            </form>
+
+
+
 
         </main>
     </div>
@@ -91,9 +116,7 @@ $fornecedor = $_POST['nomeFornecedor'];
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../js/bootstrap.min.js"></script>
 
@@ -108,5 +131,4 @@ $fornecedor = $_POST['nomeFornecedor'];
 
 </body>
 </html>
-
 

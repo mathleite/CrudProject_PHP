@@ -1,24 +1,25 @@
 <?php
-require '../vendor/autoload.php';
-$nomeProduto = $_POST['nomeProduto'];
-$Categoria = $_POST['categoria'];
-$fornecedor = $_POST['nomeFornecedor'];
+require 'vendor/autoload.php';
+
+$comando = new Conexao();
+$arrayProdutos = $comando->listar();
 ?>
+
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="icon" href="cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -26,7 +27,7 @@ $fornecedor = $_POST['nomeFornecedor'];
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.php">Projeto Cadastro</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
 
 </nav>
@@ -37,7 +38,7 @@ $fornecedor = $_POST['nomeFornecedor'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -45,7 +46,7 @@ $fornecedor = $_POST['nomeFornecedor'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.html">
+                        <a class="nav-link" href="site/cadastro.html">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -60,30 +61,36 @@ $fornecedor = $_POST['nomeFornecedor'];
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Cadastrar Produto</h1>
+                <h1 class="h2">Home</h1>
 
             </div>
-            <?php
-            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor)) {
-                echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.html'>
-    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
-                exit;
-            }
+            <h2>Produtos Disponíveis</h2>
+            <form>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>nome</th>
+                        <th>Categoria</th>
+                        <th>Fornecedor</th>
+                    </tr>
+                    </thead>
 
-            try {
-                $conexao = new Conexao();
-                $conexao->cadastar($nomeProduto, $Categoria, $fornecedor);
-
-                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
-                echo "</form>";
-            } catch (\Exception $e) {
-                throw new \Exception("Cadastro feito com sucesso", 1);
-
-            }
-            ?>
-
+                    <tbody>
+            <?php foreach ($arrayProdutos as $value) {  ?>
+                <tr>
+                    <th scope="row"><?= $value['id']; ?></th>
+                    <td><?= $value['nome']; ?></td>
+                    <td><?= $value['categoria']; ?></td>
+                    <td><?= $value['fornecedor']; ?></td>
+                    <?php $valorId = $value['id'] ?>
+                </tr>
+            <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            </form>
         </main>
     </div>
 </div>
@@ -91,11 +98,9 @@ $fornecedor = $_POST['nomeFornecedor'];
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -108,5 +113,3 @@ $fornecedor = $_POST['nomeFornecedor'];
 
 </body>
 </html>
-
-

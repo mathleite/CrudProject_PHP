@@ -11,11 +11,11 @@ class Conexao
 
     public function cadastar($nomeProduto, $Categoria, $fornecedor)
     {
-        $comando = $this->conexao->prepare("INSERT INTO produto(nome, categoria, nome_fornecedor) VALUES(:NOME, :CATEGORIA,
-        :NOME_FORNECEDOR)");
+        $comando = $this->conexao->prepare("INSERT INTO produto(nome, categoria, fornecedor) VALUES(:NOME, :CATEGORIA,
+        :FORNECEDOR)");
         $comando->bindParam(":NOME", $nomeProduto);
         $comando->bindParam(":CATEGORIA", $Categoria);
-        $comando->bindParam(":NOME_FORNECEDOR", $fornecedor);
+        $comando->bindParam(":FORNECEDOR", $fornecedor);
         $comando->execute();
     }
 
@@ -26,7 +26,7 @@ class Conexao
             p.id,
             p.nome,
             p.categoria,
-            p.nome_fornecedor
+            p.fornecedor
         FROM 
             produto p
         ORDER BY 
@@ -37,5 +37,23 @@ class Conexao
 
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function deletar ()
+    {
+        foreach($_POST['selecionado'] as $selecionados){
+            $sql = "
+            DELETE FROM 
+                produto 
+            WHERE  
+                id = $selecionados
+             ";
+            $comando = $this->conexao->prepare($sql);
+            $comando->execute();
+        }
+
+
+
+    }
+
 
 }

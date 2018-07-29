@@ -53,6 +53,14 @@ $arrayProdutos = $comando->listar();
                             Produtos
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listagem.php">
+                            <i class="material-icons">
+                                format_align_left
+                            </i>
+                            Tabela
+                        </a>
+                    </li>
                 </ul>
 
                 </ul>

@@ -3,6 +3,9 @@ require '../vendor/autoload.php';
 $nomeProduto = $_POST['nomeProduto'];
 $Categoria = $_POST['categoria'];
 $fornecedor = $_POST['nomeFornecedor'];
+$diaLancamento = $_POST['diaLancamento'];
+$precoVenda = $_POST['precoVenda'];
+$precoUnitario = $_POST['precoUnitario'];
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -49,7 +52,7 @@ $fornecedor = $_POST['nomeFornecedor'];
                             <i class="material-icons">
                                 shopping_basket
                             </i>
-                            Produtos
+                            Cadastrar
                         </a>
                     </li>
                     <li class="nav-item">
@@ -58,6 +61,14 @@ $fornecedor = $_POST['nomeFornecedor'];
                                 format_align_left
                             </i>
                             Tabela
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listagem.php">
+                            <i class="material-icons">
+                                border_color
+                            </i>
+                            Editar
                         </a>
                     </li>
                 </ul>
@@ -72,7 +83,7 @@ $fornecedor = $_POST['nomeFornecedor'];
 
             </div>
             <?php
-            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor)) {
+            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario))  {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
                 echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.html'>
     <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
@@ -81,11 +92,14 @@ $fornecedor = $_POST['nomeFornecedor'];
 
             try {
                 $conexao = new Conexao();
-                $conexao->cadastar($nomeProduto, $Categoria, $fornecedor);
+                $conexao->cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
                 echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
-                echo "</form>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<a href='../site/cadastro.html'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

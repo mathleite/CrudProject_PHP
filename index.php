@@ -50,7 +50,7 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 shopping_basket
                             </i>
-                            Produtos
+                            Cadastrar
                         </a>
                     </li>
                     <li class="nav-item">
@@ -59,6 +59,14 @@ $arrayProdutos = $comando->listar();
                                 format_align_left
                             </i>
                             Tabela
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="classes/listagem.php">
+                            <i class="material-icons">
+                                border_color
+                            </i>
+                            Editar
                         </a>
                     </li>
                 </ul>
@@ -82,6 +90,9 @@ $arrayProdutos = $comando->listar();
                         <th>nome</th>
                         <th>Categoria</th>
                         <th>Fornecedor</th>
+                        <th>Lançamento</th>
+                        <th>Venda</th>
+                        <th>Unidade</th>
                     </tr>
                     </thead>
 
@@ -92,6 +103,9 @@ $arrayProdutos = $comando->listar();
                     <td><?= $value['nome']; ?></td>
                     <td><?= $value['categoria']; ?></td>
                     <td><?= $value['fornecedor']; ?></td>
+                    <td><?= $value['diaLancamento']; ?></td>
+                    <td>R$ <?= $value['precoVenda']; ?></td>
+                    <td>R$ <?= $value['precoUnitario']; ?></td>
                     <?php $valorId = $value['id'] ?>
                 </tr>
             <?php } ?>
@@ -109,6 +123,7 @@ $arrayProdutos = $comando->listar();
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/popper.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -118,6 +133,7 @@ $arrayProdutos = $comando->listar();
 
 <!-- Graphs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
 
 </body>
 </html>

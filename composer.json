@@ -1,5 +1,5 @@
 {
     "autoload": {
-        "classmap": ["BD", "classes", "css", "html"]
+        "classmap": ["bd", "classes", "css",  "site"]
     }
 }

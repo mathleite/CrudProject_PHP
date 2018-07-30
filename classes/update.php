@@ -1,13 +1,22 @@
+<?php
+require '../vendor/autoload.php';
+$produto = $_GET['nome'];
+$categoria = $_GET['categoria'];
+$fornecedor = $_GET['fornecedor'];
+$diaLancamento = $_GET['diaLancamento'];
+$precoVenda = $_GET['precoVenda'];
+$precoUnitario = $_GET['precoUnitario'];
+?>
 <!doctype html>
-<html lang="en">
+<html lang="pt_br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
@@ -39,7 +48,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="../site/cadastro.html">
+                            <i class="material-icons">
+                                shopping_basket
+                            </i>
+                            Cadastrar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -47,7 +64,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -65,39 +82,29 @@
                 <h1 class="h2">Cadastrar Produto</h1>
 
             </div>
-            <h4>Forneça os dados necessários</h4>
-            <br>
-            <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
+            <?php
+            if (empty($produto) || empty($categoria) || empty($fornecedor) ||  empty($precoVenda) || empty($precoUnitario))  {
+                echo "<p>Dados inválidos!</p>" . PHP_EOL;
+                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.html'>
+    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                exit;
+            }
 
-            <br>
+            try {
+                $conexao = new Conexao();
+                $editar = $conexao->editar($produto, $categoria, $fornecedor, $precoVenda, $precoUnitario);
 
-            <form id="formulario" action="../classes/Cadastro.php" method="post">
-                <div class="form-row">
-                    <div class="col">
-                        <input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
-                    </div>
-                    <div class="col">
-                        <input type="text"  name="categoria" class="form-control" placeholder="Categoria">
-                    </div>
-                    <div class="col">
-                        <input type="text" name="nomeFornecedor" class="form-control" placeholder="Fornecedor">
-                    </div>
-                    <div class="col">
-                        <input type="date" name="diaLancamento" class="form-control">
-                    </div>
-                    <div class="col">
-                        <input type="number" name="precoVenda" step="any" class="form-control" placeholder="Preço de Venda R$">
-                    </div>
-                    <div class="col">
-                        <input type="number" name="precoUnitario" step="any" class="form-control" placeholder="Preço Unitário R$">
-                    </div>
-                </div>
-                <br>
-                <br>
-                <button type="submit" class="btn btn-success">Cadastrar</button>
-            </form>
+                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
+                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<a href='../site/cadastro.html'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+            } catch (\Exception $e) {
+                throw new \Exception("Cadastro feito com sucesso", 1);
 
-
+            }
+            ?>
 
         </main>
     </div>
@@ -106,7 +113,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../js/bootstrap.min.js"></script>
 
@@ -121,3 +130,5 @@
 
 </body>
 </html>
+
+

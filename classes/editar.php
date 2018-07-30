@@ -1,3 +1,11 @@
+<?php
+require '../vendor/autoload.php';
+$comando = new Conexao();
+$inserir = new Conexao();
+$arrayLista = $inserir->listarId();
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,7 +47,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="../site/cadastro.html">
+                            <i class="material-icons">
+                                shopping_basket
+                            </i>
+                            Cadastrar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -47,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -62,41 +78,48 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Cadastrar Produto</h1>
+                <h1 class="h2">Editar Produto</h1>
 
             </div>
             <h4>Forneça os dados necessários</h4>
             <br>
             <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
-
             <br>
+            <?php
+            foreach ($arrayLista as $value) { ?>
 
-            <form id="formulario" action="../classes/Cadastro.php" method="post">
+            <form id="formulario" action="../classes/update.php" method="get">
                 <div class="form-row">
                     <div class="col">
-                        <input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
+                        <input type="text" name="nome" class="form-control"
+                               placeholder="Nome" value="<?=$value['nome']?>">
                     </div>
                     <div class="col">
-                        <input type="text"  name="categoria" class="form-control" placeholder="Categoria">
+                        <input type="text" name="categoria" class="form-control"
+                               placeholder="Categoria" value="<?=$value['categoria']?>" >
                     </div>
                     <div class="col">
-                        <input type="text" name="nomeFornecedor" class="form-control" placeholder="Fornecedor">
+                        <input type="text" name="fornecedor" class="form-control"
+                               placeholder="Fornecedor" value="<?=$value['fornecedor']?>" >
                     </div>
                     <div class="col">
-                        <input type="date" name="diaLancamento" class="form-control">
+                        <input type="date" name="diaLancamento"
+                                class=" form-control" value="<?=$value['diaLancamento']?>" >
                     </div>
                     <div class="col">
-                        <input type="number" name="precoVenda" step="any" class="form-control" placeholder="Preço de Venda R$">
+                        <input type="number" name="precoVenda" step="any" class="form-control"
+                               placeholder="Preço de Venda R$" value="<?=$value['precoVenda']?>" >
                     </div>
                     <div class="col">
-                        <input type="number" name="precoUnitario" step="any" class="form-control" placeholder="Preço Unitário R$">
+                        <input type="number" name="precoUnitario" step="any" class="form-control"
+                               placeholder="Preço Unitário R$" value="<?=$value['precoUnitario']?>" >
                     </div>
                 </div>
                 <br>
                 <br>
-                <button type="submit" class="btn btn-success">Cadastrar</button>
+                <button type="submit" class="btn btn-success">Salvar</button>
             </form>
-
+            <?php } ?>
 
 
         </main>
@@ -106,7 +129,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../js/bootstrap.min.js"></script>
 
@@ -121,3 +146,4 @@
 
 </body>
 </html>
+

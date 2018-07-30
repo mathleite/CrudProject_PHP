@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Conexao' => $baseDir . '/BD/Conexao.php',
+    'Conexao' => $baseDir . '/bd/Conexao.php',
 );

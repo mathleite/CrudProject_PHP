@@ -15,8 +15,8 @@ class Conexao
         INSERT INTO 
             produtos(
             nome, 
-            categoria, 
-            fornecedor, 
+            categoria_id, 
+            fornecedores_id, 
             diaLancamento, 
             precoVenda, 
             precoUnitario) 
@@ -26,7 +26,7 @@ class Conexao
             :FORNECEDOR, 
             :LANCAMENTO, 
             :VENDA, 
-            :UNIDADE)
+            :UNIDADE  )
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->bindParam(":NOME", $nomeProduto);
@@ -42,21 +42,21 @@ class Conexao
     {
         $sql = "
         SELECT
-            p.id,
-            p.nome,
-            p.categoria,
-            p.fornecedor,
-            p.precoVenda,
-            p.precoUnitario,
-            DATE_FORMAT(diaLancamento, '%d/%c/%Y')
-        AS 
-            diaLancamento
-
-            
+	     	p.id,
+	        p.nome,
+	        p.categoria_id,
+            p.fornecedores_id,
+	        p.precoVenda,
+	        p.precoUnitario,
+	        DATE_FORMAT(diaLancamento, '%d/%c/%Y') AS diaLancamento,
+	        c.descricao AS descricao_categoria,
+            f.nome AS nome_fornecedores
         FROM 
-            produtos p
-        ORDER BY 
-            p.id ASC
+	        produtos p
+	        INNER JOIN categoria c ON c.id = p.categoria_id
+            INNER JOIN fornecedores f ON f.id = p.fornecedores_id
+	    ORDER BY
+	        p.id ASC;
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->execute();
@@ -71,17 +71,19 @@ class Conexao
         SELECT
             p.id,
             p.nome,
-            p.categoria,
-            p.fornecedor,
+            p.categoria_id,
+            p.fornecedores_id,
             p.precoVenda,
             p.precoUnitario,
-            p.diaLancamento
-
-            
+            p.diaLancamento,
+			c.descricao AS descricao_categoria,
+            f.nome AS nome_fornecedor
         FROM 
-            produtos p
-        WHERE 
-            id = $id
+	        produtos p
+	        INNER JOIN categoria c ON c.id = p.categoria_id
+            INNER JOIN fornecedores f ON f.id = p.fornecedores_id
+        WHERE
+            p.id = $id
         ORDER BY 
             p.id ASC
         ";
@@ -111,13 +113,13 @@ class Conexao
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-        $sql ="
+        $sql = "
         UPDATE
             produtos p
         SET
             p.nome = :nome,
-            p.categoria = :categoria,
-            p.fornecedor = :fornecedor,
+            p.categoria_id = :categoria_id,
+            p.fornecedores_id = :fornecedores_id,
             p.precoVenda = :precoVenda,
             p.precoUnitario = :precoUnitario
         WHERE
@@ -126,8 +128,8 @@ class Conexao
 
         $comando = $this->conexao->prepare($sql);
         $comando->bindParam(":nome", $nome);
-        $comando->bindParam(":categoria", $categoria);
-        $comando->bindParam(":fornecedor", $fornecedor);
+        $comando->bindParam(":categoria_id", $categoria);
+        $comando->bindParam(":fornecedores_id", $fornecedor);
         $comando->bindParam(":precoVenda", $precoVenda);
         $comando->bindParam(":precoUnitario", $precoUnitario);
         $comando->bindParam(":id", $id);
@@ -135,7 +137,41 @@ class Conexao
         $comando->execute();
     }
 
+    public function receberCategoria(): array
+    {
+        $sql = "
+        SELECT 
+            id,
+            descricao 
+        FROM 
+            categoria
+        ORDER BY
+            descricao ASC
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
 
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function receberFornecedor()
+    {
+        $sql = " 
+        SELECT 
+            id,
+            nome
+        FROM 
+            fornecedores 
+        ORDER BY 
+            id ASC
+        ";
+
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 }

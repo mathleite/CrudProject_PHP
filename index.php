@@ -46,7 +46,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/cadastro.html">
+                        <a class="nav-link" href="site/cadastro.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -101,8 +101,8 @@ $arrayProdutos = $comando->listar();
                 <tr>
                     <th scope="row"><?= $value['id']; ?></th>
                     <td><?= $value['nome']; ?></td>
-                    <td><?= $value['categoria']; ?></td>
-                    <td><?= $value['fornecedor']; ?></td>
+                    <td><?= $value['descricao_categoria']; ?></td>
+                    <td><?= $value['nome_fornecedores']; ?></td>
                     <td><?= $value['diaLancamento']; ?></td>
                     <td>R$ <?= $value['precoVenda']; ?></td>
                     <td>R$ <?= $value['precoUnitario']; ?></td>

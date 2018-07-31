@@ -1,3 +1,10 @@
+<?php
+require '../vendor/autoload.php';
+$conecao = new Conexao();
+$arrayCategoria = $conecao->receberCategoria();
+$arrayFornecedor = $conecao->receberFornecedor();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -76,27 +83,40 @@
                     <div class="col">
                         <input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
                     </div>
+
                     <div class="col">
-                        <input type="text"  name="categoria" class="form-control" placeholder="Categoria">
+
+                        <select class="form-control" name="categoria">
+                            <?php foreach ($arrayCategoria as $categoria) { ?>
+
+                                <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="col">
-                        <input type="text" name="nomeFornecedor" class="form-control" placeholder="Fornecedor">
+                        <select class="form-control" name="fornecedor">
+                            <?php foreach ($arrayFornecedor as $fornecedores) { ?>
+
+                                <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="col">
                         <input type="date" name="diaLancamento" class="form-control">
                     </div>
                     <div class="col">
-                        <input type="number" name="precoVenda" step="any" class="form-control" placeholder="Preço de Venda R$">
+                        <input type="number" name="precoVenda" step="any" class="form-control"
+                               placeholder="Preço de Venda R$">
                     </div>
                     <div class="col">
-                        <input type="number" name="precoUnitario" step="any" class="form-control" placeholder="Preço Unitário R$">
+                        <input type="number" name="precoUnitario" step="any" class="form-control"
+                               placeholder="Preço Unitário R$">
                     </div>
                 </div>
                 <br>
                 <br>
                 <button type="submit" class="btn btn-success">Cadastrar</button>
             </form>
-
 
 
         </main>
@@ -106,7 +126,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../js/bootstrap.min.js"></script>
 

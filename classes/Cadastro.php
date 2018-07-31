@@ -2,7 +2,7 @@
 require '../vendor/autoload.php';
 $nomeProduto = $_POST['nomeProduto'];
 $Categoria = $_POST['categoria'];
-$fornecedor = $_POST['nomeFornecedor'];
+$fornecedor = $_POST['fornecedor'];
 $diaLancamento = $_POST['diaLancamento'];
 $precoVenda = $_POST['precoVenda'];
 $precoUnitario = $_POST['precoUnitario'];
@@ -48,7 +48,7 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.html">
+                        <a class="nav-link" href="../site/cadastro.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -85,8 +85,7 @@ $precoUnitario = $_POST['precoUnitario'];
             <?php
             if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario))  {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.html'>
-    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo "<a href='../site/cadastro.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;
             }
 
@@ -99,7 +98,7 @@ $precoUnitario = $_POST['precoUnitario'];
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../site/cadastro.html'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../site/cadastro.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

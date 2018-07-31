@@ -2,7 +2,8 @@
 require '../vendor/autoload.php';
 $inserir = new Conexao();
 $arrayLista = $inserir->listarId();
-
+$arrayCategoria = $inserir->receberCategoria();
+$arrayFornecedor = $inserir->receberFornecedor();
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,7 +46,7 @@ $arrayLista = $inserir->listarId();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.html">
+                        <a class="nav-link" href="../site/cadastro.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -83,8 +84,7 @@ $arrayLista = $inserir->listarId();
             <br>
             <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
             <br>
-            <?php
-            foreach ($arrayLista as $value) { ?>
+            <?php foreach ($arrayLista as $value) { ?>
 
                 <form id="formulario" action="update.php" method="get">
                     <div class="form-row">
@@ -93,12 +93,20 @@ $arrayLista = $inserir->listarId();
                                    placeholder="Nome" value="<?= $value['nome'] ?>">
                         </div>
                         <div class="col">
-                            <input type="text" name="categoria" class="form-control"
-                                   placeholder="Categoria" value="<?= $value['categoria'] ?>">
+                            <select class="form-control" name="categoria">
+                                <?php foreach ($arrayCategoria as $categoria) { ?>
+
+                                    <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="col">
-                            <input type="text" name="fornecedor" class="form-control"
-                                   placeholder="Fornecedor" value="<?= $value['fornecedor'] ?>">
+                            <select class="form-control" name="fornecedor">
+                                <?php foreach ($arrayFornecedor as $fornecedores) { ?>
+
+                                    <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="col">
                             <input type="date" name="diaLancamento"

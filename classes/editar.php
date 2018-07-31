@@ -1,9 +1,7 @@
 <?php
 require '../vendor/autoload.php';
-$comando = new Conexao();
 $inserir = new Conexao();
 $arrayLista = $inserir->listarId();
-
 
 ?>
 <!doctype html>
@@ -88,37 +86,40 @@ $arrayLista = $inserir->listarId();
             <?php
             foreach ($arrayLista as $value) { ?>
 
-            <form id="formulario" action="../classes/update.php" method="get">
-                <div class="form-row">
-                    <div class="col">
-                        <input type="text" name="nome" class="form-control"
-                               placeholder="Nome" value="<?=$value['nome']?>">
+                <form id="formulario" action="update.php" method="get">
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" name="nome" class="form-control"
+                                   placeholder="Nome" value="<?= $value['nome'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="text" name="categoria" class="form-control"
+                                   placeholder="Categoria" value="<?= $value['categoria'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="text" name="fornecedor" class="form-control"
+                                   placeholder="Fornecedor" value="<?= $value['fornecedor'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="date" name="diaLancamento"
+                                   class=" form-control" value="<?= $value['diaLancamento'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="precoVenda" step="any" class="form-control"
+                                   placeholder="Preço de Venda R$" value="<?= $value['precoVenda'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="precoUnitario" step="any" class="form-control"
+                                   placeholder="Preço Unitário R$" value="<?= $value['precoUnitario'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                        </div>
                     </div>
-                    <div class="col">
-                        <input type="text" name="categoria" class="form-control"
-                               placeholder="Categoria" value="<?=$value['categoria']?>" >
-                    </div>
-                    <div class="col">
-                        <input type="text" name="fornecedor" class="form-control"
-                               placeholder="Fornecedor" value="<?=$value['fornecedor']?>" >
-                    </div>
-                    <div class="col">
-                        <input type="date" name="diaLancamento"
-                                class=" form-control" value="<?=$value['diaLancamento']?>" >
-                    </div>
-                    <div class="col">
-                        <input type="number" name="precoVenda" step="any" class="form-control"
-                               placeholder="Preço de Venda R$" value="<?=$value['precoVenda']?>" >
-                    </div>
-                    <div class="col">
-                        <input type="number" name="precoUnitario" step="any" class="form-control"
-                               placeholder="Preço Unitário R$" value="<?=$value['precoUnitario']?>" >
-                    </div>
-                </div>
-                <br>
-                <br>
-                <button type="submit" class="btn btn-success">Salvar</button>
-            </form>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
             <?php } ?>
 
 

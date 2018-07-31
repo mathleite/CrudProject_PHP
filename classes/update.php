@@ -1,5 +1,6 @@
 <?php
 require '../vendor/autoload.php';
+
 $produto = $_GET['nome'];
 $categoria = $_GET['categoria'];
 $fornecedor = $_GET['fornecedor'];
@@ -56,7 +57,7 @@ $precoUnitario = $_GET['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="tabela.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -79,7 +80,7 @@ $precoUnitario = $_GET['precoUnitario'];
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Cadastrar Produto</h1>
+                <h1 class="h2">Editar produto</h1>
 
             </div>
             <?php
@@ -99,7 +100,7 @@ $precoUnitario = $_GET['precoUnitario'];
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../site/cadastro.html'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../../site/cadastro.html'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

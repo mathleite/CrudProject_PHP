@@ -75,9 +75,7 @@ class Conexao
             p.fornecedor,
             p.precoVenda,
             p.precoUnitario,
-            DATE_FORMAT(diaLancamento, '%d/%c/%Y')
-        AS 
-            diaLancamento
+            p.diaLancamento
 
             
         FROM 
@@ -109,30 +107,34 @@ class Conexao
 
     }
 
-    public function editar($produto, $categoria, $fornecedor, $precoVenda, $precoUnitario)
+    public function editar($nome, $categoria, $fornecedor, $precoVenda, $precoUnitario)
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
         $sql ="
         UPDATE
-            produtos
+            produtos p
         SET
-            p.nome = :p.nome,
-            p.categoria = :p.categoria,
-            p.fornecedor = :p.fornecedor,
-            p.precoVenda = :p.precoVenda,
-            p.precoUnitario = :p.precoUnitario
+            p.nome = :nome,
+            p.categoria = :categoria,
+            p.fornecedor = :fornecedor,
+            p.precoVenda = :precoVenda,
+            p.precoUnitario = :precoUnitario
         WHERE
-            p.id = $id
+            p.id = :id
         ";
 
         $comando = $this->conexao->prepare($sql);
-        $comando->bindParam(":p.nome", $produto);
-        $comando->bindParam(":p.categoria", $categoria);
-        $comando->bindParam(":p.fornecedor", $fornecedor);
-        $comando->bindParam(":p.precoVenda", $precoVenda);
-        $comando->bindParam(":p.precoUnitario", $precoUnitario);
+        $comando->bindParam(":nome", $nome);
+        $comando->bindParam(":categoria", $categoria);
+        $comando->bindParam(":fornecedor", $fornecedor);
+        $comando->bindParam(":precoVenda", $precoVenda);
+        $comando->bindParam(":precoUnitario", $precoUnitario);
+        $comando->bindParam(":id", $id);
+
         $comando->execute();
     }
+
 
 
 

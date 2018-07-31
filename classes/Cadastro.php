@@ -56,7 +56,7 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="tabela.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>

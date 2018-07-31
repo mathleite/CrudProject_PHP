@@ -3,6 +3,7 @@ require '../vendor/autoload.php';
 
 $comando = new Conexao();
 $arrayProdutos = $comando->listar();
+
 ?>
 
 <!doctype html>
@@ -18,8 +19,10 @@ $arrayProdutos = $comando->listar();
 
     <title>Projeto - Sistema </title>
 
+    <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
 </head>
 
@@ -48,15 +51,23 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 shopping_basket
                             </i>
-                            Produtos
+                            Cadastrar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tabela.php">
+                            <i class="material-icons">
+                                format_align_left
+                            </i>
+                            Tabela
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
-                                format_align_left
+                                border_color
                             </i>
-                            Tabela
+                            Editar
                         </a>
                     </li>
                 </ul>
@@ -69,6 +80,7 @@ $arrayProdutos = $comando->listar();
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
             <h4>Tabela de Produtos</h4>
+            <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
 
             <br>
             <form method="post">
@@ -79,40 +91,45 @@ $arrayProdutos = $comando->listar();
                         <th>nome</th>
                         <th>Categoria</th>
                         <th>Fornecedor</th>
+                        <th>Lançamento</th>
+                        <th>Venda</th>
+                        <th>Unidade</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
 
                     <tbody>
 
                     <?php
-                    if(isset($_POST['selecionado'])){
+                    if (isset($_POST['selecionado'])) {
                         $comando = new Conexao();
                         $deletar = $comando->deletar();
                         header("Refresh: 0");
 
                     }
                     ?>
-                    <?php foreach ($arrayProdutos as $value) {  ?>
+                    <?php foreach ($arrayProdutos as $value) { ?>
                         <tr>
                             <th scope="row"><?= $value['id']; ?></th>
                             <td><?= $value['nome']; ?></td>
                             <td><?= $value['categoria']; ?></td>
                             <td><?= $value['fornecedor']; ?></td>
-                            <?php $valorId = $value['id'] ?>
-                            <?php echo "<td><div class=\"form-check\">
-                            <input class=\"form-check-input position-static\" type=\"checkbox\" name=selecionado[]     
-                            id=\"blankCheckbox\" value=$valorId aria-label=\"...\"></div></td>\"";?>
-
+                            <td><?= $value['diaLancamento']; ?></td>
+                            <td>R$ <?= $value['precoVenda']; ?></td>
+                            <td>R$ <?= $value['precoUnitario']; ?></td>
+                            <td>
+                                    <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
+                                           id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
+                                </div>
+                            </td>
                         </tr>
                     <?php } ?>
 
                     </tbody>
                     <br>
-                    <button type="submit" class="btn btn-danger">Excluir</button>
                 </table>
+                <button type="submit" class="btn btn-danger">Deletar</button>
             </form>
-
-
 
 
         </main>
@@ -122,7 +139,9 @@ $arrayProdutos = $comando->listar();
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../js/bootstrap.min.js"></script>
 

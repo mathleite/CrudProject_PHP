@@ -54,7 +54,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classes/listagem.php">
+                        <a class="nav-link" href="classes/tabela.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>

@@ -1,3 +1,7 @@
+<?php
+require '../vendor/autoload.php';
+$categoria = $_GET['descricao'];
+?>
 <!doctype html>
 <html lang="pt_br">
 <head>
@@ -5,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
@@ -39,7 +43,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastro.php">
+                        <a class="nav-link" href="../site/cadastro.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -47,7 +51,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/tabela.php">
+                        <a class="nav-link" href="tabela.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -55,7 +59,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -63,44 +67,53 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastroFornecedor.html">
+                        <a class="nav-link" href="../site/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastroCategoria.html">
+                        <a class="nav-link" href="../site/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
                             Categoria
                         </a>
                     </li>
+
                 </ul>
             </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Editar produto</h1>
+
             </div>
-            <h4>Cadastro de Categorias</h4>
-            <h6 style="color: #dd0000">'>.<'</h6>
+            <?php
+            if (empty($categoria)) {
+                echo "<p>Dados inválidos!</p>" . PHP_EOL;
+                echo "<a href='../site/espacoCategoria.php'>
+    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                exit;
+            }
 
-            <br>
+            try {
+                $conexao = new Conexao();
+                $editar = $conexao->updateCategoria($categoria);
 
-            <form action="../classes/cadastros/cadastroCategoria.php" method="get">
-                <div class="form-row">
-                    <div class="col">
-                        <span><strong>Categoria</strong></span><input type="text" name="novaCategoria"
-                                                                      class="form-control" placeholder="Nome">
-                        <br>
-                        <button type="submit" class="btn btn-primary">Salvar</button>
-                    </div>
+                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
+                echo "<a href='../site/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ver Categorias</button></a>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<a href='../../index.php'><button type=\"submit\" class=\"btn btn-dark\">Ir à home</button></a>";
+            } catch (\Exception $e) {
+                throw new \Exception("Cadastro feito com sucesso", 1);
 
-                </div>
-            </form>
-
+            }
+            ?>
 
         </main>
     </div>

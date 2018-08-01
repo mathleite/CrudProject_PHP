@@ -1,14 +1,10 @@
-<?php require '../vendor/autoload.php';
-$comando = new Conexao();
-$arrayProdutos = $comando->listar();
-if (isset($_POST['selecionado'])) {
-    $comando = new Conexao();
-    $deletar = $comando->deletar();
-    header("Refresh: 0");
-}
+<?php
+require '../vendor/autoload.php';
+$inserir = new Conexao();
+$arrayCategoria = $inserir->idCategoria();
 ?>
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,7 +52,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tabela.php">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -86,6 +82,7 @@ if (isset($_POST['selecionado'])) {
                             Categoria
                         </a>
                     </li>
+                </ul>
 
                 </ul>
             </div>
@@ -93,48 +90,30 @@ if (isset($_POST['selecionado'])) {
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Editar Categoria</h1>
+
             </div>
-            <h4>Tabela de Produtos</h4>
-            <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
-
+            <h4>Forneça os dados necessários</h4>
             <br>
-            <form method="post">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>nome</th>
-                        <th>Categoria</th>
-                        <th>Fornecedor</th>
-                        <th>Lançamento</th>
-                        <th>Venda</th>
-                        <th>Unidade</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
+            <h6 style="color: #dd0000;">O campo deve ser preenchido*</h6>
+            <br>
+            <?php foreach ($arrayCategoria as $value) { ?>
 
-                    <tbody>
-                    <?php foreach ($arrayProdutos
-
-                    as $value) { ?>
-                    <tr>
-                        <th scope="row"><?= $value['id']; ?></th>
-                        <td><?= $value['nome']; ?></td>
-                        <td><?= $value['descricao_categoria']; ?></td>
-                        <td><?= $value['nome_fornecedores']; ?></td>
-                        <td><?= $value['diaLancamento']; ?></td>
-                        <td>R$ <?= $value['precoVenda']; ?></td>
-                        <td>R$ <?= $value['precoUnitario']; ?></td>
-                        <td>
-                            <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
-                            <?php } ?>
-
-                    </tbody>
+                <form id="formulario" action="updateCategoria.php" method="get">
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" name="descricao" class="form-control"
+                                   placeholder="Descrição" value="<?= $value['descricao'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                        </div>
+                    </div>
                     <br>
-                </table>
-                <button type="submit" class="btn btn-danger">Deletar</button>
-            </form>
+                    <br>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            <?php } ?>
 
 
         </main>

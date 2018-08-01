@@ -154,6 +154,38 @@ class Conexao
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function idCategoria()
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $sql = "
+        SELECT 
+            id,
+            descricao
+        FROM
+            categoria
+        WHERE id = $id
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function updateCategoria($categoria)
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $sql ="
+        UPDATE
+            categoria
+        SET 
+            descricao = :descricao
+        WHERE
+            id= :id
+            ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->bindParam(":descricao", $categoria);
+        $comando->bindParam(":id", $id);
+        $comando->execute();
+
+    }
 
     public function receberFornecedor()
     {
@@ -173,6 +205,39 @@ class Conexao
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function idFornecedor()
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $sql = "
+        SELECT 
+            id,
+            nome
+        FROM
+            fornecedores
+        WHERE id = $id
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateFornecedor($fornecedor)
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $sql ="
+        UPDATE
+            fornecedores
+        SET 
+            nome = :nome
+        WHERE
+            id= :id
+            ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->bindParam(":nome", $fornecedor);
+        $comando->bindParam(":id", $id);
+        $comando->execute();
+
+    }
     public function cadastrarFornecedor()
     {
         $nomeFornecedor = filter_input(INPUT_GET, 'novoFornecedor', FILTER_SANITIZE_STRING);
@@ -202,6 +267,7 @@ class Conexao
         $comando = $this->conexao->prepare($sql);
         $comando->execute();
     }
+
 
 
 }

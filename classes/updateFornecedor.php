@@ -1,11 +1,6 @@
-<?php require '../vendor/autoload.php';
-$comando = new Conexao();
-$arrayProdutos = $comando->listar();
-if (isset($_POST['selecionado'])) {
-    $comando = new Conexao();
-    $deletar = $comando->deletar();
-    header("Refresh: 0");
-}
+<?php
+require '../vendor/autoload.php';
+$fornecedor = $_GET['nome'];
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -14,9 +9,9 @@ if (isset($_POST['selecionado'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
@@ -93,49 +88,32 @@ if (isset($_POST['selecionado'])) {
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Editar produto</h1>
+
             </div>
-            <h4>Tabela de Produtos</h4>
-            <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
+            <?php
+            if (empty($fornecedor)) {
+                echo "<p>Dados inválidos!</p>" . PHP_EOL;
+                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.php'>
+    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                exit;
+            }
 
-            <br>
-            <form method="post">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>nome</th>
-                        <th>Categoria</th>
-                        <th>Fornecedor</th>
-                        <th>Lançamento</th>
-                        <th>Venda</th>
-                        <th>Unidade</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
+            try {
+                $conexao = new Conexao();
+                $editar = $conexao->updateFornecedor($fornecedor);
 
-                    <tbody>
-                    <?php foreach ($arrayProdutos
+                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
+                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+            } catch (\Exception $e) {
+                throw new \Exception("Cadastro feito com sucesso", 1);
 
-                    as $value) { ?>
-                    <tr>
-                        <th scope="row"><?= $value['id']; ?></th>
-                        <td><?= $value['nome']; ?></td>
-                        <td><?= $value['descricao_categoria']; ?></td>
-                        <td><?= $value['nome_fornecedores']; ?></td>
-                        <td><?= $value['diaLancamento']; ?></td>
-                        <td>R$ <?= $value['precoVenda']; ?></td>
-                        <td>R$ <?= $value['precoUnitario']; ?></td>
-                        <td>
-                            <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
-                            <?php } ?>
-
-                    </tbody>
-                    <br>
-                </table>
-                <button type="submit" class="btn btn-danger">Deletar</button>
-            </form>
-
+            }
+            ?>
 
         </main>
     </div>
@@ -161,4 +139,5 @@ if (isset($_POST['selecionado'])) {
 
 </body>
 </html>
+
 

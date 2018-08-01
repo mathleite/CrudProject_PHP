@@ -1,14 +1,10 @@
-<?php require '../vendor/autoload.php';
+<?php
+require '../vendor/autoload.php';
 $comando = new Conexao();
-$arrayProdutos = $comando->listar();
-if (isset($_POST['selecionado'])) {
-    $comando = new Conexao();
-    $deletar = $comando->deletar();
-    header("Refresh: 0");
-}
+$arrayFornecedores = $comando->receberFornecedor();
 ?>
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,7 +44,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="cadastro.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -56,7 +52,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tabela.php">
+                        <a class="nav-link" href="../classes/tabela.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -64,7 +60,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../classes/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -72,21 +68,20 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
                             Categoria
                         </a>
                     </li>
-
                 </ul>
             </div>
         </nav>
@@ -94,48 +89,39 @@ if (isset($_POST['selecionado'])) {
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
-            <h4>Tabela de Produtos</h4>
-            <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
+            <h4>Espaço do Fornecedor</h4>
+            <h6 style="color: #dd0000">'>.<'</h6>
 
             <br>
-            <form method="post">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>nome</th>
-                        <th>Categoria</th>
-                        <th>Fornecedor</th>
-                        <th>Lançamento</th>
-                        <th>Venda</th>
-                        <th>Unidade</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
 
-                    <tbody>
-                    <?php foreach ($arrayProdutos
-
-                    as $value) { ?>
-                    <tr>
-                        <th scope="row"><?= $value['id']; ?></th>
-                        <td><?= $value['nome']; ?></td>
-                        <td><?= $value['descricao_categoria']; ?></td>
-                        <td><?= $value['nome_fornecedores']; ?></td>
-                        <td><?= $value['diaLancamento']; ?></td>
-                        <td>R$ <?= $value['precoVenda']; ?></td>
-                        <td>R$ <?= $value['precoUnitario']; ?></td>
-                        <td>
-                            <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
-                            <?php } ?>
-
-                    </tbody>
-                    <br>
-                </table>
-                <button type="submit" class="btn btn-danger">Deletar</button>
+            <form action="../classes/cadastros/cadastroFeito.php" method="get">
+                <div class="form-row">
+                    <div class="col">
+                        <span><strong>Cadastrar - Fornecedor: </strong></span><input type="text" name="novoFornecedor"
+                                                                                     class="form-control"
+                                                                                     placeholder="Nome">
+                        <br>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
             </form>
-
+            <hr style="background-color: #007bff">
+            <h4>Editar - Fornecedores: </h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fornecedores</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($arrayFornecedores as $fornecedores){?>
+                <tr>
+                    <th scope="row"><?= $fornecedores['id']?></th>
+                    <td><?= $fornecedores['nome']?></td>
+                    <td><a href="../classes/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a></td>
+                    <?php } ?>
 
         </main>
     </div>
@@ -161,4 +147,5 @@ if (isset($_POST['selecionado'])) {
 
 </body>
 </html>
+
 

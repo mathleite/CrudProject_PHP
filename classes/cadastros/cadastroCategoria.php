@@ -67,14 +67,14 @@ $novaCategoria = $_GET['novaCategoria'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../site/cadastroFornecedor.html">
+                        <a class="nav-link" href="../../site/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../site/cadastroCategoria.html">
+                        <a class="nav-link" href="../../site/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>

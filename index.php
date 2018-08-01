@@ -41,8 +41,8 @@ $arrayProdutos = $comando->listar();
                         <a class="nav-link active" href="index.php">
                             <i class="material-icons">
                                 home
-                            </i>HOME
-
+                            </i>
+                            <span>HOME</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -50,7 +50,7 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 shopping_basket
                             </i>
-                            Cadastrar
+                            <span>Cadastrar</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -58,7 +58,7 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 format_align_left
                             </i>
-                            Deletar
+                            <span>Deletar</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -66,27 +66,26 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 border_color
                             </i>
-                            Editar
+                            <span>Editar</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/cadastroFornecedor.html">
+                        <a class="nav-link" href="site/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
-                            Fornecedor
+                            <span>Fornecedor</span>
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/cadastroCategoria.html">
+                        <a class="nav-link" href="site/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
-                            Categoria
+                            <span>Categoria</span>
                         </a>
                     </li>
                 </ul>
-
-                </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 

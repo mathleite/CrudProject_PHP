@@ -62,14 +62,14 @@ $arrayFornecedor = $conecao->receberFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastroFornecedor.html">
+                        <a class="nav-link" href="espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastroCategoria.html">
+                        <a class="nav-link" href="espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>

@@ -58,7 +58,7 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 format_align_left
                             </i>
-                            Tabela
+                            Deletar
                         </a>
                     </li>
                     <li class="nav-item">
@@ -69,6 +69,21 @@ $arrayProdutos = $comando->listar();
                             Editar
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site/cadastroFornecedor.html">
+                            <i class="material-icons">
+                                face
+                            </i>
+                            Fornecedor
+                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site/cadastroCategoria.html">
+                            <i class="material-icons">
+                                shopping_cart
+                            </i>
+                            Categoria
+                        </a>
+                    </li>
                 </ul>
 
                 </ul>
@@ -77,10 +92,10 @@ $arrayProdutos = $comando->listar();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Home</h1>
+                <h1 class="h2">Projeto</h1>
 
             </div>
-            <h2>Produtos Disponíveis</h2>
+            <h3>Produtos Disponíveis</h3>
             <form>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">

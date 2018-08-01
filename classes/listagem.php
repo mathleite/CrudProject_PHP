@@ -58,7 +58,7 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 format_align_left
                             </i>
-                            Tabela
+                            Deletar
                         </a>
                     </li>
                     <li class="nav-item">
@@ -69,7 +69,21 @@ $arrayProdutos = $comando->listar();
                             Editar
                         </a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../site/cadastroFornecedor.html">
+                            <i class="material-icons">
+                                face
+                            </i>
+                            Fornecedor
+                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../site/cadastroCategoria.html">
+                            <i class="material-icons">
+                                shopping_cart
+                            </i>
+                            Categoria
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -82,6 +96,7 @@ $arrayProdutos = $comando->listar();
             <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
 
             <br>
+
             <form method="post">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -99,14 +114,6 @@ $arrayProdutos = $comando->listar();
 
                     <tbody>
 
-                    <?php
-                    if (isset($_POST['selecionado'])) {
-                        $comando = new Conexao();
-                        $deletar = $comando->deletar();
-                        header("Refresh: 0");
-
-                    }
-                    ?>
                     <?php foreach ($arrayProdutos as $value) { ?>
                         <tr>
                             <th scope="row"><?= $value['id']; ?></th>
@@ -119,8 +126,6 @@ $arrayProdutos = $comando->listar();
                             <td>
                                 <a href="editar.php?id=<?= $value['id'] ?>">Editar</a>
                                 <div class="form-check">
-                                    <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                           id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
                                 </div>
                             </td>
                         </tr>
@@ -129,7 +134,6 @@ $arrayProdutos = $comando->listar();
                     </tbody>
                     <br>
                 </table>
-                <button type="submit" class="btn btn-danger">Deletar</button>
             </form>
 
 

@@ -59,7 +59,7 @@ $arrayProdutos = $comando->listar();
                             <i class="material-icons">
                                 format_align_left
                             </i>
-                            Tabela
+                            Deletar
                         </a>
                     </li>
                     <li class="nav-item">
@@ -70,7 +70,21 @@ $arrayProdutos = $comando->listar();
                             Editar
                         </a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../site/cadastroFornecedor.html">
+                            <i class="material-icons">
+                                face
+                            </i>
+                            Fornecedor
+                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../site/cadastroCategoria.html">
+                            <i class="material-icons">
+                                shopping_cart
+                            </i>
+                            Categoria
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -108,32 +122,34 @@ $arrayProdutos = $comando->listar();
 
                     }
                     ?>
-                    <?php foreach ($arrayProdutos as $value) { ?>
-                        <tr>
-                            <th scope="row"><?= $value['id']; ?></th>
-                            <td><?= $value['nome']; ?></td>
-                            <td><?= $value['descricao_categoria']; ?></td>
-                            <td><?= $value['nome_fornecedores']; ?></td>
-                            <td><?= $value['diaLancamento']; ?></td>
-                            <td>R$ <?= $value['precoVenda']; ?></td>
-                            <td>R$ <?= $value['precoUnitario']; ?></td>
-                            <td>
-                                    <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                           id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
-                                </div>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                    <?php foreach ($arrayProdutos
 
-                    </tbody>
-                    <br>
-                </table>
-                <button type="submit" class="btn btn-danger">Deletar</button>
-            </form>
-
-
-        </main>
+                    as $value) { ?>
+                    <tr>
+                        <th scope="row"><?= $value['id']; ?></th>
+                        <td><?= $value['nome']; ?></td>
+                        <td><?= $value['descricao_categoria']; ?></td>
+                        <td><?= $value['nome_fornecedores']; ?></td>
+                        <td><?= $value['diaLancamento']; ?></td>
+                        <td>R$ <?= $value['precoVenda']; ?></td>
+                        <td>R$ <?= $value['precoUnitario']; ?></td>
+                        <td>
+                            <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
+                                   id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
     </div>
+    </td>
+    </tr>
+    <?php } ?>
+
+    </tbody>
+    <br>
+    </table>
+    <button type="submit" class="btn btn-danger">Deletar</button>
+    </form>
+
+
+    </main>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript

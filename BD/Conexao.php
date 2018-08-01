@@ -173,5 +173,35 @@ class Conexao
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function cadastrarFornecedor()
+    {
+        $nomeFornecedor = filter_input(INPUT_GET, 'novoFornecedor', FILTER_SANITIZE_STRING);
+        $sql = "
+        INSERT INTO 
+            fornecedores (
+            nome
+            ) 
+        VALUE 
+            ('$nomeFornecedor')
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+    }
+
+    public function cadastrarCategoria()
+    {
+        $nomeCategoria = filter_input(INPUT_GET, 'novaCategoria', FILTER_SANITIZE_STRING);
+        $sql = "
+        INSERT INTO 
+            categoria (
+            descricao
+            ) 
+        VALUE 
+            ('$nomeCategoria')
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+    }
+
 
 }

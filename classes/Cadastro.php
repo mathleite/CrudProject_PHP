@@ -68,9 +68,25 @@ $precoUnitario = $_POST['precoUnitario'];
                             <i class="material-icons">
                                 border_color
                             </i>
-                            Editar
+                            Deletar
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../site/cadastroFornecedor.html">
+                            <i class="material-icons">
+                                face
+                            </i>
+                            Fornecedor
+                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../site/cadastroCategoria.html">
+                            <i class="material-icons">
+                                shopping_cart
+                            </i>
+                            Categoria
+                        </a>
+                    </li>
+                </ul>
                 </ul>
 
                 </ul>

@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 $nomeProduto = $_POST['nomeProduto'];
 $Categoria = $_POST['categoria'];
 $fornecedor = $_POST['fornecedor'];
@@ -15,13 +15,13 @@ $precoUnitario = $_POST['precoUnitario'];
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -29,7 +29,7 @@ $precoUnitario = $_POST['precoUnitario'];
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -40,7 +40,7 @@ $precoUnitario = $_POST['precoUnitario'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -48,7 +48,7 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -56,7 +56,7 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tabela.php">
+                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -64,7 +64,7 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -72,14 +72,14 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -99,20 +99,20 @@ $precoUnitario = $_POST['precoUnitario'];
             <?php
             if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='../site/cadastro.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo "<a href='../site/cadastroUpdate.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;
             }
 
             try {
-                $conexao = new Conexao();
-                $conexao->cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario);
+                $inserir = new Inserir();
+                $comando = $inserir->cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<a href='../listagem/listagemSemEditar.php' ><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../site/cadastro.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../cadastros/cadastrar.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 
@@ -130,7 +130,7 @@ $precoUnitario = $_POST['precoUnitario'];
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>

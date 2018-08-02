@@ -1,10 +1,8 @@
 <?php
-require '../vendor/autoload.php';
-
-$comando = new Conexao();
-$arrayProdutos = $comando->listar();
+require '../../vendor/autoload.php';
+$lista = new Listar();
+$arrayCategoria = $lista->idCategoria();
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,12 +12,12 @@ $arrayProdutos = $comando->listar();
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -27,7 +25,7 @@ $arrayProdutos = $comando->listar();
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -38,7 +36,7 @@ $arrayProdutos = $comando->listar();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -46,7 +44,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -54,7 +52,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tabela.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -62,7 +60,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -70,14 +68,14 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -91,50 +89,30 @@ $arrayProdutos = $comando->listar();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Editar Categoria</h1>
+
             </div>
-            <h4>Tabela de Produtos</h4>
-            <h6 style="color: #dd0000">Selecione 'Editar' para poder editar o Lançamento</h6>
-
+            <h4>Forneça os dados necessários</h4>
             <br>
+            <h6 style="color: #dd0000;">O campo deve ser preenchido*</h6>
+            <br>
+            <?php foreach ($arrayCategoria as $value) { ?>
 
-            <form method="post">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>nome</th>
-                        <th>Categoria</th>
-                        <th>Fornecedor</th>
-                        <th>Lançamento</th>
-                        <th>Venda</th>
-                        <th>Unidade</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-
-                    <?php foreach ($arrayProdutos as $value) { ?>
-                        <tr>
-                            <th scope="row"><?= $value['id']; ?></th>
-                            <td><?= $value['nome']; ?></td>
-                            <td><?= $value['descricao_categoria']; ?></td>
-                            <td><?= $value['nome_fornecedores']; ?></td>
-                            <td><?= $value['diaLancamento']; ?></td>
-                            <td>R$ <?= $value['precoVenda']; ?></td>
-                            <td>R$ <?= $value['precoUnitario']; ?></td>
-                            <td>
-                                <a href="editar.php?id=<?= $value['id'] ?>">Editar</a>
-                                <div class="form-check">
-                                </div>
-                            </td>
-                        </tr>
-                    <?php } ?>
-
-                    </tbody>
+                <form id="formulario" action="../atualizar/atualizarCategoria.php" method="get">
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" name="descricao" class="form-control"
+                                   placeholder="Descrição" value="<?= $value['descricao'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                        </div>
+                    </div>
                     <br>
-                </table>
-            </form>
+                    <br>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            <?php } ?>
 
 
         </main>
@@ -148,7 +126,7 @@ $arrayProdutos = $comando->listar();
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>

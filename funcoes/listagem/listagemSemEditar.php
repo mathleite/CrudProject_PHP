@@ -1,6 +1,12 @@
-<?php
-require '../vendor/autoload.php';
-$fornecedor = $_GET['nome'];
+<?php require '../../vendor/autoload.php';
+$comando = new Listar();
+$arrayProdutos = $comando->listarTabela();
+
+if (isset($_POST['selecionado'])) {
+    $comando = new Deletar();
+    $deletar = $comando->deletar();
+    header("Refresh: 0");
+}
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -9,14 +15,14 @@ $fornecedor = $_GET['nome'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -24,7 +30,7 @@ $fornecedor = $_GET['nome'];
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -35,7 +41,7 @@ $fornecedor = $_GET['nome'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -43,7 +49,7 @@ $fornecedor = $_GET['nome'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -51,7 +57,7 @@ $fornecedor = $_GET['nome'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tabela.php">
+                        <a class="nav-link" href="listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -67,14 +73,14 @@ $fornecedor = $_GET['nome'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -88,32 +94,50 @@ $fornecedor = $_GET['nome'];
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Editar produto</h1>
-
             </div>
-            <?php
-            if (empty($fornecedor)) {
-                echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.php'>
-    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
-                exit;
-            }
+            <h4>Tabela de Produtos</h4>
+            <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
 
-            try {
-                $conexao = new Conexao();
-                $editar = $conexao->updateFornecedor($fornecedor);
+            <br>
+            <form method="post">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>nome</th>
+                        <th>Categoria</th>
+                        <th>Fornecedor</th>
+                        <th>Lançamento</th>
+                        <th>Venda</th>
+                        <th>Unidade</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
 
-                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
-                echo "<br>";
-                echo "<br>";
-                echo "<br>";
-                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
-            } catch (\Exception $e) {
-                throw new \Exception("Cadastro feito com sucesso", 1);
+                    <tbody>
+                    <?php foreach ($arrayProdutos
 
-            }
-            ?>
+                                   as $value) { ?>
+                        <tr>
+                            <th scope="row"><?= $value['id']; ?></th>
+                            <td><?= $value['nome']; ?></td>
+                            <td><?= $value['descricao_categoria']; ?></td>
+                            <td><?= $value['nome_fornecedores']; ?></td>
+                            <td><?= $value['diaLancamento']; ?></td>
+                            <td>R$ <?= $value['precoVenda']; ?></td>
+                            <td>R$ <?= $value['precoUnitario']; ?></td>
+                            <td>
+                                <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
+                                       id="blankCheckbox" value=<?= $value['id'] ?> aria-label="..."></td>
+                        </tr>
+                    <?php } ?>
+
+                    </tbody>
+                    <br>
+                </table>
+                <button type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+
 
         </main>
     </div>
@@ -126,7 +150,7 @@ $fornecedor = $_GET['nome'];
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -139,5 +163,4 @@ $fornecedor = $_GET['nome'];
 
 </body>
 </html>
-
 

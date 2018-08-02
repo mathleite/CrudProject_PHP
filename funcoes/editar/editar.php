@@ -1,17 +1,22 @@
 <?php
 require '../../vendor/autoload.php';
-$novaCategoria = $_GET['novaCategoria'];
+$lista = new Listar();
+$arrayLista = $lista->listarId();
+$arrayCategoria = $lista->receberCategoria();
+
+$lista = new Listar();
+$arrayFornecedor = $lista->receberFornecedor();
 ?>
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="icon" href="../../cloud.ico/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
@@ -43,7 +48,7 @@ $novaCategoria = $_GET['novaCategoria'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../site/cadastro.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -51,7 +56,7 @@ $novaCategoria = $_GET['novaCategoria'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../tabela.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -59,7 +64,7 @@ $novaCategoria = $_GET['novaCategoria'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -67,14 +72,14 @@ $novaCategoria = $_GET['novaCategoria'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../site/espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../site/espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -88,31 +93,59 @@ $novaCategoria = $_GET['novaCategoria'];
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Cadastrar Produto</h1>
+                <h1 class="h2">Editar Produto</h1>
 
             </div>
-            <?php
-            if (empty($novaCategoria)) {
-                echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
-                exit;
-            }
+            <h4>Forneça os dados necessários</h4>
+            <br>
+            <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
+            <br>
+            <?php foreach ($arrayLista as $value) { ?>
 
-            try {
-                $conexao = new Conexao();
-                $conexao->cadastrarCategoria($novaCategoria);
+                <form id="formulario" action="../atualizar/atualizarTodosDados.php" method="get">
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" name="nome" class="form-control"
+                                   placeholder="Nome" value="<?= $value['nome'] ?>">
+                        </div>
+                        <div class="col">
+                            <select class="form-control" name="categoria">
+                                <?php foreach ($arrayCategoria as $categoria) { ?>
 
-                echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
-                echo "<br>";
-                echo "<br>";
-                echo "<br>";
-                echo "<a href='../../site/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar</button></a>";
-            } catch (\Exception $e) {
-                throw new \Exception("Cadastro feito com sucesso", 1);
+                                    <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-control" name="fornecedor">
+                                <?php foreach ($arrayFornecedor as $fornecedores) { ?>
 
-            }
-            ?>
+                                    <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input type="date" name="diaLancamento"
+                                   class=" form-control" value="<?= $value['diaLancamento'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="precoVenda" step="any" class="form-control"
+                                   placeholder="Preço de Venda R$" value="<?= $value['precoVenda'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="precoUnitario" step="any" class="form-control"
+                                   placeholder="Preço Unitário R$" value="<?= $value['precoUnitario'] ?>">
+                        </div>
+                        <div class="col">
+                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            <?php } ?>
+
 
         </main>
     </div>
@@ -125,7 +158,7 @@ $novaCategoria = $_GET['novaCategoria'];
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -138,5 +171,4 @@ $novaCategoria = $_GET['novaCategoria'];
 
 </body>
 </html>
-
 

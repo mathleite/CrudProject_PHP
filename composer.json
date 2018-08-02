@@ -1,9 +1,20 @@
 {
-    "require": {
-        "php": ">=5.2"
-    },
-
-    "autoload": {
-        "classmap": ["bd", "classes", "css",  "site"]
+  "name": "Projeto Sistema-Cadastro",
+  "description": "Simples sistema de cadastro, proposto com o intuito de Desenvolvimento Profissional",
+  "authors": [
+    {
+      "name": "Matheus Leite",
+      "email": "matheussantosleite_@hotmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.2"
+  },
+  "autoload": {
+    "classmap": [
+      "bd",
+      "funcoes",
+      "css"
+    ]
+  }
 }

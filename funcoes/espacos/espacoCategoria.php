@@ -1,12 +1,16 @@
 <?php
-require '../vendor/autoload.php';
-$conecao = new Conexao();
-$arrayCategoria = $conecao->receberCategoria();
-$arrayFornecedor = $conecao->receberFornecedor();
-?>
+require '../../vendor/autoload.php';
+$lista = new Listar();
+$arrayCategorias = $lista->receberCategoria();
+
+if (isset($_POST['selecionado'])) {
+    $comando = new Deletar();
+    $deletar = $comando->deletarCategoria();
+    header("Refresh: 0");
+} ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt_br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,12 +18,12 @@ $arrayFornecedor = $conecao->receberFornecedor();
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -27,7 +31,7 @@ $arrayFornecedor = $conecao->receberFornecedor();
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -38,7 +42,7 @@ $arrayFornecedor = $conecao->receberFornecedor();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -46,7 +50,15 @@ $arrayFornecedor = $conecao->receberFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
+                            <i class="material-icons">
+                                shopping_basket
+                            </i>
+                            Cadastrar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -54,7 +66,7 @@ $arrayFornecedor = $conecao->receberFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -83,57 +95,54 @@ $arrayFornecedor = $conecao->receberFornecedor();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Cadastrar Produto</h1>
-
             </div>
-            <h4>Forneça os dados necessários</h4>
+            <h4>Espaço das Categorias</h4>
 
-            <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
+
             <br>
-            <br>
-            <form id="formulario" action="../classes/Cadastro.php" method="post">
+
+            <form action="../cadastros/cadastroCategoria.php" method="get">
                 <div class="form-row">
                     <div class="col">
-                        <span><strong>Nome</strong></span><input type="text" name="nomeProduto" class="form-control"
-                                                                 placeholder="Nome">
+                        <span><strong>Cadastrar - categoria:</strong></span><input type="text" name="novaCategoria" class="form-control" placeholder="Nome">
+                        <br>
+                        <button type="submit" class="btn btn-success">Salvar</button>
                     </div>
 
-                    <div class="col">
-
-                        <span><strong>Categoria</strong></span><select class="form-control" name="categoria">
-                            <?php foreach ($arrayCategoria as $categoria) { ?>
-
-                                <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <span><strong>Fornecedor</strong></span><select class="form-control" name="fornecedor">
-                            <?php foreach ($arrayFornecedor as $fornecedores) { ?>
-
-                                <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <span><strong>Dia do Lançamento</strong></span><input type="date" name="diaLancamento"
-                                                                              class="form-control">
-                    </div>
-                    <div class="col">
-                        <span><strong>Preço de Venda</strong></span><input type="number" name="precoVenda" step="any"
-                                                                           class="form-control"
-                                                                           placeholder="Preço de Venda R$">
-                    </div>
-                    <div class="col">
-                        <span><strong>Preço Unitário</strong></span><input type="number" name="precoUnitario" step="any"
-                                                                           class="form-control"
-                                                                           placeholder="Preço Unitário R$">
-                    </div>
                 </div>
-                <br>
-                <br>
-                <button style="margin-left: 930px; " type="submit" class="btn btn-success">Cadastrar</button>
             </form>
+
+            <hr style="background-color: #007bff">
+            <h4>Editar - Categorias: </h4>
+            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
+            <br>
+            <form method="post">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Categorias</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($arrayCategorias
+                    as $categoria){ ?>
+                    <tr>
+                        <th scope="row"><?= $categoria['id'] ?></th>
+                        <td><?= $categoria['descricao'] ?></td>
+                        <td><a href="../editar/editarCategoria.php?id=<?= $categoria['id'] ?>">Editar</a></td>
+                        <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
+                                   id="blankCheckbox" value=<?= $categoria['id'] ?> aria-label="..."></td>
+                    </tr>
+                    </tbody>
+                    <?php } ?>
+                </table>
+                <button style="margin-left: 960px;" type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+            <br>
+            <br>
+
+
         </main>
     </div>
 </div>
@@ -145,7 +154,7 @@ $arrayFornecedor = $conecao->receberFornecedor();
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -158,3 +167,5 @@ $arrayFornecedor = $conecao->receberFornecedor();
 
 </body>
 </html>
+
+

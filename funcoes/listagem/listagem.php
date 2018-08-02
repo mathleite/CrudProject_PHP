@@ -1,16 +1,12 @@
 <?php
-require '../vendor/autoload.php';
-$comando = new Conexao();
-$arrayCategorias = $comando->receberCategoria();
+require '../../vendor/autoload.php';
 
-if (isset($_POST['selecionado'])) {
-    $comando = new Conexao();
-    $deletar = $comando->deletarCategoria();
-    header("Refresh: 0");
-} ?>
+$comando = new Listar();
+$arrayProdutos = $comando->listarTabela();
+?>
 
 <!doctype html>
-<html lang="pt_br">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,12 +14,12 @@ if (isset($_POST['selecionado'])) {
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -31,7 +27,7 @@ if (isset($_POST['selecionado'])) {
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -42,7 +38,7 @@ if (isset($_POST['selecionado'])) {
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -50,7 +46,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastro.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -58,7 +54,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/tabela.php">
+                        <a class="nav-link" href="listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -66,7 +62,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -74,14 +70,14 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -96,55 +92,49 @@ if (isset($_POST['selecionado'])) {
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
-            <h4>Espaço das Categorias</h4>
-
+            <h4>Tabela de Produtos</h4>
+            <h6 style="color: #dd0000">Selecione 'Editar' para poder editar o Lançamento</h6>
 
             <br>
 
-            <form action="../classes/cadastros/cadastroCategoria.php" method="get">
-                <div class="form-row">
-                    <div class="col">
-                        <span><strong>Cadastrar - categoria:</strong></span><input type="text" name="novaCategoria"
-                                                                                   class="form-control"
-                                                                                   placeholder="Nome">
-                        <br>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </div>
-
-                </div>
-            </form>
-
-            <hr style="background-color: #007bff">
-            <h4>Editar - Categorias: </h4>
-            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
-            <br>
             <form method="post">
-                <table class="table">
+                <table class="table table-striped table-sm">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Categorias</th>
+                        <th>#</th>
+                        <th>nome</th>
+                        <th>Categoria</th>
+                        <th>Fornecedor</th>
+                        <th>Lançamento</th>
+                        <th>Venda</th>
+                        <th>Unidade</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                    <?php foreach ($arrayCategorias
 
-                    as $categoria){ ?>
-                    <tr>
-                        <th scope="row"><?= $categoria['id'] ?></th>
-                        <td><?= $categoria['descricao'] ?></td>
-                        <td><a href="../classes/editarCategoria.php?id=<?= $categoria['id'] ?>">Editar</a></td>
-                        <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $categoria['id'] ?> aria-label="..."></td>
-                        <td><button type="submit" class="btn btn-danger">Excluir</button></td>
-                    </tr>
-                    </tbody>
+                    <?php foreach ($arrayProdutos as $value) { ?>
+                        <tr>
+                            <th scope="row"><?= $value['id']; ?></th>
+                            <td><?= $value['nome']; ?></td>
+                            <td><?= $value['descricao_categoria']; ?></td>
+                            <td><?= $value['nome_fornecedores']; ?></td>
+                            <td><?= $value['diaLancamento']; ?></td>
+                            <td>R$ <?= $value['precoVenda']; ?></td>
+                            <td>R$ <?= $value['precoUnitario']; ?></td>
+                            <td>
+                                <a href="../editar/editar.php?id=<?= $value['id'] ?>">Editar</a>
+                                <div class="form-check">
+                                </div>
+                            </td>
+                        </tr>
                     <?php } ?>
-                </table>
 
+                    </tbody>
+                    <br>
+                </table>
             </form>
-            <br>
-            <br>
 
 
         </main>
@@ -158,7 +148,7 @@ if (isset($_POST['selecionado'])) {
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -171,5 +161,4 @@ if (isset($_POST['selecionado'])) {
 
 </body>
 </html>
-
 

@@ -1,12 +1,6 @@
 <?php
-require '../vendor/autoload.php';
-
-$produto = $_GET['nome'];
-$categoria = $_GET['categoria'];
-$fornecedor = $_GET['fornecedor'];
-$diaLancamento = $_GET['diaLancamento'];
-$precoVenda = $_GET['precoVenda'];
-$precoUnitario = $_GET['precoUnitario'];
+require '../../vendor/autoload.php';
+$novaCategoria = $_GET['novaCategoria'];
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -16,13 +10,13 @@ $precoUnitario = $_GET['precoUnitario'];
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -30,7 +24,7 @@ $precoUnitario = $_GET['precoUnitario'];
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -41,7 +35,7 @@ $precoUnitario = $_GET['precoUnitario'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -49,7 +43,7 @@ $precoUnitario = $_GET['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -57,7 +51,7 @@ $precoUnitario = $_GET['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tabela.php">
+                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -65,7 +59,7 @@ $precoUnitario = $_GET['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -73,14 +67,14 @@ $precoUnitario = $_GET['precoUnitario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -94,27 +88,26 @@ $precoUnitario = $_GET['precoUnitario'];
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Editar produto</h1>
+                <h1 class="h2">Cadastrar Categoria</h1>
 
             </div>
             <?php
-            if (empty($produto) || empty($categoria) || empty($fornecedor) || empty($precoVenda) || empty($precoUnitario)) {
+            if (empty($novaCategoria)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastro.php'>
-    <button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo ">Voltar</button></a>";
                 exit;
             }
 
             try {
-                $conexao = new Conexao();
-                $editar = $conexao->editar($produto, $categoria, $fornecedor, $precoVenda, $precoUnitario);
+                $inserir = new Inserir();
+                $comando = $inserir->cadastrarCategoria($novaCategoria);
 
-                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
+                echo "<a href='../listagem/listagemSemEditar.php' ><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../espacos/espacoCategoria.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar para Categorias</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

@@ -1,8 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 
-$comando = new Conexao();
-$arrayProdutos = $comando->listar();
+$comando = new Listar();
+$arrayProdutos = $comando->listarTabela();
 ?>
 
 <!doctype html>
@@ -46,7 +46,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/cadastro.php">
+                        <a class="nav-link" href="funcoes/cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -54,7 +54,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classes/tabela.php">
+                        <a class="nav-link" href="funcoes/listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -62,7 +62,7 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classes/listagem.php">
+                        <a class="nav-link" href="funcoes/listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -70,14 +70,14 @@ $arrayProdutos = $comando->listar();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/espacoFornecedor.php">
+                        <a class="nav-link" href="funcoes/espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             <span>Fornecedor</span>
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/espacoCategoria.php">
+                        <a class="nav-link" href="funcoes/espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>

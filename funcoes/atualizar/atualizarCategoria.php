@@ -1,29 +1,22 @@
 <?php
-require '../vendor/autoload.php';
-$comando = new Conexao();
-$arrayFornecedores = $comando->receberFornecedor();
-
-if (isset($_POST['selecionado'])) {
-    $comando = new Conexao();
-    $deletar = $comando->deletarFornecedor();
-    header("Refresh: 0");
-}
+require '../../vendor/autoload.php';
+$categoria = $_GET['descricao'];
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="pt_br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -31,7 +24,7 @@ if (isset($_POST['selecionado'])) {
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -42,7 +35,7 @@ if (isset($_POST['selecionado'])) {
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -50,7 +43,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastro.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -58,7 +51,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/tabela.php">
+                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -66,7 +59,7 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../classes/listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -74,14 +67,14 @@ if (isset($_POST['selecionado'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -95,51 +88,31 @@ if (isset($_POST['selecionado'])) {
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">Editar produto</h1>
+
             </div>
-            <h4>Espaço do Fornecedor</h4>
- 
-            <br>
+            <?php
+            if (empty($categoria)) {
+                echo "<p>Dados inválidos!</p>" . PHP_EOL;
+                echo "<a href='http://localhost/Projeto-SistemaCadastro/site/cadastroUpdate.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                exit;
+            }
 
-            <form action="../classes/cadastros/cadastroFeito.php" method="get">
-                <div class="form-row">
-                    <div class="col">
-                        <span><strong>Cadastrar - Fornecedor: </strong></span><input type="text" name="novoFornecedor"
-                                                                                     class="form-control"
-                                                                                     placeholder="Nome">
-                        <br>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </div>
-                </div>
-            </form>
-            <hr style="background-color: #007bff">
-            <h4>Editar - Fornecedores: </h4>
-            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
-            <br>
-            <form method="post">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Fornecedores</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($arrayFornecedores
+            try {
+                $update = new Atualizar();
+                $editar = $update->updateCategoria($categoria);
 
-                    as $fornecedores){ ?>
-                    <tr>
-                        <th scope="row"><?= $fornecedores['id'] ?></th>
-                        <td><?= $fornecedores['nome'] ?></td>
-                        <td><a href="../classes/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a></td>
-                        <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $fornecedores['id'] ?> aria-label="..."></td>
-                        <td><button type="submit" class="btn btn-danger">Deletar</button></td>
-                    </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
+                echo "<a href='../listagem/listagemSemEditar.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+            } catch (\Exception $e) {
+                throw new \Exception("Cadastro feito com sucesso", 1);
 
-            </form>
+            }
+            ?>
 
         </main>
     </div>
@@ -152,7 +125,7 @@ if (isset($_POST['selecionado'])) {
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>

@@ -1,23 +1,22 @@
 <?php
-require '../vendor/autoload.php';
-$inserir = new Conexao();
-$arrayCategoria = $inserir->idCategoria();
+require '../../vendor/autoload.php';
+$novoFornecedor = $_GET['novoFornecedor'];
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="pt_br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/cadastro.css">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -25,7 +24,7 @@ $arrayCategoria = $inserir->idCategoria();
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -36,7 +35,7 @@ $arrayCategoria = $inserir->idCategoria();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -44,7 +43,7 @@ $arrayCategoria = $inserir->idCategoria();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -52,7 +51,7 @@ $arrayCategoria = $inserir->idCategoria();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -60,7 +59,7 @@ $arrayCategoria = $inserir->idCategoria();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -68,14 +67,14 @@ $arrayCategoria = $inserir->idCategoria();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="../espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -89,31 +88,31 @@ $arrayCategoria = $inserir->idCategoria();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Editar Categoria</h1>
+                <h1 class="h2">Cadastrar Fornecedor</h1>
 
             </div>
-            <h4>Forneça os dados necessários</h4>
-            <br>
-            <h6 style="color: #dd0000;">O campo deve ser preenchido*</h6>
-            <br>
-            <?php foreach ($arrayCategoria as $value) { ?>
+            <?php
+            if (empty($novoFornecedor)) {
+                echo "<p>Dados inválidos!</p>" . PHP_EOL;
+                echo "<a href='../espacoFornecedor.php.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                exit;
+            }
 
-                <form id="formulario" action="updateCategoria.php" method="get">
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="text" name="descricao" class="form-control"
-                                   placeholder="Descrição" value="<?= $value['descricao'] ?>">
-                        </div>
-                        <div class="col">
-                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </form>
-            <?php } ?>
+            try {
+                $inserir = new Inserir();
+                $comando = $inserir->cadastrarFornecedor($novoFornecedor);
 
+                echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
+                echo "<a href='../listagem/listagem.php' ><button type=\"submit\" class=\"btn btn-success\">Ver Lista</button></a>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<a href='../espacos/espacoFornecedor.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar aos Fornecedores</button></a>";
+            } catch (\Exception $e) {
+                throw new \Exception("Cadastro feito com sucesso", 1);
+
+            }
+            ?>
 
         </main>
     </div>
@@ -139,4 +138,5 @@ $arrayCategoria = $inserir->idCategoria();
 
 </body>
 </html>
+
 

@@ -1,7 +1,13 @@
 <?php
-require '../vendor/autoload.php';
-$inserir = new Conexao();
-$arrayFornecedor = $inserir->idFornecedor();
+require '../../vendor/autoload.php';
+$lista = new Listar();
+$arrayFornecedores = $lista->receberFornecedor();
+
+if (isset($_POST['selecionado'])) {
+    $comando = new Deletar();
+    $deletar = $comando->deletarFornecedor();
+    header("Refresh: 0");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,12 +18,12 @@ $arrayFornecedor = $inserir->idFornecedor();
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link rel="icon" href="../cloud.ico/favicon.ico">
+    <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -25,7 +31,7 @@ $arrayFornecedor = $inserir->idFornecedor();
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../index.php">Projeto Cadastro</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
 
 
 </nav>
@@ -36,7 +42,7 @@ $arrayFornecedor = $inserir->idFornecedor();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="../../index.php">
                             <i class="material-icons">
                                 home
                             </i>HOME
@@ -44,7 +50,7 @@ $arrayFornecedor = $inserir->idFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/cadastro.php">
+                        <a class="nav-link" href="../cadastros/cadastrar.php">
                             <i class="material-icons">
                                 shopping_basket
                             </i>
@@ -52,7 +58,7 @@ $arrayFornecedor = $inserir->idFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -60,7 +66,7 @@ $arrayFornecedor = $inserir->idFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listagem.php">
+                        <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
                                 border_color
                             </i>
@@ -68,14 +74,14 @@ $arrayFornecedor = $inserir->idFornecedor();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoFornecedor.php">
+                        <a class="nav-link" href="espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             Fornecedor
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="../site/espacoCategoria.php">
+                        <a class="nav-link" href="espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>
@@ -89,31 +95,52 @@ $arrayFornecedor = $inserir->idFornecedor();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Editar Produto</h1>
-
             </div>
-            <h4>Forneça os dados necessários</h4>
-            <br>
-            <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
-            <br>
-            <?php foreach ($arrayFornecedor as $value) { ?>
+            <h4>Espaço do Fornecedor</h4>
 
-                <form id="formulario" action="updateFornecedor.php" method="get">
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="text" name="nome" class="form-control"
-                                   placeholder="Nome" value="<?= $value['nome'] ?>">
-                        </div>
-                        <div class="col">
-                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
-                        </div>
+            <br>
+
+            <form action="../cadastros/cadastroFornecedores.php" method="get">
+                <div class="form-row">
+                    <div class="col">
+                        <span><strong>Cadastrar - Fornecedor: </strong></span><input type="text" name="novoFornecedor"
+                                                                                     class="form-control"
+                                                                                     placeholder="Nome">
+                        <br>
+                        <button type="submit" class="btn btn-success">Salvar</button>
                     </div>
-                    <br>
-                    <br>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </form>
-            <?php } ?>
+                </div>
+            </form>
+            <hr style="background-color: #007bff">
+            <h4>Editar - Fornecedores: </h4>
+            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
+            <br>
+            <form method="post">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fornecedores</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($arrayFornecedores
 
+                                   as $fornecedores) { ?>
+                        <tr>
+                            <th scope="row"><?= $fornecedores['id'] ?></th>
+                            <td><?= $fornecedores['nome'] ?></td>
+                            <td><a href="../editar/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a></td>
+                            <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
+                                       id="blankCheckbox" value=<?= $fornecedores['id'] ?> aria-label="..."></td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+                <button style="margin-left: 960px;" type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+            <br>
+            <br>
 
         </main>
     </div>
@@ -126,7 +153,7 @@ $arrayFornecedor = $inserir->idFornecedor();
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -139,4 +166,5 @@ $arrayFornecedor = $inserir->idFornecedor();
 
 </body>
 </html>
+
 

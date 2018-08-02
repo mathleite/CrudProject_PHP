@@ -87,9 +87,7 @@ $precoUnitario = $_POST['precoUnitario'];
                         </a>
                     </li>
                 </ul>
-                </ul>
-
-                </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 
@@ -99,7 +97,7 @@ $precoUnitario = $_POST['precoUnitario'];
 
             </div>
             <?php
-            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario))  {
+            if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
                 echo "<a href='../site/cadastro.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;

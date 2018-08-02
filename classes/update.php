@@ -87,8 +87,8 @@ $precoUnitario = $_GET['precoUnitario'];
                             Categoria
                         </a>
                     </li>
-
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 

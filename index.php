@@ -96,36 +96,36 @@ $arrayProdutos = $comando->listar();
             </div>
             <h3>Produtos Disponíveis</h3>
             <form>
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>nome</th>
-                        <th>Categoria</th>
-                        <th>Fornecedor</th>
-                        <th>Lançamento</th>
-                        <th>Venda</th>
-                        <th>Unidade</th>
-                    </tr>
-                    </thead>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>nome</th>
+                            <th>Categoria</th>
+                            <th>Fornecedor</th>
+                            <th>Lançamento</th>
+                            <th>Venda</th>
+                            <th>Unidade</th>
+                        </tr>
+                        </thead>
 
-                    <tbody>
-            <?php foreach ($arrayProdutos as $value) {  ?>
-                <tr>
-                    <th scope="row"><?= $value['id']; ?></th>
-                    <td><?= $value['nome']; ?></td>
-                    <td><?= $value['descricao_categoria']; ?></td>
-                    <td><?= $value['nome_fornecedores']; ?></td>
-                    <td><?= $value['diaLancamento']; ?></td>
-                    <td>R$ <?= $value['precoVenda']; ?></td>
-                    <td>R$ <?= $value['precoUnitario']; ?></td>
-                    <?php $valorId = $value['id'] ?>
-                </tr>
-            <?php } ?>
-                    </tbody>
-                </table>
-            </div>
+                        <tbody>
+                        <?php foreach ($arrayProdutos as $value) { ?>
+                            <tr>
+                                <th scope="row"><?= $value['id']; ?></th>
+                                <td><?= $value['nome']; ?></td>
+                                <td><?= $value['descricao_categoria']; ?></td>
+                                <td><?= $value['nome_fornecedores']; ?></td>
+                                <td><?= $value['diaLancamento']; ?></td>
+                                <td>R$ <?= $value['precoVenda']; ?></td>
+                                <td>R$ <?= $value['precoUnitario']; ?></td>
+                                <?php $valorId = $value['id'] ?>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </form>
         </main>
     </div>
@@ -134,7 +134,9 @@ $arrayProdutos = $comando->listar();
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/popper.min.js"></script>

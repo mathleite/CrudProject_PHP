@@ -82,6 +82,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
                         </a>
                     </li>
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 
@@ -93,7 +94,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
             <?php
             if (empty($novoFornecedor)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo "<a href='../../site/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;
             }
 
@@ -106,7 +107,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../../site/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar aos Fornecedores</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

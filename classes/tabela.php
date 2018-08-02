@@ -86,8 +86,8 @@ if (isset($_POST['selecionado'])) {
                             Categoria
                         </a>
                     </li>
-
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 
@@ -127,7 +127,8 @@ if (isset($_POST['selecionado'])) {
                         <td>R$ <?= $value['precoUnitario']; ?></td>
                         <td>
                             <input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $value['id'] ?> aria-label="...">
+                                   id="blankCheckbox" value=<?= $value['id'] ?> aria-label="..."></td>
+                    </tr>
                             <?php } ?>
 
                     </tbody>

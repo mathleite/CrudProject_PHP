@@ -81,8 +81,8 @@ $categoria = $_GET['descricao'];
                             Categoria
                         </a>
                     </li>
-
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 

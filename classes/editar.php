@@ -85,8 +85,7 @@ $arrayFornecedor = $inserir->receberFornecedor();
                         </a>
                     </li>
                 </ul>
-
-                </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 

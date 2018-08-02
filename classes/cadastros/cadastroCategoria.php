@@ -81,8 +81,8 @@ $novaCategoria = $_GET['novaCategoria'];
                             Categoria
                         </a>
                     </li>
-
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 
@@ -103,11 +103,11 @@ $novaCategoria = $_GET['novaCategoria'];
                 $conexao->cadastrarCategoria($novaCategoria);
 
                 echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Lista</button></a>";
+                echo "<a href='../listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../../site/cadastro.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../../site/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

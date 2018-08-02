@@ -2,6 +2,12 @@
 require '../vendor/autoload.php';
 $comando = new Conexao();
 $arrayFornecedores = $comando->receberFornecedor();
+
+if (isset($_POST['selecionado'])) {
+    $comando = new Conexao();
+    $deletar = $comando->deletarFornecedor();
+    header("Refresh: 0");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,6 +89,7 @@ $arrayFornecedores = $comando->receberFornecedor();
                         </a>
                     </li>
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 
@@ -90,7 +97,6 @@ $arrayFornecedores = $comando->receberFornecedor();
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
             <h4>Espaço do Fornecedor</h4>
-            <h6 style="color: #dd0000">'>.<'</h6>
 
             <br>
 
@@ -101,27 +107,39 @@ $arrayFornecedores = $comando->receberFornecedor();
                                                                                      class="form-control"
                                                                                      placeholder="Nome">
                         <br>
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-success">Salvar</button>
                     </div>
                 </div>
             </form>
             <hr style="background-color: #007bff">
             <h4>Editar - Fornecedores: </h4>
+            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
             <br>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Fornecedores</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($arrayFornecedores as $fornecedores){?>
-                <tr>
-                    <th scope="row"><?= $fornecedores['id']?></th>
-                    <td><?= $fornecedores['nome']?></td>
-                    <td><a href="../classes/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a></td>
-                    <?php } ?>
+            <form method="post">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fornecedores</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($arrayFornecedores
+
+                    as $fornecedores){ ?>
+                    <tr>
+                        <th scope="row"><?= $fornecedores['id'] ?></th>
+                        <td><?= $fornecedores['nome'] ?></td>
+                        <td><a href="../classes/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a></td>
+                        <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
+                                   id="blankCheckbox" value=<?= $fornecedores['id'] ?> aria-label="..."></td>
+                        <td><button type="submit" class="btn btn-danger">Deletar</button></td>
+                    </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+            </form>
 
         </main>
     </div>

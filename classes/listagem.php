@@ -84,8 +84,8 @@ $arrayProdutos = $comando->listar();
                             Categoria
                         </a>
                     </li>
-
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 
@@ -93,7 +93,7 @@ $arrayProdutos = $comando->listar();
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
             <h4>Tabela de Produtos</h4>
-            <h6 style="color: #dd0000">Selecione os 'Check-boxes' para deletar um produto.</h6>
+            <h6 style="color: #dd0000">Selecione 'Editar' para poder editar o Lançamento</h6>
 
             <br>
 

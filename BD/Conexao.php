@@ -109,6 +109,38 @@ class Conexao
 
     }
 
+    public function deletarFornecedor()
+    {
+        foreach ($_POST['selecionado'] as $selecionados) {
+            $sql = "
+            DELETE FROM 
+                fornecedores 
+            WHERE  
+                id = $selecionados
+             ";
+            $comando = $this->conexao->prepare($sql);
+            $comando->execute();
+        }
+
+
+    }
+
+    public function deletarCategoria()
+    {
+        foreach ($_POST['selecionado'] as $selecionados) {
+            $sql = "
+            DELETE FROM 
+                categoria 
+            WHERE  
+                id = $selecionados
+             ";
+            $comando = $this->conexao->prepare($sql);
+            $comando->execute();
+        }
+
+
+    }
+
     public function editar($nome, $categoria, $fornecedor, $precoVenda, $precoUnitario)
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);

@@ -77,6 +77,7 @@ $arrayFornecedor = $conecao->receberFornecedor();
                         </a>
                     </li>
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 

@@ -81,8 +81,8 @@ $fornecedor = $_GET['nome'];
                             Categoria
                         </a>
                     </li>
-
                 </ul>
+                <hr style="background-color: #0062cc">
             </div>
         </nav>
 

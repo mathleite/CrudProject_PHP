@@ -1,4 +1,8 @@
 {
+    "require": {
+        "php": ">=5.2"
+    },
+
     "autoload": {
         "classmap": ["bd", "classes", "css",  "site"]
     }

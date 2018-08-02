@@ -97,7 +97,7 @@ if (isset($_POST['selecionado'])) {
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
             <h4>Espaço do Fornecedor</h4>
-
+ 
             <br>
 
             <form action="../classes/cadastros/cadastroFeito.php" method="get">

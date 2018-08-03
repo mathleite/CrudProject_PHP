@@ -99,7 +99,7 @@ $precoUnitario = $_POST['precoUnitario'];
             <?php
             if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='../site/cadastroUpdate.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo "<a href='cadastrar.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;
             }
 

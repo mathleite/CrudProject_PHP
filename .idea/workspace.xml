@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php" afterDir="false" />
-    </list>
+    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,26 +58,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="cadastrar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastrar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1780">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadastroUpdate.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -185,17 +164,6 @@
               <item name="Projeto-SistemaCadastro" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto-SistemaCadastro" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Projeto-SistemaCadastro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto-SistemaCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="funcoes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projeto-SistemaCadastro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto-SistemaCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="funcoes" type="462c0819:PsiDirectoryNode" />
-              <item name="cadastros" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -248,11 +216,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81473000" />
+    <option name="totallyTimeSpent" value="81836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.26606876" />
@@ -349,7 +316,7 @@
     <entry file="file://$PROJECT_DIR$/css/listagem.css" />
     <entry file="file://$PROJECT_DIR$/css/index.css" />
     <entry file="file://$PROJECT_DIR$/html/listagem.html" />
-    <entry file="file://$PROJECT_DIR$/BD/Deletar.php">
+    <entry file="file://$PROJECT_DIR$/bd/Deletar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
@@ -425,14 +392,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BD/Atualizar.php">
+    <entry file="file://$PROJECT_DIR$/bd/Atualizar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BD/Listar.php">
+    <entry file="file://$PROJECT_DIR$/bd/Listar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
@@ -475,14 +442,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BD/Deletar.php">
+    <entry file="file://$PROJECT_DIR$/bd/Deletar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BD/Inserir.php">
+    <entry file="file://$PROJECT_DIR$/bd/Inserir.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="5" />
@@ -555,17 +522,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastrar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1780">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastrar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1780">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -69,7 +69,6 @@ $arrayProdutos = $comando->listarTabela();
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
             <h4>Tabela de Produtos</h4>
-            <h6 style="color: #dd0000">Selecione 'Editar' para poder editar o Lançamento</h6>
             <a href="../cadastros/cadastrar.php"><button style="width: 100px; margin-left: 865px;" type="button" class="btn btn-info">Novo</button></a>
 
             <br>

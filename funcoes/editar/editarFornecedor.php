@@ -36,35 +36,11 @@ $arrayFornecedor = $lista->idFornecedor();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../index.php">
-                            <i class="material-icons">
-                                home
-                            </i>HOME
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cadastros/cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            Cadastrar
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
-                                format_align_left
+                                monetization_on
                             </i>
-                            Deletar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../listagem/listagem.php">
-                            <i class="material-icons">
-                                border_color
-                            </i>
-                            Editar
+                            <span>Produtos</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -139,4 +115,3 @@ $arrayFornecedor = $lista->idFornecedor();
 
 </body>
 </html>
-

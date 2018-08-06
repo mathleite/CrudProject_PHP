@@ -40,35 +40,12 @@ $precoUnitario = $_POST['precoUnitario'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../index.php">
-                            <i class="material-icons">
-                                home
-                            </i>HOME
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            Cadastrar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
-                            <i class="material-icons">
-                                format_align_left
-                            </i>
-                            Tabela
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
-                                border_color
+                                monetization_on
                             </i>
-                            Deletar
+                            <span>Produtos</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -108,7 +85,7 @@ $precoUnitario = $_POST['precoUnitario'];
                 $comando = $inserir->cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../listagem/listagemSemEditar.php' ><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<a href='../cadastros/cadastrar.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
@@ -143,5 +120,3 @@ $precoUnitario = $_POST['precoUnitario'];
 
 </body>
 </html>
-
-

@@ -1,7 +1,9 @@
 <?php
+
 class Atualizar
 {
     private $conexao;
+
     public function __construct()
     {
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
@@ -38,7 +40,7 @@ class Atualizar
     public function updateCategoria($categoria)
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $sql ="
+        $sql = "
         UPDATE
             categoria
         SET 
@@ -56,7 +58,7 @@ class Atualizar
     public function updateFornecedor($fornecedor)
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $sql ="
+        $sql = "
         UPDATE
             fornecedores
         SET 

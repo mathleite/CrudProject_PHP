@@ -3,6 +3,7 @@
 class Listar
 {
     private $conexao;
+
     public function __construct()
     {
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");

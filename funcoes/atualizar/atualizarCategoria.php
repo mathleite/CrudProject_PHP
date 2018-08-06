@@ -35,23 +35,7 @@ $categoria = $_GET['descricao'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../index.php">
-                            <i class="material-icons">
-                                home
-                            </i>HOME
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cadastros/cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            Cadastrar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
+                        <a class="nav-link" href="../listagem/listagemDeletar.php">
                             <i class="material-icons">
                                 format_align_left
                             </i>
@@ -103,7 +87,7 @@ $categoria = $_GET['descricao'];
                 $editar = $update->updateCategoria($categoria);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../listagem/listagemSemEditar.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
@@ -138,5 +122,3 @@ $categoria = $_GET['descricao'];
 
 </body>
 </html>
-
-

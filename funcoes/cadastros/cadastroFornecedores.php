@@ -35,35 +35,11 @@ $novoFornecedor = $_GET['novoFornecedor'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../index.php">
-                            <i class="material-icons">
-                                home
-                            </i>HOME
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            Cadastrar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
-                            <i class="material-icons">
-                                format_align_left
-                            </i>
-                            Deletar
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
-                                border_color
+                                monetization_on
                             </i>
-                            Editar
+                            <span>Produtos</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -73,6 +49,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
                             </i>
                             Fornecedor
                         </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../espacos/espacoCategoria.php">
                             <i class="material-icons">
@@ -94,7 +71,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
             <?php
             if (empty($novoFornecedor)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='../espacoFornecedor.php.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo "<a href='../espacos/espacoFornecedor.php.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;
             }
 
@@ -138,5 +115,3 @@ $novoFornecedor = $_GET['novoFornecedor'];
 
 </body>
 </html>
-
-

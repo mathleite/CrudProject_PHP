@@ -35,35 +35,11 @@ $novaCategoria = $_GET['novaCategoria'];
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../index.php">
-                            <i class="material-icons">
-                                home
-                            </i>HOME
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            Cadastrar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../listagem/listagemSemEditar.php">
-                            <i class="material-icons">
-                                format_align_left
-                            </i>
-                            Deletar
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="../listagem/listagem.php">
                             <i class="material-icons">
-                                border_color
+                                monetization_on
                             </i>
-                            Editar
+                            <span>Produtos</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -94,7 +70,7 @@ $novaCategoria = $_GET['novaCategoria'];
             <?php
             if (empty($novaCategoria)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo ">Voltar</button></a>";
+                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
                 exit;
             }
 
@@ -103,7 +79,7 @@ $novaCategoria = $_GET['novaCategoria'];
                 $comando = $inserir->cadastrarCategoria($novaCategoria);
 
                 echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../listagem/listagemSemEditar.php' ><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
+                echo ""<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
@@ -138,5 +114,3 @@ $novaCategoria = $_GET['novaCategoria'];
 
 </body>
 </html>
-
-

@@ -1,6 +1,5 @@
 <?php
 require 'vendor/autoload.php';
-
 $comando = new Listar();
 $arrayProdutos = $comando->listarTabela();
 ?>
@@ -38,35 +37,11 @@ $arrayProdutos = $comando->listarTabela();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">
-                            <i class="material-icons">
-                                home
-                            </i>
-                            <span>HOME</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="funcoes/cadastros/cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            <span>Cadastrar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="funcoes/listagem/listagemSemEditar.php">
-                            <i class="material-icons">
-                                format_align_left
-                            </i>
-                            <span>Deletar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="funcoes/listagem/listagem.php">
                             <i class="material-icons">
-                                border_color
+                                monetization_on
                             </i>
-                            <span>Editar</span>
+                            <span>Produtos</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -91,46 +66,13 @@ $arrayProdutos = $comando->listarTabela();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Projeto</h1>
-
+                <h1 class="h2">Projeto - TG</h1>
             </div>
-            <h3>Produtos Disponíveis</h3>
-            <form>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>nome</th>
-                            <th>Categoria</th>
-                            <th>Fornecedor</th>
-                            <th>Lançamento</th>
-                            <th>Venda</th>
-                            <th>Unidade</th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-                        <?php foreach ($arrayProdutos as $value) { ?>
-                            <tr>
-                                <th scope="row"><?= $value['id']; ?></th>
-                                <td><?= $value['nome']; ?></td>
-                                <td><?= $value['descricao_categoria']; ?></td>
-                                <td><?= $value['nome_fornecedores']; ?></td>
-                                <td><?= $value['diaLancamento']; ?></td>
-                                <td>R$ <?= $value['precoVenda']; ?></td>
-                                <td>R$ <?= $value['precoUnitario']; ?></td>
-                                <?php $valorId = $value['id'] ?>
-                            </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
         </main>
     </div>
 </div>
 
+<script src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

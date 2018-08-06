@@ -38,35 +38,11 @@ $arrayProdutos = $comando->listarTabela();
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../index.php">
-                            <i class="material-icons">
-                                home
-                            </i>HOME
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cadastros/cadastrar.php">
-                            <i class="material-icons">
-                                shopping_basket
-                            </i>
-                            Cadastrar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="listagemSemEditar.php">
-                            <i class="material-icons">
-                                format_align_left
-                            </i>
-                            Deletar
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="listagem.php">
                             <i class="material-icons">
-                                border_color
+                                monetization_on
                             </i>
-                            Editar
+                            <span>Produtos</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -94,6 +70,7 @@ $arrayProdutos = $comando->listarTabela();
             </div>
             <h4>Tabela de Produtos</h4>
             <h6 style="color: #dd0000">Selecione 'Editar' para poder editar o Lançamento</h6>
+            <a href="../cadastros/cadastrar.php"><button style="width: 100px; margin-left: 865px;" type="button" class="btn btn-info">Novo</button></a>
 
             <br>
 
@@ -102,13 +79,13 @@ $arrayProdutos = $comando->listarTabela();
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>nome</th>
+                        <th>Nome</th>
                         <th>Categoria</th>
                         <th>Fornecedor</th>
                         <th>Lançamento</th>
                         <th>Venda</th>
                         <th>Unidade</th>
-                        <th>&nbsp;</th>
+                        <th>Ações</th>
                     </tr>
                     </thead>
 
@@ -123,10 +100,8 @@ $arrayProdutos = $comando->listarTabela();
                             <td><?= $value['diaLancamento']; ?></td>
                             <td>R$ <?= $value['precoVenda']; ?></td>
                             <td>R$ <?= $value['precoUnitario']; ?></td>
-                            <td>
-                                <a href="../editar/editar.php?id=<?= $value['id'] ?>">Editar</a>
-                                <div class="form-check">
-                                </div>
+                            <td><a  href="../editar/editar.php?id=<?= $value['id'] ?>">Editar</a>
+                                <a  style="color: #dd0000;" href="listagemDeletar.php">Deletar</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -141,6 +116,7 @@ $arrayProdutos = $comando->listarTabela();
     </div>
 </div>
 
+<script src="../../js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -161,4 +137,3 @@ $arrayProdutos = $comando->listarTabela();
 
 </body>
 </html>
-

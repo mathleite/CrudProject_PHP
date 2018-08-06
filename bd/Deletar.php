@@ -3,6 +3,7 @@
 class Deletar
 {
     private $conexao;
+
     public function __construct()
     {
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
@@ -21,6 +22,7 @@ class Deletar
             $comando->execute();
         }
     }
+
     public function deletarFornecedor()
     {
         foreach ($_POST['selecionado'] as $selecionados) {
@@ -34,6 +36,7 @@ class Deletar
             $comando->execute();
         }
     }
+
     public function deletarCategoria()
     {
         foreach ($_POST['selecionado'] as $selecionados) {

@@ -76,7 +76,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
             }
 
             try {
-                $inserir = new Inserir();
+                $inserir = new Fornecedor() ;
                 $comando = $inserir->cadastrarFornecedor($novoFornecedor);
 
                 echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;

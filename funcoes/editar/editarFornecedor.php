@@ -1,6 +1,6 @@
 <?php
 require '../../vendor/autoload.php';
-$lista = new Listar();
+$lista = new Fornecedor();
 $arrayFornecedor = $lista->idFornecedor();
 ?>
 <!doctype html>

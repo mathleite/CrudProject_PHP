@@ -3,7 +3,6 @@
 class Fornecedor
 {
     private $conexao;
-    private $id;
 
     public function __construct()
     {

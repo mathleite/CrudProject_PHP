@@ -8,3 +8,4 @@
 require '../vendor/autoload.php';
 $fornecedor = new Fornecedor();
 $fornecedor->excluir();
+$fornecedor->cadastrarFornecedor();

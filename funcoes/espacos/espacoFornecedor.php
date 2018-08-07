@@ -70,9 +70,8 @@ $arrayFornecedores = $lista->receberFornecedor();
             <form action="../cadastros/cadastroFornecedores.php" method="get">
                 <div class="form-row">
                     <div class="col">
-                        <span><strong>Cadastrar - Fornecedor: </strong></span><input type="text" name="novoFornecedor"
-                                                                                     class="form-control"
-                                                                                     placeholder="Nome">
+                        <span><strong>Cadastrar - Fornecedor: </strong></span>
+                        <input type="text" name="novoFornecedor" class="form-control" placeholder="Nome">
                         <br>
                         <button type="submit" class="btn btn-success">Salvar</button>
                     </div>

@@ -1,13 +1,8 @@
 <?php
 require '../../vendor/autoload.php';
-$lista = new Listar();
+$lista = new Categoria();
 $arrayCategorias = $lista->receberCategoria();
-
-if (isset($_POST['selecionado'])) {
-    $comando = new Deletar();
-    $deletar = $comando->deletarCategoria();
-    header("Refresh: 0");
-} ?>
+ ?>
 
 <!doctype html>
 <html lang="pt_br">
@@ -24,9 +19,6 @@ if (isset($_POST['selecionado'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +72,9 @@ if (isset($_POST['selecionado'])) {
             <form action="../cadastros/cadastroCategoria.php" method="get">
                 <div class="form-row">
                     <div class="col">
-                        <span><strong>Cadastrar - categoria:</strong></span><input type="text" name="novaCategoria" class="form-control" placeholder="Nome">
+                        <span><strong>Cadastrar - categoria:</strong></span><input type="text" name="novaCategoria"
+                                                                                   class="form-control"
+                                                                                   placeholder="Nome">
                         <br>
                         <button type="submit" class="btn btn-success">Salvar</button>
                     </div>
@@ -92,7 +86,7 @@ if (isset($_POST['selecionado'])) {
             <h4>Editar - Categorias: </h4>
             <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
             <br>
-            <form method="post">
+            <form id="formularioCategoria" method="post">
                 <table class="table">
                     <thead>
                     <tr>
@@ -102,18 +96,19 @@ if (isset($_POST['selecionado'])) {
                     </thead>
                     <tbody>
                     <?php foreach ($arrayCategorias
+
                     as $categoria){ ?>
                     <tr>
                         <th scope="row"><?= $categoria['id'] ?></th>
                         <td><?= $categoria['descricao'] ?></td>
-                        <td><a href="../editar/editarCategoria.php?id=<?= $categoria['id'] ?>">Editar</a></td>
-                        <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                   id="blankCheckbox" value=<?= $categoria['id'] ?> aria-label="..."></td>
+                        <td><a href="../editar/editarCategoria.php?id=<?= $categoria['id'] ?>">Editar</a>
+                            <a style="color: #dd0000" href="javascript:void(0)"
+                               onclick="excluir('<?= $categoria['id'] ?>')">Deletar</a>
+                        </td>
                     </tr>
                     </tbody>
                     <?php } ?>
                 </table>
-                <button style="margin-left: 960px;" type="submit" class="btn btn-danger">Deletar</button>
             </form>
             <br>
             <br>
@@ -122,24 +117,21 @@ if (isset($_POST['selecionado'])) {
         </main>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../js/bootstrap.min.js"></script>
-
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script src="/js/jquery-3.0.0.min.js"></script>
 <script>
-    feather.replace()
+    function excluir(id) {
+        alert('Categoria excluida com sucesso!!');
+        $.ajax({
+            url: '/control/categoriaControl.php',
+            type: 'POST',
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                window.location.reload();
+            }
+        });
+    }
 </script>
-
-<!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
 </body>
 </html>

@@ -84,7 +84,7 @@ $novoFornecedor = $_GET['novoFornecedor'];
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../espacos/espacoFornecedor.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar aos Fornecedores</button></a>";
+                echo "<a href='../espacos/espacoFornecedor.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar aos Fornecedor</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

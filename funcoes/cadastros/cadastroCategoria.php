@@ -75,15 +75,15 @@ $novaCategoria = $_GET['novaCategoria'];
             }
 
             try {
-                $inserir = new Inserir();
+                $inserir = new Categoria();
                 $comando = $inserir->cadastrarCategoria($novaCategoria);
 
                 echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
-                echo ""<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
+                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "<a href='../espacos/espacoCategoria.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar para Categorias</button></a>";
+                echo "<a href='../espacos/espacoCategoria.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar para Categoria</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

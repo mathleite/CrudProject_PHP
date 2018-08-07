@@ -83,11 +83,11 @@ $categoria = $_GET['descricao'];
             }
 
             try {
-                $update = new Atualizar();
-                $editar = $update->updateCategoria($categoria);
+                $update = new Categoria();
+                $editar = $update->atualizarCategoria($categoria);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produto</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";

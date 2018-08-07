@@ -6,8 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Atualizar' => $baseDir . '/bd/Atualizar.php',
-    'Deletar' => $baseDir . '/bd/Deletar.php',
-    'Inserir' => $baseDir . '/bd/Inserir.php',
-    'Listar' => $baseDir . '/bd/Listar.php',
+    'Categoria' => $baseDir . '/src/Categoria.php',
+    'Fornecedor' => $baseDir . '/src/Fornecedor.php',
+    'Produto' => $baseDir . '/src/Produto.php',
 );

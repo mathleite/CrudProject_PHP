@@ -81,11 +81,11 @@ $precoUnitario = $_POST['precoUnitario'];
             }
 
             try {
-                $inserir = new Inserir();
+                $inserir = new Produto();
                 $comando = $inserir->cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../cadastros/cadastrar.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<a href='../listagem/listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produto</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";

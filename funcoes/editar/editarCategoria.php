@@ -1,6 +1,6 @@
 <?php
 require '../../vendor/autoload.php';
-$lista = new Listar();
+$lista = new Categoria();
 $arrayCategoria = $lista->idCategoria();
 ?>
 <!doctype html>

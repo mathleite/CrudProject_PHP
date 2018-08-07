@@ -1,11 +1,13 @@
 <?php
 require '../../vendor/autoload.php';
-$lista = new Listar();
+$lista = new Produto();
 $arrayLista = $lista->listarId();
-$arrayCategoria = $lista->receberCategoria();
 
-$lista = new Listar();
+$lista = new Fornecedor();
 $arrayFornecedor = $lista->receberFornecedor();
+
+$lista = new Categoria();
+$arrayCategoria = $lista->receberCategoria();
 ?>
 <!doctype html>
 <html lang="en">

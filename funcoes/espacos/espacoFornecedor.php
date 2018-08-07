@@ -1,13 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
-$lista = new Listar();
+$lista = new Fornecedor();
 $arrayFornecedores = $lista->receberFornecedor();
-
-if (isset($_POST['selecionado'])) {
-    $comando = new Deletar();
-    $deletar = $comando->deletarFornecedor();
-    header("Refresh: 0");
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,9 +18,6 @@ if (isset($_POST['selecionado'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -100,20 +91,18 @@ if (isset($_POST['selecionado'])) {
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($arrayFornecedores
-
-                                   as $fornecedores) { ?>
+                    <?php foreach ($arrayFornecedores as $fornecedores) { ?>
                         <tr>
                             <th scope="row"><?= $fornecedores['id'] ?></th>
                             <td><?= $fornecedores['nome'] ?></td>
-                            <td><a href="../editar/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a></td>
-                            <td><input class="form-check-input position-static" type="checkbox" name="selecionado[]"
-                                       id="blankCheckbox" value=<?= $fornecedores['id'] ?> aria-label="..."></td>
+                            <td><a href="../editar/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a>
+                                <a style="color: #dd0000" href="javascript:void(0)"
+                                   onclick="excluir('<?= $fornecedores['id'] ?>')">Deletar</a>
+                            </td>
                         </tr>
                     <?php } ?>
                     </tbody>
                 </table>
-                <button style="margin-left: 960px;" type="submit" class="btn btn-danger">Deletar</button>
             </form>
             <br>
             <br>
@@ -121,24 +110,21 @@ if (isset($_POST['selecionado'])) {
         </main>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../js/bootstrap.min.js"></script>
-
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script src="/js/jquery-3.0.0.min.js"></script>
 <script>
-    feather.replace()
+    function excluir(id) {
+        alert('Fornecedor excluido com sucesso!!');
+        $.ajax({
+            url: '/control/fornecedorControl.php',
+            type: 'POST',
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                window.location.reload();
+            }
+        });
+    }
 </script>
-
-<!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
 </body>
 </html>

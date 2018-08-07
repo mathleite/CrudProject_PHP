@@ -83,11 +83,11 @@ $fornecedor = $_GET['nome'];
             }
 
             try {
-                $update = new Atualizar();
+                $update = new Fornecedor();
                 $editar = $update->updateFornecedor($fornecedor);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../espacos/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produtos</button></a>";
+                echo "<a href='../espacos/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produto</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";

@@ -12,9 +12,12 @@
   },
   "autoload": {
     "classmap": [
-      "bd",
       "funcoes",
-      "css"
+      "css",
+      "src",
+      "control"
+
+
     ]
   }
 }

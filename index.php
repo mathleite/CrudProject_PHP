@@ -1,7 +1,5 @@
 <?php
 require 'vendor/autoload.php';
-$comando = new Listar();
-$arrayProdutos = $comando->listarTabela();
 ?>
 
 <!doctype html>
@@ -19,9 +17,6 @@ $arrayProdutos = $comando->listarTabela();
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -71,7 +66,7 @@ $arrayProdutos = $comando->listarTabela();
         </main>
     </div>
 </div>
-
+<script src="js/jquery-3.0.0.min.js"></script>
 <script src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript
 ================================================== -->

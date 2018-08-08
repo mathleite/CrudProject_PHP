@@ -19,4 +19,4 @@ if (empty($_POST['id'])) {
     exit;
 }
 
-$categoria->{$_POST['']}();
+$categoria->{$_POST['metodo']}();

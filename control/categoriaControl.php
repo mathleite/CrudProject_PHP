@@ -6,5 +6,17 @@
  * Time: 11:55
  */
 require '../vendor/autoload.php';
-$funcao = new Categoria();
-$excluir = $funcao->excluir();
+$categoria = new Categoria();
+
+if (empty($_POST['metodo'])) {
+    echo "error: metodo não encontrado";
+    exit;
+}
+$categoria->{$_POST['metodo']}();
+
+if (empty($_POST['id'])) {
+    echo "Não foi possivel obter um ID";
+    exit;
+}
+
+$categoria->{$_POST['']}();

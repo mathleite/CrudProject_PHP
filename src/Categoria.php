@@ -12,7 +12,15 @@ class Categoria
 
     public function cadastrarCategoria()
     {
-        $nomeCategoria = filter_input(INPUT_GET, 'novaCategoria', FILTER_SANITIZE_STRING);
+        if (empty($_POST['novaCategoria'])) {
+            echo json_encode([
+                'tipo' => 'erro',
+                'message' => 'Nome vazio!'
+            ]);
+            exit;
+        }
+        $nomeCategoria = $_POST['novaCategoria'];
+
         $sql = "
         INSERT INTO 
             categoria (
@@ -22,7 +30,19 @@ class Categoria
             ('$nomeCategoria')
         ";
         $comando = $this->conexao->prepare($sql);
-        $comando->execute();
+
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Cadastrado com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar o cadastro.'
+        ]);
     }
 
     public function atualizarCategoria($categoria)

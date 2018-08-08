@@ -87,11 +87,8 @@ $fornecedor = $_GET['nome'];
                 $editar = $update->updateFornecedor($fornecedor);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../espacos/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produto</button></a>";
                 echo "<br>";
-                echo "<br>";
-                echo "<br>";
-                echo "<a href='../espacos/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar ao Cadastro</button></a>";
+                echo "<a href='../espacos/espacoFornecedor.php'><button type=\"submit\" class=\"btn btn-dark\">Voltar aos fornecedores</button></a>";
             } catch (\Exception $e) {
                 throw new \Exception("Cadastro feito com sucesso", 1);
 

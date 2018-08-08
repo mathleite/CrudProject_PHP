@@ -63,23 +63,15 @@ $arrayFornecedores = $lista->receberFornecedor();
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
-            <h4>Espaço do Fornecedor</h4>
-
-            <br>
-
-            <form action="../cadastros/cadastroFornecedores.php" method="get">
-                <div class="form-row">
-                    <div class="col">
-                        <span><strong>Cadastrar - Fornecedor: </strong></span>
-                        <input type="text" name="novoFornecedor" class="form-control" placeholder="Nome">
-                        <br>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </div>
-                </div>
-            </form>
+            <h4 style="color: #007bff">Espaço dos Fornecedores</h4>
             <hr style="background-color: #007bff">
-            <h4>Editar - Fornecedores: </h4>
-            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
+            <h5>Lista de Fornecedores:</h5>
+            <a href="/funcoes/cadastros/cadastroFornecedor.php">
+                <button style="margin-left: 900px; text-decoration: none;" type="button" class="btn btn-info">Novo
+                    fornecedor
+                </button>
+            </a>
+            <br>
             <br>
             <form method="post">
                 <table class="table">
@@ -87,6 +79,7 @@ $arrayFornecedores = $lista->receberFornecedor();
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Fornecedores</th>
+                        <th scope="col">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -110,20 +103,6 @@ $arrayFornecedores = $lista->receberFornecedor();
     </div>
 </div>
 <script src="/js/jquery-3.0.0.min.js"></script>
-<script>
-    function excluir(id) {
-        alert('Fornecedor excluido com sucesso!!');
-        $.ajax({
-            url: '/control/fornecedorControl.php',
-            type: 'POST',
-            data: {
-                'id': id
-            },
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    }
-</script>
+<script src="/js/excluirFornecedor.js"></script>
 </body>
 </html>

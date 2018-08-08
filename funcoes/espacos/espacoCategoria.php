@@ -2,7 +2,7 @@
 require '../../vendor/autoload.php';
 $lista = new Categoria();
 $arrayCategorias = $lista->receberCategoria();
- ?>
+?>
 
 <!doctype html>
 <html lang="pt_br">
@@ -64,27 +64,15 @@ $arrayCategorias = $lista->receberCategoria();
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
-            <h4>Espaço das Categorias</h4>
-
-
-            <br>
-
-            <form action="../cadastros/cadastroCategoria.php" method="get">
-                <div class="form-row">
-                    <div class="col">
-                        <span><strong>Cadastrar - categoria:</strong></span><input type="text" name="novaCategoria"
-                                                                                   class="form-control"
-                                                                                   placeholder="Nome">
-                        <br>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </div>
-
-                </div>
-            </form>
-
+            <h4 style="color: #007bff">Espaço das Categorias</h4>
             <hr style="background-color: #007bff">
-            <h4>Editar - Categorias: </h4>
-            <h6 style="color: #dd0000">Selecione o 'Check-box' para deletar um produto.</h6>
+            <h5>Lista de categorias:</h5>
+            <a href="/funcoes/cadastros/cadastroCategoria.php">
+                <button style="margin-left: 915px; text-decoration: none;" type="button" class="btn btn-info">Nova
+                    categoria
+                </button>
+            </a>
+            <br>
             <br>
             <form id="formularioCategoria" method="post">
                 <table class="table">
@@ -92,12 +80,11 @@ $arrayCategorias = $lista->receberCategoria();
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Categorias</th>
+                        <th scope="col">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($arrayCategorias
-
-                    as $categoria){ ?>
+                    <?php foreach ($arrayCategorias as $categoria){ ?>
                     <tr>
                         <th scope="row"><?= $categoria['id'] ?></th>
                         <td><?= $categoria['descricao'] ?></td>
@@ -106,32 +93,16 @@ $arrayCategorias = $lista->receberCategoria();
                                onclick="excluir('<?= $categoria['id'] ?>')">Deletar</a>
                         </td>
                     </tr>
-                    </tbody>
                     <?php } ?>
+                    </tbody>
                 </table>
             </form>
             <br>
             <br>
-
-
         </main>
     </div>
 </div>
 <script src="/js/jquery-3.0.0.min.js"></script>
-<script>
-    function excluir(id) {
-        alert('Categoria excluida com sucesso!!');
-        $.ajax({
-            url: '/control/categoriaControl.php',
-            type: 'POST',
-            data: {
-                'id': id
-            },
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    }
-</script>
+<script src="/js/excluirCategoria.js"></script>
 </body>
 </html>

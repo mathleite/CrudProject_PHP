@@ -66,7 +66,7 @@ $arrayProdutos = $comando->listarTabela();
             </div>
             <h4>Tabela de Produtos</h4>
             <a href="../cadastros/cadastrar.php">
-                <button style="width: 100px; margin-left: 865px;" type="button" class="btn btn-info">Novo</button>
+                <button style="width: 100px; margin-left: 950px; text-decoration: none;" type="button" class="btn btn-info">Novo</button>
             </a>
 
             <br>
@@ -115,20 +115,6 @@ $arrayProdutos = $comando->listarTabela();
     </div>
 </div>
 <script src="/js/jquery-3.0.0.min.js"></script>
-<script>
-    function excluir(id) {
-        alert('Teste de alert!!!!!');
-        $.ajax({
-            url: '/control/produtoControl.php',
-            type: 'POST',
-            data: {
-                'id': id
-            },
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    }
-</script>
+<script src="/js/excluirProduto.js"></script>
 </body>
 </html>

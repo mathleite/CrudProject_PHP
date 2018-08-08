@@ -3,6 +3,17 @@
 class Fornecedor
 {
     private $conexao;
+    private $id;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     public function __construct()
     {
@@ -12,7 +23,15 @@ class Fornecedor
 
     public function cadastrarFornecedor()
     {
-        $nomeFornecedor = $_GET['novoFornecedor'];
+        if (empty($_POST['novoFornecedor'])) {
+            echo json_encode([
+                'tipo' => 'erro',
+                'message' => 'Nome vazio!'
+            ]);
+            exit;
+        }
+        $nomeFornecedor = $_POST['novoFornecedor'];
+
         $sql = "
         INSERT INTO 
             fornecedores (
@@ -22,7 +41,19 @@ class Fornecedor
             ('$nomeFornecedor')
         ";
         $comando = $this->conexao->prepare($sql);
-        $comando->execute();
+
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Cadastrado com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar o cadastro.'
+        ]);
     }
 
 

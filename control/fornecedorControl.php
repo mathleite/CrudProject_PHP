@@ -7,5 +7,19 @@
  */
 require '../vendor/autoload.php';
 $fornecedor = new Fornecedor();
-$fornecedor->excluir();
-$fornecedor->cadastrarFornecedor();
+
+if (empty($_POST['metodo'])) {
+    echo 'error: método não existe!';
+    exit;
+}
+$fornecedor->{$_POST['metodo']}();
+
+if(empty($_POST['id'])){
+    echo 'Fornecedor não possui ID';
+    exit;
+}
+$fornecedor->{$_POST['metodo']}();
+
+
+
+

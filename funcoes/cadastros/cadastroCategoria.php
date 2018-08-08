@@ -1,6 +1,5 @@
 <?php
 require '../../vendor/autoload.php';
-$novaCategoria = $_GET['novaCategoria'];
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -25,8 +24,6 @@ $novaCategoria = $_GET['novaCategoria'];
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
-
-
 </nav>
 
 <div class="container-fluid">
@@ -65,52 +62,21 @@ $novaCategoria = $_GET['novaCategoria'];
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Cadastrar Categoria</h1>
-
             </div>
-            <?php
-            if (empty($novaCategoria)) {
-                echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
-                exit;
-            }
-
-            try {
-                $inserir = new Categoria();
-                $comando = $inserir->cadastrarCategoria($novaCategoria);
-
-                echo "<p>Dado salvo com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../espacos/espacoCategoria.php'><button type=\"submit\" class=\"btn btn-success\">Ir à Lista</button></a>";
-                echo "<br>";
-                echo "<br>";
-                echo "<br>";
-                echo "<a href='../espacos/espacoCategoria.php' ><button type=\"submit\" class=\"btn btn-dark\">Voltar para Categoria</button></a>";
-            } catch (\Exception $e) {
-                throw new \Exception("Cadastro feito com sucesso", 1);
-
-            }
-            ?>
-
+            <form id="formularioCategoria" onsubmit="return false">
+                <div class="form-row">
+                    <div class="col">
+                        <span><strong>Cadastrar - categoria:</strong></span>
+                        <input type="text" name="novaCategoria" class="form-control" placeholder="Nome">
+                        <br>
+                        <button type="submit" id="salvar" class="btn btn-success">Salvar</button>
+                    </div>
+                </div>
+            </form>
         </main>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../js/bootstrap.min.js"></script>
-
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-    feather.replace()
-</script>
-
-<!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
+<script src="/js/jquery-3.0.0.min.js"></script>
+<script src="/js/cadastrarCategoria.js"></script>
 </body>
 </html>

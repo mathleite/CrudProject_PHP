@@ -1,12 +1,12 @@
 <?php
 require '../../vendor/autoload.php';
 
-$produto = $_GET['nome'];
-$categoria = $_GET['categoria'];
-$fornecedor = $_GET['fornecedor'];
-$diaLancamento = $_GET['diaLancamento'];
-$precoVenda = $_GET['precoVenda'];
-$precoUnitario = $_GET['precoUnitario'];
+$produto = $_POST['nome'];
+$categoria = $_POST['categoria'];
+$fornecedor = $_POST['fornecedor'];
+$diaLancamento = $_POST['diaLancamento'];
+$precoVenda = $_POST['precoVenda'];
+$precoUnitario = $_POST['precoUnitario'];
 ?>
 <!doctype html>
 <html lang="pt_br">

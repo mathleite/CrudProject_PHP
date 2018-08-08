@@ -40,7 +40,7 @@ class Produto
 
     public function atualizar($nome, $categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)
     {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $id = $_POST['id'];
         $sql = "
         UPDATE
             produtos p
@@ -62,7 +62,6 @@ class Produto
         $comando->bindParam(":precoVenda", $precoVenda);
         $comando->bindParam(":precoUnitario", $precoUnitario);
         $comando->bindParam(":id", $id);
-
         $comando->execute();
     }
 

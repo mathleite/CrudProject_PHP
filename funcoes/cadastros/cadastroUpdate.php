@@ -76,7 +76,7 @@ $precoUnitario = $_POST['precoUnitario'];
             <?php
             if (empty($nomeProduto) || empty($Categoria) || empty($fornecedor) || empty($diaLancamento) || empty($precoVenda) || empty($precoUnitario)) {
                 echo "<p>Dados inválidos!</p>" . PHP_EOL;
-                echo "<a href='cadastrar.php'><button type=\"submit\" class=\"btn btn-success\">Voltar</button></a>";
+                echo "<a href='cadastrar.php'><button type=\"submit\" class=\"btn btn-info\">Voltar</button></a>";
                 exit;
             }
 
@@ -85,7 +85,7 @@ $precoUnitario = $_POST['precoUnitario'];
                 $comando = $inserir->cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario);
 
                 echo "<p>Dados salvos com sucesso!</p>" . PHP_EOL;
-                echo "<a href='../listagem/listagem.php'><button type=\"submit\" class=\"btn btn-success\">Ver Produto</button></a>";
+                echo "<a href='../listagem/listagem.php'><button type=\"submit\" class=\"btn btn-info\">Ver Produto</button></a>";
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";

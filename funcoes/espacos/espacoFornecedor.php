@@ -13,20 +13,13 @@ $arrayFornecedores = $lista->receberFornecedor();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="../../cloud.ico/favicon.ico">
-
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
-
-
 </nav>
-
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -66,8 +59,8 @@ $arrayFornecedores = $lista->receberFornecedor();
             <h4 style="color: #007bff">Espaço dos Fornecedores</h4>
             <hr style="background-color: #007bff">
             <h5>Lista de Fornecedores:</h5>
-            <a href="/funcoes/cadastros/cadastroFornecedor.php">
-                <button style="margin-left: 900px; text-decoration: none;" type="button" class="btn btn-info">Novo
+            <a style="text-decoration: none; margin-left: 900px;" href="/funcoes/cadastros/cadastroFornecedor.php">
+                <button   type="button" class="btn btn-info">Novo
                     fornecedor
                 </button>
             </a>

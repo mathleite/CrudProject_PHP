@@ -14,18 +14,12 @@ $arrayCategorias = $lista->receberCategoria();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="../../cloud.ico/favicon.ico">
-
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
-
-
 </nav>
 
 <div class="container-fluid">
@@ -67,8 +61,8 @@ $arrayCategorias = $lista->receberCategoria();
             <h4 style="color: #007bff">Espaço das Categorias</h4>
             <hr style="background-color: #007bff">
             <h5>Lista de categorias:</h5>
-            <a href="/funcoes/cadastros/cadastroCategoria.php">
-                <button style="margin-left: 915px; text-decoration: none;" type="button" class="btn btn-info">Nova
+            <a style="margin-left: 915px; text-decoration: none;" href="/funcoes/cadastros/cadastroCategoria.php">
+                <button  type="button" class="btn btn-info">Nova
                     categoria
                 </button>
             </a>

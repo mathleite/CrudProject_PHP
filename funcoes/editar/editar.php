@@ -10,7 +10,7 @@ $lista = new Categoria();
 $arrayCategoria = $lista->receberCategoria();
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="pt_br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,23 +19,13 @@ $arrayCategoria = $lista->receberCategoria();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="../../cloud.ico/favicon.ico">
-
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
-
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
-
-
 </nav>
-
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -68,18 +58,15 @@ $arrayCategoria = $lista->receberCategoria();
                 <hr style="background-color: #0062cc">
             </div>
         </nav>
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Editar Produto</h1>
-
             </div>
             <h4>Forneça os dados necessários</h4>
             <br>
             <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
             <br>
             <?php foreach ($arrayLista as $value) { ?>
-
                 <form id="formularioEdicao" action="../atualizar/atualizarTodosDados.php" method="post">
                     <div class="form-row">
                         <div class="col">
@@ -126,5 +113,6 @@ $arrayCategoria = $lista->receberCategoria();
         </main>
     </div>
 </div>
+<script src="/js/jquery-3.0.0.min.js"></script>
 </body>
 </html>

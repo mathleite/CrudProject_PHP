@@ -12,18 +12,12 @@ require 'vendor/autoload.php';
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="cloud.ico/favicon.ico">
-
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.php">Projeto Cadastro</a>
-
-
 </nav>
 
 <div class="container-fluid">

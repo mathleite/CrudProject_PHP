@@ -17,8 +17,6 @@ $arrayProdutos = $comando->listarTabela();
     <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -65,8 +63,8 @@ $arrayProdutos = $comando->listarTabela();
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             </div>
             <h4>Tabela de Produtos</h4>
-            <a href="../cadastros/cadastrar.php">
-                <button style="width: 100px; margin-left: 950px; text-decoration: none;" type="button" class="btn btn-info">Novo</button>
+            <a style=" margin-left: 945px; text-decoration: none;" href="../cadastros/cadastrar.php">
+                <button style="width: 100px; " type="button" class="btn btn-info">Novo</button>
             </a>
 
             <br>

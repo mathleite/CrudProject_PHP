@@ -16,14 +16,8 @@ $arrayFornecedor = $listaFornecedor->receberFornecedor();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="../../cloud.ico/favicon.ico">
-
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
 
 <body>

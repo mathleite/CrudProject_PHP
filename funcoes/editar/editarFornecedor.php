@@ -15,12 +15,7 @@ $arrayFornecedor = $lista->idFornecedor();
     <link rel="icon" href="../../cloud.ico/favicon.ico">
 
     <title>Projeto - Sistema </title>
-
-    <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
 
 <body>

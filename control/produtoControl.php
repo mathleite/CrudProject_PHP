@@ -6,4 +6,3 @@ if (empty($_POST['metodo'])) {
     exit;
 }
 $produto->{$_POST['metodo']}();
-

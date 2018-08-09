@@ -21,10 +21,7 @@ $arrayFornecedor = $lista->idFornecedor();
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="../../index.php">Projeto Cadastro</a>
-
-
 </nav>
-
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -69,7 +66,7 @@ $arrayFornecedor = $lista->idFornecedor();
             <br>
             <?php foreach ($arrayFornecedor as $value) { ?>
 
-                <form id="formulario" action="../atualizar/atualizarFornecedor.php" method="get">
+                <form id="formulario" onsubmit="return false">
                     <div class="form-row">
                         <div class="col">
                             <input type="text" name="nome" class="form-control"
@@ -84,29 +81,10 @@ $arrayFornecedor = $lista->idFornecedor();
                     <button type="submit" class="btn btn-success">Salvar</button>
                 </form>
             <?php } ?>
-
-
         </main>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../js/bootstrap.min.js"></script>
-
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-    feather.replace()
-</script>
-
-<!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
+<script src="/js/jquery-3.0.0.min.js"></script>
+<script src="/js/editarFornecedor.js"></script>
 </body>
 </html>

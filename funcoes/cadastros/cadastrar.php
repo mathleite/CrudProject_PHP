@@ -70,7 +70,7 @@ $arrayFornecedor = $listaFornecedor->receberFornecedor();
             <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
             <br>
             <br>
-            <form id="formulario" action="cadastroUpdate.php" method="post">
+            <form id="formulario" onsubmit="return false">
                 <div class="form-row">
                     <div class="col">
                         <span><strong>Nome</strong></span><input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
@@ -80,7 +80,6 @@ $arrayFornecedor = $listaFornecedor->receberFornecedor();
 
                         <span><strong>Categoria</strong></span><select class="form-control" name="categoria">
                             <?php foreach ($arrayCategoria as $categoria) { ?>
-
                                 <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
                             <?php } ?>
                         </select>
@@ -105,10 +104,12 @@ $arrayFornecedor = $listaFornecedor->receberFornecedor();
                 </div>
                 <br>
                 <br>
-                <button style="margin-left: 930px; " type="submit" class="btn btn-info">Cadastrar</button>
+                <button style="margin-left: 930px; " type="submit" class="btn btn-info">Salvar</button>
             </form>
         </main>
     </div>
 </div>
+<script src="/js/jquery-3.0.0.min.js"></script>
+<script src="/js/cadastrarProdutos.js"></script>
 </body>
 </html>

@@ -10,24 +10,22 @@ class Categoria
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
     }
 
-    public function cadastrarCategoria()
+    public function cadastrarCategoria($novaCategoria)
     {
-        if (empty($_POST['novaCategoria'])) {
+        if (empty($novaCategoria)) {
             echo json_encode([
                 'tipo' => 'erro',
                 'message' => 'Nome vazio!'
             ]);
             exit;
         }
-        $nomeCategoria = $_POST['novaCategoria'];
-
         $sql = "
         INSERT INTO 
             categoria (
             descricao
             ) 
         VALUE 
-            ('$nomeCategoria')
+            ('$novaCategoria')
         ";
         $comando = $this->conexao->prepare($sql);
 
@@ -45,9 +43,16 @@ class Categoria
         ]);
     }
 
-    public function atualizarCategoria($categoria)
+    public function atualizarCategoria($id, $descricao)
     {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        if(empty($id) || empty($descricao)){
+            echo json_encode([
+                'tipo' => 'error',
+                'message' => 'Sem dados !'
+            ]);
+            exit;
+        }
+
         $sql = "
         UPDATE
             categoria
@@ -57,15 +62,33 @@ class Categoria
             id= :id
             ";
         $comando = $this->conexao->prepare($sql);
-        $comando->bindParam(":descricao", $categoria);
+        $comando->bindParam(":descricao", $descricao);
         $comando->bindParam(":id", $id);
-        $comando->execute();
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Editado com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar a edição.'
+        ]);
 
     }
 
-    public function excluir()
+    public function excluir($id)
     {
-        $id = $_POST['id'];
+        if (empty($id)) {
+            echo json_encode([
+                'tipo' => 'error',
+                'message' => 'Sem ID'
+            ]);
+            exit;
+        }
+
         $sql = "
             DELETE FROM 
                 categoria 
@@ -73,7 +96,18 @@ class Categoria
                 id = $id
              ";
         $comando = $this->conexao->prepare($sql);
-        $comando->execute();
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Excluida com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar a exclusão.'
+        ]);
 
     }
 

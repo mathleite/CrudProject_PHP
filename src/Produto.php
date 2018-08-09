@@ -9,8 +9,22 @@ class Produto
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
     }
 
-    public function cadastar($nomeProduto, $Categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)
+    public function cadastar($nomeProduto, $categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)
     {
+        if (
+            empty($nomeProduto) ||
+            empty($categoria) ||
+            empty($fornecedor) ||
+            empty($diaLancamento) ||
+            empty($precoVenda) ||
+            empty($precoUnitario)
+        ) {
+            echo json_encode([
+                'tipo' => 'error',
+                'message' => 'Sem dados !'
+            ]);
+            exit;
+        }
         $sql = "
         INSERT INTO 
             produtos(
@@ -30,17 +44,41 @@ class Produto
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->bindParam(":NOME", $nomeProduto);
-        $comando->bindParam(":CATEGORIA", $Categoria);
+        $comando->bindParam(":CATEGORIA", $categoria);
         $comando->bindParam(":FORNECEDOR", $fornecedor);
         $comando->bindParam(":LANCAMENTO", $diaLancamento);
         $comando->bindParam(":VENDA", $precoVenda);
         $comando->bindParam(":UNIDADE", $precoUnitario);
-        $comando->execute();
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Cadastrado com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar o cadastro.'
+        ]);
     }
 
-    public function atualizar($nome, $categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)
+    public function atualizar($id, $nome, $categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)
     {
-        $id = $_POST['id'];
+        if (
+            empty($nome)
+            || empty($categoria)
+            || empty($fornecedor)
+            || empty($diaLancamento)
+            || empty($precoVenda)
+            || empty($precoUnitario)
+        ) {
+            echo json_encode([
+                'tipo' => 'erro',
+                'message' => 'Sem DADOS!'
+            ]);
+            exit;
+        }
         $sql = "
         UPDATE
             produtos p
@@ -62,12 +100,23 @@ class Produto
         $comando->bindParam(":precoVenda", $precoVenda);
         $comando->bindParam(":precoUnitario", $precoUnitario);
         $comando->bindParam(":id", $id);
-        $comando->execute();
+
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Editado com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar a edição.'
+        ]);
     }
 
-    public function excluir()
+    public function excluir(int $id)
     {
-        $id = $_POST['id'];
         $sql = "
             DELETE FROM 
                 produtos 

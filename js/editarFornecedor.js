@@ -1,15 +1,16 @@
-$('#formularioFornecedor').submit(function () {
+$('#formulario').submit(function () {
     $.ajax({
         url: '/control/fornecedorControl.php',
         type: 'POST',
         datatype: 'json',
         data: {
-            'novoFornecedor': $('input[name="novoFornecedor"]').val(),
-            'metodo': 'cadastrarFornecedor'
+            'nome': $('input[name="nome"]').val(),
+            'id': $('input[name="id"]').val(),
+            'metodo': 'updateFornecedor'
         },
         success: function (data) {
-            confirm("Realmente deseja fazer este cadastro?");
-            alert("Cadastro realizado !");
+            confirm("Realmente deseja fazer esta edição ?");
+            alert('Editado com sucesso! ');
 
             if (!data.tipo !== 'erro') {
                 window.location.href = "../espacos/espacoFornecedor.php";

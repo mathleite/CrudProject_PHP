@@ -67,7 +67,7 @@ $arrayCategoria = $lista->receberCategoria();
             <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
             <br>
             <?php foreach ($arrayLista as $value) { ?>
-                <form id="formularioEdicao" action="../atualizar/atualizarTodosDados.php" method="post">
+                <form id="formularioEdicao">
                     <div class="form-row">
                         <div class="col">
                             <input type="text" name="nome" class="form-control"
@@ -76,7 +76,6 @@ $arrayCategoria = $lista->receberCategoria();
                         <div class="col">
                             <select class="form-control" name="categoria">
                                 <?php foreach ($arrayCategoria as $categoria) { ?>
-
                                     <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
                                 <?php } ?>
                             </select>
@@ -84,7 +83,6 @@ $arrayCategoria = $lista->receberCategoria();
                         <div class="col">
                             <select class="form-control" name="fornecedor">
                                 <?php foreach ($arrayFornecedor as $fornecedores) { ?>
-
                                     <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
                                 <?php } ?>
                             </select>
@@ -114,5 +112,6 @@ $arrayCategoria = $lista->receberCategoria();
     </div>
 </div>
 <script src="/js/jquery-3.0.0.min.js"></script>
+<script src="/js/editarProduto.js"></script>
 </body>
 </html>

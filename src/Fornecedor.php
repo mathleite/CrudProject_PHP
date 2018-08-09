@@ -21,24 +21,22 @@ class Fornecedor
     }
 
 
-    public function cadastrarFornecedor()
+    public function cadastrarFornecedor($novoFornecedor)
     {
-        if (empty($_POST['novoFornecedor'])) {
+        if (empty($novoFornecedor)) {
             echo json_encode([
                 'tipo' => 'erro',
                 'message' => 'Nome vazio!'
             ]);
             exit;
         }
-        $nomeFornecedor = $_POST['novoFornecedor'];
-
         $sql = "
         INSERT INTO 
             fornecedores (
             nome
             ) 
         VALUE 
-            ('$nomeFornecedor')
+            ('$novoFornecedor')
         ";
         $comando = $this->conexao->prepare($sql);
 
@@ -89,9 +87,18 @@ class Fornecedor
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function updateFornecedor($fornecedor)
+    public function updateFornecedor($id, $nome)
     {
-        $id = $_GET['id'];
+        if (
+            empty($id) ||
+            empty($nome)
+        ) {
+            echo json_encode([
+                'tipo' => 'error',
+                'message' => 'Não há dados'
+            ]);
+            exit;
+        }
         $sql = "
         UPDATE
             fornecedores
@@ -101,14 +108,35 @@ class Fornecedor
             id= :id
             ";
         $comando = $this->conexao->prepare($sql);
-        $comando->bindParam(":nome", $fornecedor);
+        $comando->bindParam(":nome", $nome);
         $comando->bindParam(":id", $id);
-        $comando->execute();
+
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Editado com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar a edição.'
+        ]);
     }
 
-    public function excluir()
+    public function excluir($id)
     {
-        $id = $_POST['id'];
+        if (
+        empty($id)
+        ) {
+            echo json_encode([
+                'tipo' => 'erro',
+                'message' => 'Sem dados !'
+            ]);
+            exit;
+        }
+
         $sql = "
             DELETE FROM 
                 fornecedores 
@@ -116,7 +144,18 @@ class Fornecedor
                 id = $id 
              ";
         $comando = $this->conexao->prepare($sql);
-        $comando->execute();
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Excluido com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'erro',
+            'message' => 'Não foi possivel realizar a exclusão.'
+        ]);
     }
 
 }

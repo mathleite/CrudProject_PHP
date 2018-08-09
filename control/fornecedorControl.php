@@ -12,13 +12,25 @@ if (empty($_POST['metodo'])) {
     echo 'error: método não existe!';
     exit;
 }
-$fornecedor->{$_POST['metodo']}();
 
-if(empty($_POST['id'])){
-    echo 'Fornecedor não possui ID';
-    exit;
+
+switch ($_POST['metodo']) {
+    case 'excluir':
+        $id = (int)$_POST['id'];
+        $fornecedor->excluir($id);
+        break;
+
+    case 'updateFornecedor':
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $fornecedor->updateFornecedor($id, $nome);
+        break;
+
+    case 'cadastrarFornecedor':
+        $novoFornecedor = $_POST['novoFornecedor'];
+        $fornecedor->cadastrarFornecedor($novoFornecedor);
+        break;
 }
-$fornecedor->{$_POST['metodo']}();
 
 
 

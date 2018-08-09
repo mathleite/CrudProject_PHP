@@ -1,15 +1,16 @@
-$('#formularioCategoria').submit(function () {
+$('#formulario').submit(function () {
     $.ajax({
         url: '/control/categoriaControl.php',
         type: 'POST',
         datatype: 'json',
         data: {
-            'novaCategoria': $('input[name="novaCategoria"]').val(),
-            'metodo': 'cadastrarCategoria'
+            'descricao': $('input[name="descricao"]').val(),
+            'id': $('input[name="id"]').val(),
+            'metodo': 'atualizarCategoria'
         },
         success: function (data) {
-            confirm("Realmente deseja fazer este cadastro?");
-            alert("Cadastro realizado ! ");
+            confirm("Realmente deseja fazer esta edição ?");
+            alert('Editado com sucesso! ');
 
             if (!data.tipo !== 'erro') {
                 window.location.href = "../espacos/espacoCategoria.php";

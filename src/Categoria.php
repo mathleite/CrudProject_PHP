@@ -105,7 +105,7 @@ class Categoria
         }
 
         echo json_encode([
-            'tipo' => 'erro',
+            'tipo' => 'error',
             'message' => 'Não foi possivel realizar a exclusão.'
         ]);
 

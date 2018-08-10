@@ -135,8 +135,8 @@ class Fornecedor
         empty($id)
         ) {
             echo json_encode([
-                'tipo' => 'erro',
-                'message' => 'Sem dados !'
+                'tipo' => 'error',
+                'message' => 'Sem id !'
             ]);
             exit;
         }
@@ -157,7 +157,7 @@ class Fornecedor
         }
 
         echo json_encode([
-            'tipo' => 'erro',
+            'tipo' => 'error',
             'message' => 'Não foi possivel realizar a exclusão.'
         ]);
     }

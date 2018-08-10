@@ -117,6 +117,12 @@ class Produto
 
     public function excluir(int $id)
     {
+        if(empty($id)){
+            echo json_encode([
+                'tipo' => 'error',
+                'message' => 'sem dados'
+            ]);
+        }
         $sql = "
             DELETE FROM 
                 produtos 
@@ -124,7 +130,18 @@ class Produto
                 id = $id
              ";
         $comando = $this->conexao->prepare($sql);
-        $comando->execute();
+        if ($comando->execute()) {
+            echo json_encode([
+                'tipo' => 'sucesso',
+                'message' => 'Excluida com sucesso!'
+            ]);
+            exit;
+        }
+
+        echo json_encode([
+            'tipo' => 'error',
+            'message' => 'Não foi possivel realizar a exclusão.'
+        ]);
 
     }
 

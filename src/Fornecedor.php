@@ -13,7 +13,7 @@ class Fornecedor
     {
         if (empty($novoFornecedor)) {
             echo json_encode([
-                'tipo' => 'erro',
+                'tipo' => 'error',
                 'message' => 'Nome vazio!'
             ]);
             exit;

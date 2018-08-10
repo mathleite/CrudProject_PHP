@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/js/excluirCategoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/excluirCategoria.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/excluirFornecedor.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/excluirFornecedor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/excluirProduto.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/excluirProduto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Categoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Categoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/categoriaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/categoriaControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/cadastrarCategoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cadastrarCategoria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/cadastrarFornecedor.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cadastrarFornecedor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Fornecedor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fornecedor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Produto.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,8 +82,8 @@
       <file leaf-file-name="categoriaControl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control/categoriaControl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+            <state relative-caret-position="280">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
               <folding>
                 <element signature="e#6#95#0#PHP" />
               </folding>
@@ -92,20 +91,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="excluirCategoria.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/excluirCategoria.js">
+      <file leaf-file-name="cadastroCategoria.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+            <state relative-caret-position="149">
+              <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="excluirFornecedor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/excluirFornecedor.js">
+      <file leaf-file-name="cadastrarCategoria.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/cadastrarCategoria.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state relative-caret-position="180">
+              <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editarCategoria.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/editarCategoria.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -168,7 +176,6 @@
         <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedores.php" />
         <option value="$PROJECT_DIR$/funcoes/atualizar/atualizarCategoria.php" />
         <option value="$PROJECT_DIR$/funcoes/atualizar/atualizarFornecedor.php" />
-        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php" />
         <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedor.php" />
         <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -178,9 +185,7 @@
         <option value="$PROJECT_DIR$/funcoes/editar/editarFornecedor.php" />
         <option value="$PROJECT_DIR$/js/editarFornecedor.js" />
         <option value="$PROJECT_DIR$/js/editarProduto.js" />
-        <option value="$PROJECT_DIR$/js/cadastrarFornecedor.js" />
         <option value="$PROJECT_DIR$/funcoes/editar/editarCategoria.php" />
-        <option value="$PROJECT_DIR$/control/categoriaControl.php" />
         <option value="$PROJECT_DIR$/js/editarCategoria.js" />
         <option value="$PROJECT_DIR$/control/fornecedorControl.php" />
         <option value="$PROJECT_DIR$/funcoes/espacos/espacoFornecedor.php" />
@@ -189,13 +194,16 @@
         <option value="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" />
         <option value="$PROJECT_DIR$/control/produtoControl.php" />
         <option value="$PROJECT_DIR$/js/cadastrarProdutos.js" />
-        <option value="$PROJECT_DIR$/js/cadastrarCategoria.js" />
         <option value="$PROJECT_DIR$/src/Produto.php" />
         <option value="$PROJECT_DIR$/js/excluirProduto.js" />
-        <option value="$PROJECT_DIR$/src/Fornecedor.php" />
         <option value="$PROJECT_DIR$/js/excluirFornecedor.js" />
         <option value="$PROJECT_DIR$/src/Categoria.php" />
         <option value="$PROJECT_DIR$/js/excluirCategoria.js" />
+        <option value="$PROJECT_DIR$/src/Fornecedor.php" />
+        <option value="$PROJECT_DIR$/js/cadastrarFornecedor.js" />
+        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php" />
+        <option value="$PROJECT_DIR$/control/categoriaControl.php" />
+        <option value="$PROJECT_DIR$/js/cadastrarCategoria.js" />
       </list>
     </option>
   </component>
@@ -234,7 +242,7 @@
             <path>
               <item name="Projeto-SistemaCadastro" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto-SistemaCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -288,12 +296,12 @@
       <workItem from="1532702504808" duration="90092000" />
       <workItem from="1533553463331" duration="1513000" />
       <workItem from="1533556977729" duration="4260000" />
-      <workItem from="1533642471624" duration="69704000" />
+      <workItem from="1533642471624" duration="77187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158946000" />
+    <option name="totallyTimeSpent" value="166429000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -307,7 +315,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32884902" />
       <window_info anchor="bottom" id="Run" order="9" />
       <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17791411" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32884902" />
@@ -491,16 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/fornecedorControl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding>
-            <element signature="e#6#95#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/editarFornecedor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -526,13 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1160">
           <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/cadastrarFornecedor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -564,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/editarCategoria.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/cadastrarProdutos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -585,23 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="64" column="71" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/categoriaControl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-          <folding>
-            <element signature="e#6#95#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Produto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -609,31 +576,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/cadastrarCategoria.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/excluirProduto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Categoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -648,6 +594,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/fornecedorControl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <element signature="e#6#95#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cadastrarFornecedor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Categoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/categoriaControl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <element signature="e#6#95#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/editarCategoria.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cadastrarCategoria.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
         </state>
       </provider>
     </entry>

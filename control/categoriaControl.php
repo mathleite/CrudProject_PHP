@@ -12,7 +12,9 @@ if (empty($_POST['metodo'])) {
     echo "Error: sem metodo";
     exit;
 }
-
+//$dados = file_get_contents('php://input');
+//var_dump($dados);
+//exit;
 switch ($_POST['metodo']) {
     case 'cadastrarCategoria':
         $novaCategoria = $_POST['novaCategoria'];

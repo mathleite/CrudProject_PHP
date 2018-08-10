@@ -1,5 +1,7 @@
 $('#formularioCategoria').submit(function () {
     if (confirm("Deseja realmente fazer este cadastro ?")) {
+        // var formulario = $('#formularioCategoria').serializeArray();
+        // console.log(formulario.split('&'));
         $.ajax({
             url: '/control/categoriaControl.php',
             type: 'POST',
@@ -9,6 +11,8 @@ $('#formularioCategoria').submit(function () {
                 'metodo': 'cadastrarCategoria'
             },
             success: function (data) {
+                // console.log(data);
+                // return false;
                 var dados = JSON.parse(data);
                 if (dados.tipo == 'erro') {
                     alert("ERRO: sem dados !");

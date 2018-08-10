@@ -3,18 +3,6 @@
 class Fornecedor
 {
     private $conexao;
-    private $id;
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
     public function __construct()
     {
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
@@ -53,9 +41,7 @@ class Fornecedor
             'message' => 'Não foi possivel realizar o cadastro.'
         ]);
     }
-
-
-    public function receberFornecedor()
+    public function listarFornecedor()
     {
         $sql = " 
         SELECT 
@@ -64,7 +50,25 @@ class Fornecedor
         FROM 
             fornecedores 
         ORDER BY 
-            id ASC
+             id ASC
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function receberFornecedor()
+    {
+        $id = $_GET['id'];
+        $sql = " 
+        SELECT 
+            p.id,
+            f.nome AS nome_fornecedores
+        FROM 
+            produtos p 
+            INNER JOIN fornecedores f ON f.id = p.fornecedores_id
+        ORDER BY 
+             p.id = $id DESC
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->execute();

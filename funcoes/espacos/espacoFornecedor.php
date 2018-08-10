@@ -1,7 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 $lista = new Fornecedor();
-$arrayFornecedores = $lista->receberFornecedor();
+$arrayFornecedores = $lista->listarFornecedor();
 ?>
 <!doctype html>
 <html lang="en">

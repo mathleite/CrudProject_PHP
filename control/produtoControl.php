@@ -5,11 +5,9 @@ if (empty($_POST['metodo'])) {
     echo 'error: metodo não existe';
     exit;
 }
-
-$id = (int)$_POST['id'];
-
 switch ($_POST['metodo']) {
     case 'excluir':
+        $id = (int)$_POST['id'];
         $produto->excluir($id);
         break;
 

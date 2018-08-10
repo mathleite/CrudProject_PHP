@@ -129,14 +129,33 @@ class Categoria
 
     public function receberCategoria(): array
     {
+        $id = $_GET['id'];
+        $sql = "
+        SELECT 
+            p.id,
+            c.descricao AS descricao_categoria
+        FROM 
+            produtos p 
+            INNER JOIN categoria c ON c.id = p.categoria_id
+        ORDER BY
+            p.id = $id DESC
+        ";
+        $comando = $this->conexao->prepare($sql);
+        $comando->execute();
+
+        return $comando->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function listarCategoria(): array
+    {
         $sql = "
         SELECT 
             id,
-            descricao 
+            descricao
         FROM 
-            categoria
+            categoria 
         ORDER BY
-            descricao ASC
+            id  ASC
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->execute();

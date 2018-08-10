@@ -1,9 +1,9 @@
 <?php
 require '../../vendor/autoload.php';
 $listaCategoria = new Categoria();
-$arrayCategoria = $listaCategoria->receberCategoria();
+$arrayCategoria = $listaCategoria->listarCategoria();
 $listaFornecedor = new Fornecedor();
-$arrayFornecedor = $listaFornecedor->receberFornecedor();
+$arrayFornecedor = $listaFornecedor->listarFornecedor();
 ?>
 
 <!doctype html>
@@ -73,7 +73,8 @@ $arrayFornecedor = $listaFornecedor->receberFornecedor();
             <form id="formulario" onsubmit="return false">
                 <div class="form-row">
                     <div class="col">
-                        <span><strong>Nome</strong></span><input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
+                        <span><strong>Nome</strong></span><input type="text" name="nomeProduto" class="form-control"
+                                                                 placeholder="Nome">
                     </div>
 
                     <div class="col">
@@ -93,13 +94,18 @@ $arrayFornecedor = $listaFornecedor->receberFornecedor();
                         </select>
                     </div>
                     <div class="col">
-                        <span><strong>Dia do Lançamento</strong></span><input type="date" name="diaLancamento" class="form-control">
+                        <span><strong>Dia do Lançamento</strong></span><input type="date" name="diaLancamento"
+                                                                              class="form-control">
                     </div>
                     <div class="col">
-                        <span><strong>Preço de Venda</strong></span><input type="number" name="precoVenda" step="any" class="form-control" placeholder="Preço de Venda R$">
+                        <span><strong>Preço de Venda</strong></span><input type="number" name="precoVenda" step="any"
+                                                                           class="form-control"
+                                                                           placeholder="Preço de Venda R$">
                     </div>
                     <div class="col">
-                        <span><strong>Preço Unitário</strong></span><input type="number" name="precoUnitario" step="any" class="form-control" placeholder="Preço Unitário R$">
+                        <span><strong>Preço Unitário</strong></span><input type="number" name="precoUnitario" step="any"
+                                                                           class="form-control"
+                                                                           placeholder="Preço Unitário R$">
                     </div>
                 </div>
                 <br>

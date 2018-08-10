@@ -1,7 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 $lista = new Categoria();
-$arrayCategorias = $lista->receberCategoria();
+$arrayCategorias = $lista->listarCategoria();
 ?>
 
 <!doctype html>

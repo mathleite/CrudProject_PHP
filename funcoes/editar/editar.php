@@ -8,6 +8,7 @@ $arrayFornecedor = $lista->receberFornecedor();
 
 $lista = new Categoria();
 $arrayCategoria = $lista->receberCategoria();
+
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -76,14 +77,14 @@ $arrayCategoria = $lista->receberCategoria();
                         <div class="col">
                             <select class="form-control" name="categoria">
                                 <?php foreach ($arrayCategoria as $categoria) { ?>
-                                    <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
+                                    <option value="<?= $categoria['p.id'] ?>"><?= $categoria['descricao_categoria'] ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                         <div class="col">
                             <select class="form-control" name="fornecedor">
                                 <?php foreach ($arrayFornecedor as $fornecedores) { ?>
-                                    <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
+                                    <option value="<?= $fornecedores['p.id'] ?>"><?= $fornecedores['nome_fornecedores'] ?></option>
                                 <?php } ?>
                             </select>
                         </div>

@@ -58,7 +58,7 @@ class Produto
         }
 
         echo json_encode([
-            'tipo' => 'erro',
+            'tipo' => 'error',
             'message' => 'Não foi possivel realizar o cadastro.'
         ]);
     }

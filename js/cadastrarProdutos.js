@@ -13,15 +13,17 @@ $('#formulario').submit(function () {
                 'precoUnitario': $('input[name="precoUnitario"]').val(),
                 'metodo': 'cadastrar'
             }, success: function (data) {
-                if (!data.tipo !== 'erro') {
+                var dados = JSON.parse(data);
+
+                if (dados.tipo == 'error') {
                     alert("ERROR: cadastro sem dados");
                 } else {
+                    alert("Cadastro realizado com sucesso !");
                     window.location.href = "../listagem/listagem.php";
                 }
             }
         });
     } else {
-
         alert('Não cadastrado!');
         window.location.href = "../listagem/listagem.php";
     }

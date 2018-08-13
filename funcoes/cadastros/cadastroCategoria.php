@@ -58,11 +58,11 @@ require '../../vendor/autoload.php';
             </div>
             <form id="formularioCategoria" onsubmit="return false">
                 <div class="form-row">
-                    <div class="col">
+                    <div class="col-4">
                         <span><strong>Cadastrar - categoria:</strong></span>
                         <input type="text" name="novaCategoria" class="form-control" placeholder="Nome">
                         <br>
-                        <button type="submit" id="salvar" class="btn btn-success">Salvar</button>
+                        <button style="width: 100px;" type="submit" id="salvar" class="btn btn-success">Salvar</button>
                     </div>
                 </div>
             </form>

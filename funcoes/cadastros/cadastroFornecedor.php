@@ -61,11 +61,11 @@ require '../../vendor/autoload.php';
             </div>
             <form id="formularioFornecedor" onsubmit="return false">
                 <div class="form-row">
-                    <div class="col">
+                    <div class="col-4">
                         <span><strong>Cadastrar - Fornecedor: </strong></span>
                         <input type="text" name="novoFornecedor" class="form-control" placeholder="Nome">
                         <br>
-                        <button type="submit" id="salvar" class="btn btn-success">Salvar</button>
+                        <button style="width: 100px;" type="submit" id="salvar" class="btn btn-success">Salvar</button>
                     </div>
                 </div>
             </form>

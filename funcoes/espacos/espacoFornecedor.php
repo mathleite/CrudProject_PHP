@@ -1,7 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 $lista = new Fornecedor();
-$arrayFornecedores = $lista->listarFornecedor();
+$fornecedores = $lista->listarFornecedor();
 ?>
 <!doctype html>
 <html lang="en">
@@ -70,19 +70,19 @@ $arrayFornecedores = $lista->listarFornecedor();
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th style="color: #1315dd;" scope="col">#</th>
                         <th scope="col">Fornecedores</th>
                         <th scope="col">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($arrayFornecedores as $fornecedores) { ?>
+                    <?php foreach ($fornecedores as $novoFornecedor) { ?>
                         <tr>
-                            <th scope="row"><?= $fornecedores['id'] ?></th>
-                            <td><?= $fornecedores['nome'] ?></td>
-                            <td><a href="../editar/editarFornecedor.php?id=<?= $fornecedores['id'] ?>">Editar</a>
+                            <th scope="row"><?= $novoFornecedor['id'] ?></th>
+                            <td><?= $novoFornecedor['nome'] ?></td>
+                            <td><a href="../editar/editarFornecedor.php?id=<?= $novoFornecedor['id'] ?>">Editar</a>
                                 <a style="color: #dd0000" href="javascript:void(0)"
-                                   onclick="excluir('<?= $fornecedores['id'] ?>')">Deletar</a>
+                                   onclick="excluir('<?= $novoFornecedor['id'] ?>')">Deletar</a>
                             </td>
                         </tr>
                     <?php } ?>

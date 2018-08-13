@@ -1,6 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 $lista = new Fornecedor();
+$lista->setId($_GET['id']);
 $arrayFornecedor = $lista->idFornecedor();
 ?>
 <!doctype html>
@@ -57,12 +58,12 @@ $arrayFornecedor = $lista->idFornecedor();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Editar Produto</h1>
+                <h1 class="h2">Editar Fornecedor</h1>
 
             </div>
-            <h4>Forneça os dados necessários</h4>
-            <br>
-            <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
+            <h4>Forneça o dado necessário</h4>
+
+            <h6 style="color: #dd0000;">O campo deve ser preenchido*</h6>
             <br>
             <?php foreach ($arrayFornecedor as $value) { ?>
 
@@ -78,7 +79,7 @@ $arrayFornecedor = $lista->idFornecedor();
                     </div>
                     <br>
                     <br>
-                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button style="width: 100px;" type="submit" class="btn btn-success">Salvar</button>
                 </form>
             <?php } ?>
         </main>

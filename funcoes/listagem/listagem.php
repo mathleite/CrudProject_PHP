@@ -73,7 +73,7 @@ $arrayProdutos = $comando->listarTabela();
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th  style="color: #1315dd;">#</th>
                         <th>Nome</th>
                         <th>Categoria</th>
                         <th>Fornecedor</th>
@@ -83,9 +83,7 @@ $arrayProdutos = $comando->listarTabela();
                         <th>Ações</th>
                     </tr>
                     </thead>
-
                     <tbody>
-
                     <?php foreach ($arrayProdutos as $value) { ?>
                         <tr>
                             <th scope="row"><?= $value['id']; ?></th>
@@ -102,13 +100,10 @@ $arrayProdutos = $comando->listarTabela();
                             </td>
                         </tr>
                     <?php } ?>
-
                     </tbody>
                     <br>
                 </table>
             </form>
-
-
         </main>
     </div>
 </div>

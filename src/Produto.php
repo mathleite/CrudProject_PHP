@@ -2,6 +2,12 @@
 
 class Produto
 {
+    private $id;
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
     private $conexao;
 
     public function __construct()
@@ -66,7 +72,8 @@ class Produto
     public function atualizar($id, $nome, $categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)
     {
         if (
-            empty($nome)
+            empty($id)
+            || empty($nome)
             || empty($categoria)
             || empty($fornecedor)
             || empty($diaLancamento)
@@ -111,7 +118,7 @@ class Produto
 
         echo json_encode([
             'tipo' => 'erro',
-            'message' => 'Não foi possivel realizar a edição.'
+            'message' => 'Nao foi possivel realizar a edicao.'
         ]);
     }
 
@@ -170,9 +177,8 @@ class Produto
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function listarId(): array
+    public function getId(): array
     {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $sql = "
         SELECT
             p.id,
@@ -189,13 +195,11 @@ class Produto
 	        INNER JOIN categoria c ON c.id = p.categoria_id
             INNER JOIN fornecedores f ON f.id = p.fornecedores_id
         WHERE
-            p.id = $id
-        ORDER BY 
-            p.id ASC
+            p.id = $this->id
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->execute();
-        return $comando->fetchAll(PDO::FETCH_ASSOC);
+        return $comando->fetch();
     }
 
 }

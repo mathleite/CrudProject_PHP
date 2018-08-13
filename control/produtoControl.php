@@ -12,6 +12,7 @@ switch ($_POST['metodo']) {
         break;
 
     case 'atualizar':
+        $id = (int)$_POST['id'];
         $nome = $_POST['nome'];
         $categoria = $_POST['categoria'];
         $fornecedor = $_POST['fornecedor'];

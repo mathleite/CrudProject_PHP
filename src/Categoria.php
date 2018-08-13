@@ -3,8 +3,12 @@
 
 class Categoria
 {
+    private $id;
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
     private $conexao;
-
     public function __construct()
     {
         $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
@@ -113,14 +117,13 @@ class Categoria
 
     public function idCategoria()
     {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $sql = "
         SELECT 
             id,
             descricao
         FROM
             categoria
-        WHERE id = $id
+        WHERE id = $this->id
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->execute();
@@ -129,16 +132,13 @@ class Categoria
 
     public function receberCategoria(): array
     {
-        $id = $_GET['id'];
+
         $sql = "
         SELECT 
-            p.id,
-            c.descricao AS descricao_categoria
+            c.id,
+            c.descricao
         FROM 
-            produtos p 
-            INNER JOIN categoria c ON c.id = p.categoria_id
-        ORDER BY
-            p.id = $id DESC
+            categoria c
         ";
         $comando = $this->conexao->prepare($sql);
         $comando->execute();

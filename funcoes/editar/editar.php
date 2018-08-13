@@ -1,14 +1,16 @@
 <?php
 require '../../vendor/autoload.php';
 $lista = new Produto();
-$arrayLista = $lista->listarId();
+$lista->setId($_GET['id']);
+$produto = $lista->getId();
 
-$lista = new Fornecedor();
-$arrayFornecedor = $lista->receberFornecedor();
+$fornecedor = new Fornecedor();
+$fornecedor->setId($_GET['id']);
+$fornecedorId = $fornecedor->receberFornecedor();
 
-$lista = new Categoria();
-$arrayCategoria = $lista->receberCategoria();
-
+$categoria = new Categoria();
+$categoria->setId($_GET['id']);
+$categoriaId = $categoria->receberCategoria();
 ?>
 <!doctype html>
 <html lang="pt_br">
@@ -67,48 +69,62 @@ $arrayCategoria = $lista->receberCategoria();
             <br>
             <h6 style="color: #dd0000;">Todos os campos devem ser preenchidos*</h6>
             <br>
-            <?php foreach ($arrayLista as $value) { ?>
-                <form id="formularioEdicao">
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="text" name="nome" class="form-control"
-                                   placeholder="Nome" value="<?= $value['nome'] ?>">
-                        </div>
-                        <div class="col">
-                            <select class="form-control" name="categoria">
-                                <?php foreach ($arrayCategoria as $categoria) { ?>
-                                    <option value="<?= $categoria['p.id'] ?>"><?= $categoria['descricao_categoria'] ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <select class="form-control" name="fornecedor">
-                                <?php foreach ($arrayFornecedor as $fornecedores) { ?>
-                                    <option value="<?= $fornecedores['p.id'] ?>"><?= $fornecedores['nome_fornecedores'] ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <input type="date" name="diaLancamento"
-                                   class=" form-control" value="<?= $value['diaLancamento'] ?>">
-                        </div>
-                        <div class="col">
-                            <input type="number" name="precoVenda" step="any" class="form-control"
-                                   placeholder="Preço de Venda R$" value="<?= $value['precoVenda'] ?>">
-                        </div>
-                        <div class="col">
-                            <input type="number" name="precoUnitario" step="any" class="form-control"
-                                   placeholder="Preço Unitário R$" value="<?= $value['precoUnitario'] ?>">
-                        </div>
-                        <div class="col">
-                            <input type="hidden" name="id" value="<?= $value['id'] ?>">
-                        </div>
+
+            <form id="formularioEdicao">
+                <div class="form-row">
+                    <div class="col-sm-3">
+                        <span style="margin-left: 10px"><strong>Nome</strong></span>
+                        <input type="text" name="nome" class="form-control" placeholder="Nome"
+                               value="<?= $produto['nome'] ?>">
                     </div>
                     <br>
+                    <div class="col-sm-3">
+                        <span style="margin-left: 10px"><strong>Categoria</strong></span>
+                        <select class="form-control" name="categoria">
+                            <?php foreach ($categoriaId as $novaCategoria) {
+                                $selected = ($produto['categoria_id'] == $novaCategoria['id']) ? 'selected' : '';
+                                ?>
+                                <option value="<?= $novaCategoria['id'] ?>" <?= $selected ?>><?= $novaCategoria['descricao'] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                     <br>
-                    <button type="submit" id="salvar" class="btn btn-info">Salvar</button>
-                </form>
-            <?php } ?>
+                    <div class="col-sm-3">
+                        <span style="margin-left: 10px"><strong>Fornecedor</strong></span>
+                        <select class="form-control" name="fornecedor">
+                            <?php foreach ($fornecedorId as $novoFornecedor) {
+                                $selected = ($produto['fornecedores_id'] == $novoFornecedor['id']) ? 'selected' : '';
+                                ?>
+                                <option value="<?= $novoFornecedor['id'] ?>" <?= $selected ?>><?= $novoFornecedor['nome'] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-sm-2">
+                        <span style="margin-left: 10px"><strong>Lançamento</strong></span>
+                        <input type="date" name="diaLancamento" class=" form-control"
+                               value="<?= $produto['diaLancamento'] ?>">
+                    </div>
+                    <br>
+                    <div class="col-sm-3">
+                        <span style="margin-left: 10px"><strong>Preço Venda R$</strong></span>
+                        <input type="number" name="precoVenda" step="any" class="form-control"
+                               placeholder="Preço de Venda R$" value="<?= $produto['precoVenda'] ?>">
+                    </div>
+                    <br>
+                    <div class="col-sm-3">
+                        <span style="margin-left: 10px"><strong>Preço Unitário R$</strong></span>
+                        <input type="number" name="precoUnitario" step="any" class="form-control"
+                               placeholder="Preço Unitário R$" value="<?= $produto['precoUnitario'] ?>">
+                    </div>
+                    <div class="col">
+                        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <button style="margin-left: 930px; width: 100px;" type="submit" id="salvar" class="btn btn-info">Salvar</button>
+            </form>
         </main>
     </div>
 </div>

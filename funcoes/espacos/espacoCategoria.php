@@ -72,7 +72,7 @@ $arrayCategorias = $lista->listarCategoria();
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th style="color: #1315dd;" scope="col">#</th>
                         <th scope="col">Categorias</th>
                         <th scope="col">Ações</th>
                     </tr>

@@ -1,6 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 $lista = new Categoria();
+$lista->setId($_GET['id']);
 $arrayCategoria = $lista->idCategoria();
 ?>
 <!doctype html>
@@ -59,8 +60,7 @@ $arrayCategoria = $lista->idCategoria();
                 <h1 class="h2">Editar Categoria</h1>
 
             </div>
-            <h4>Forneça os dados necessários</h4>
-            <br>
+            <h4>Forneça o dado necessário</h4>
             <h6 style="color: #dd0000;">O campo deve ser preenchido*</h6>
             <br>
             <?php foreach ($arrayCategoria as $value) { ?>
@@ -77,7 +77,7 @@ $arrayCategoria = $lista->idCategoria();
                     </div>
                     <br>
                     <br>
-                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button style="width: 100px;" type="submit" class="btn btn-success">Salvar</button>
                 </form>
             <?php } ?>
         </main>

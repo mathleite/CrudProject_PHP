@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
+    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="Refatorando os campos 'option', DB e mudando as GRIDS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/categoriaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/categoriaControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cadastrarCategoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cadastrarCategoria.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cadastrarFornecedor.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cadastrarFornecedor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fornecedor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fornecedor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/funcoes/editar/editar.php" beforeDir="false" afterPath="$PROJECT_DIR$/funcoes/editar/editar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,51 +77,15 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="categoriaControl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/categoriaControl.php">
+    <leaf>
+      <file leaf-file-name="editar.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/funcoes/editar/editar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+            <state relative-caret-position="380">
+              <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
               <folding>
-                <element signature="e#6#95#0#PHP" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadastroCategoria.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadastrarCategoria.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/cadastrarCategoria.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editarCategoria.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/editarCategoria.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Categoria.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Categoria.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -145,10 +108,12 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Matheus Leite &lt;matheussantosleite_@hotmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -176,34 +141,34 @@
         <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedores.php" />
         <option value="$PROJECT_DIR$/funcoes/atualizar/atualizarCategoria.php" />
         <option value="$PROJECT_DIR$/funcoes/atualizar/atualizarFornecedor.php" />
-        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedor.php" />
         <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/funcoes/listagem/listagem.php" />
         <option value="$PROJECT_DIR$/js/editaProduto.js" />
         <option value="$PROJECT_DIR$/funcoes/atualizar/atualizarTodosDados.php" />
-        <option value="$PROJECT_DIR$/funcoes/editar/editarFornecedor.php" />
         <option value="$PROJECT_DIR$/js/editarFornecedor.js" />
         <option value="$PROJECT_DIR$/js/editarProduto.js" />
-        <option value="$PROJECT_DIR$/funcoes/editar/editarCategoria.php" />
         <option value="$PROJECT_DIR$/js/editarCategoria.js" />
         <option value="$PROJECT_DIR$/control/fornecedorControl.php" />
-        <option value="$PROJECT_DIR$/funcoes/espacos/espacoFornecedor.php" />
-        <option value="$PROJECT_DIR$/funcoes/editar/editar.php" />
-        <option value="$PROJECT_DIR$/funcoes/espacos/espacoCategoria.php" />
-        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" />
-        <option value="$PROJECT_DIR$/control/produtoControl.php" />
-        <option value="$PROJECT_DIR$/js/cadastrarProdutos.js" />
-        <option value="$PROJECT_DIR$/src/Produto.php" />
         <option value="$PROJECT_DIR$/js/excluirProduto.js" />
         <option value="$PROJECT_DIR$/js/excluirFornecedor.js" />
-        <option value="$PROJECT_DIR$/src/Categoria.php" />
         <option value="$PROJECT_DIR$/js/excluirCategoria.js" />
-        <option value="$PROJECT_DIR$/src/Fornecedor.php" />
-        <option value="$PROJECT_DIR$/js/cadastrarFornecedor.js" />
-        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php" />
         <option value="$PROJECT_DIR$/control/categoriaControl.php" />
+        <option value="$PROJECT_DIR$/control/produtoControl.php" />
+        <option value="$PROJECT_DIR$/js/cadastrarFornecedor.js" />
         <option value="$PROJECT_DIR$/js/cadastrarCategoria.js" />
+        <option value="$PROJECT_DIR$/js/cadastrarProdutos.js" />
+        <option value="$PROJECT_DIR$/src/Produto.php" />
+        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedor.php" />
+        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php" />
+        <option value="$PROJECT_DIR$/funcoes/espacos/espacoCategoria.php" />
+        <option value="$PROJECT_DIR$/funcoes/listagem/listagem.php" />
+        <option value="$PROJECT_DIR$/funcoes/espacos/espacoFornecedor.php" />
+        <option value="$PROJECT_DIR$/src/Fornecedor.php" />
+        <option value="$PROJECT_DIR$/src/Categoria.php" />
+        <option value="$PROJECT_DIR$/funcoes/editar/editarCategoria.php" />
+        <option value="$PROJECT_DIR$/funcoes/editar/editarFornecedor.php" />
+        <option value="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" />
+        <option value="$PROJECT_DIR$/funcoes/editar/editar.php" />
       </list>
     </option>
   </component>
@@ -242,7 +207,13 @@
             <path>
               <item name="Projeto-SistemaCadastro" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto-SistemaCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="funcoes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto-SistemaCadastro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto-SistemaCadastro" type="462c0819:PsiDirectoryNode" />
+              <item name="funcoes" type="462c0819:PsiDirectoryNode" />
+              <item name="cadastros" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -258,7 +229,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -296,30 +267,37 @@
       <workItem from="1532702504808" duration="90092000" />
       <workItem from="1533553463331" duration="1513000" />
       <workItem from="1533556977729" duration="4260000" />
-      <workItem from="1533642471624" duration="77187000" />
+      <workItem from="1533642471624" duration="77326000" />
+      <workItem from="1534159462443" duration="16030000" />
+      <workItem from="1534248116520" duration="1580000" />
     </task>
+    <task id="LOCAL-00001" summary="Refatorando os campos 'option', DB e mudando as GRIDS">
+      <created>1534187456038</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1534187456038</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166429000" />
+    <option name="totallyTimeSpent" value="184178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="1" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.26606876" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="0" visible="true" weight="0.19730942" />
+      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32884902" />
       <window_info anchor="bottom" id="Run" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
-      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32884902" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -327,6 +305,10 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="1" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32884902" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="0" visible="true" weight="0.19730942" />
+      <window_info anchor="right" x="0" y="0" width="280" height="584" id="Documentation" order="4" side_tool="true" weight="0.3297546" />
       <window_info anchor="bottom" id="Message" order="7" />
     </layout>
   </component>
@@ -362,6 +344,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refatorando os campos 'option', DB e mudando as GRIDS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refatorando os campos 'option', DB e mudando as GRIDS" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Projeto-SistemaCadastro/classes/editar.php" />
     <entry file="file://$PROJECT_DIR$/css/index.css" />
@@ -384,13 +375,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/remover.php" />
     <entry file="file://$PROJECT_DIR$/classes/editarCategoria.php" />
-    <entry file="file://$PROJECT_DIR$/funcoes/listagem/listagemDeletar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/listagem/listagemDeletar.php" />
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -407,53 +392,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Deletar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inserir.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Deletar.php" />
+    <entry file="file://$PROJECT_DIR$/src/Inserir.php" />
+    <entry file="file://$PROJECT_DIR$/src/Listar.php" />
     <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap.bundle.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="1132" column="20" selection-start-line="1132" selection-start-column="20" selection-end-line="1132" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/listagem/listagem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#a#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -464,41 +415,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/atualizar/atualizarTodosDados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/atualizar/atualizarFornecedor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="85" column="60" selection-start-line="85" selection-start-column="60" selection-end-line="85" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/editar/editarFornecedor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="71" column="57" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-851">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/editar/editarCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/atualizar/atualizarTodosDados.php" />
+    <entry file="file://$PROJECT_DIR$/funcoes/atualizar/atualizarFornecedor.php" />
     <entry file="file://$PROJECT_DIR$/js/editarFornecedor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -506,76 +424,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/editarProduto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/atualizar/atualizarCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1160">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/espacos/espacoFornecedor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/espacos/espacoCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/editar/editar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-280">
-          <caret line="79" column="103" selection-start-line="79" selection-start-column="103" selection-end-line="79" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastrar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/cadastrarProdutos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/produtoControl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="142" column="62" selection-start-line="142" selection-start-column="62" selection-end-line="142" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/atualizar/atualizarCategoria.php" />
     <entry file="file://$PROJECT_DIR$/js/excluirProduto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -601,61 +450,174 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding>
-            <element signature="e#6#95#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/cadastrarFornecedor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Categoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/categoriaControl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding>
-            <element signature="e#6#95#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/editarCategoria.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="59" />
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/produtoControl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/cadastrarCategoria.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cadastrarFornecedor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cadastrarProdutos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/editarProduto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="179" column="23" selection-start-line="179" selection-start-column="23" selection-end-line="179" selection-end-column="23" />
+          <folding>
+            <element signature="n#setId#0;n#Produto#0;n#!!top" />
+            <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
+            <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
+            <element signature="n#excluir#0;n#Produto#0;n#!!top" />
+            <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/categoriaControl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroUpdate.php" />
+    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastroFornecedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/listagem/listagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/espacos/espacoCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1480">
+          <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/espacos/espacoFornecedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Categoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding>
+            <element signature="n#__construct#0;n#Categoria#0;n#!!top" />
+            <element signature="n#cadastrarCategoria#0;n#Categoria#0;n#!!top" />
+            <element signature="n#atualizarCategoria#0;n#Categoria#0;n#!!top" />
+            <element signature="n#excluir#0;n#Categoria#0;n#!!top" />
+            <element signature="n#receberCategoria#0;n#Categoria#0;n#!!top" />
+            <element signature="n#listarCategoria#0;n#Categoria#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/editar/editarCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="79" column="49" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/editar/editarFornecedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+          <folding>
+            <element signature="n#__construct#0;n#Fornecedor#0;n#!!top" />
+            <element signature="n#cadastrarFornecedor#0;n#Fornecedor#0;n#!!top" />
+            <element signature="n#listarFornecedor#0;n#Fornecedor#0;n#!!top" />
+            <element signature="n#receberFornecedor#0;n#Fornecedor#0;n#!!top" />
+            <element signature="n#updateFornecedor#0;n#Fornecedor#0;n#!!top" />
+            <element signature="n#excluir#0;n#Fornecedor#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/cadastros/cadastrar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="96" column="68" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes/editar/editar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

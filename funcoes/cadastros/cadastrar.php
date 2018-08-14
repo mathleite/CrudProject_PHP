@@ -73,12 +73,12 @@ $arrayFornecedor = $listaFornecedor->listarFornecedor();
             <form id="formulario" onsubmit="return false">
                 <div class="form-row">
                     <div class="col-sm-3">
-                        <span><strong>Nome</strong>
+                        <span style="margin-left: 10px"><strong>Nome</strong>
                         </span><input type="text" name="nomeProduto" class="form-control" placeholder="Nome">
                     </div>
 
                     <div class="col-sm-3">
-                        <span><strong>Categoria</strong></span>
+                        <span style="margin-left: 10px"><strong>Categoria</strong></span>
                         <select class="form-control" name="categoria">
                             <?php foreach ($arrayCategoria as $categoria) { ?>
                                 <option value="<?= $categoria['id'] ?>"><?= $categoria['descricao'] ?></option>
@@ -86,7 +86,7 @@ $arrayFornecedor = $listaFornecedor->listarFornecedor();
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <span><strong>Fornecedor</strong>
+                        <span style="margin-left: 10px"><strong>Fornecedor</strong>
                         </span><select class="form-control" name="fornecedor">
                             <?php foreach ($arrayFornecedor as $fornecedores) { ?>
                                 <option value="<?= $fornecedores['id'] ?>"><?= $fornecedores['nome'] ?></option>
@@ -94,15 +94,15 @@ $arrayFornecedor = $listaFornecedor->listarFornecedor();
                         </select>
                     </div>
                     <div class="col-sm-2">
-                        <span><strong>Dia do Lançamento</strong>
+                        <span style="margin-left: 10px"><strong>Data</strong>
                         </span><input type="date" name="diaLancamento" class="form-control">
                     </div>
                     <div class="col-sm-3">
-                        <span><strong>Preço de Venda</strong>
+                        <span style="margin-left: 10px"><strong>Preço de Venda</strong>
                         </span><input type="number" name="precoVenda" step="any" class="form-control" placeholder="Preço de Venda R$">
                     </div>
                     <div class="col-sm-3">
-                        <span><strong>Preço Unitário</strong></span>
+                        <span style="margin-left: 10px"><strong>Preço Unitário</strong></span>
                         <input type="number" name="precoUnitario" step="any" class="form-control" placeholder="Preço Unitário R$">
                     </div>
                 </div>

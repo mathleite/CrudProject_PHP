@@ -101,7 +101,7 @@ $categoriaId = $categoria->receberCategoria();
                     </div>
                     <br>
                     <div class="col-sm-2">
-                        <span style="margin-left: 10px"><strong>Lançamento</strong></span>
+                        <span style="margin-left: 10px"><strong>Data</strong></span>
                         <input type="date" name="diaLancamento" class=" form-control"
                                value="<?= $produto['diaLancamento'] ?>">
                     </div>

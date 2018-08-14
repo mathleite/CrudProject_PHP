@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="Refatorando os campos 'option', DB e mudando as GRIDS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/funcoes/cadastros/cadastrar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcoes/editar/editar.php" beforeDir="false" afterPath="$PROJECT_DIR$/funcoes/editar/editar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -81,8 +78,8 @@
       <file leaf-file-name="editar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/funcoes/editar/editar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
+            <state relative-caret-position="400">
+              <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -269,7 +266,7 @@
       <workItem from="1533556977729" duration="4260000" />
       <workItem from="1533642471624" duration="77326000" />
       <workItem from="1534159462443" duration="16030000" />
-      <workItem from="1534248116520" duration="1580000" />
+      <workItem from="1534248116520" duration="2880000" />
     </task>
     <task id="LOCAL-00001" summary="Refatorando os campos 'option', DB e mudando as GRIDS">
       <created>1534187456038</created>
@@ -282,7 +279,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184178000" />
+    <option name="totallyTimeSpent" value="185478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -613,8 +610,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/funcoes/editar/editar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
+        <state relative-caret-position="400">
+          <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

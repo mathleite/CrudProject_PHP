@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="cloud.ico/favicon.ico">
-    <title>Projeto - Sistema </title>
+    <title>Projeto - Sistema - TESTE BRANCH </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>

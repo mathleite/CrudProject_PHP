@@ -59,7 +59,7 @@ $fornecedores = $lista->listarFornecedor();
             <h4 style="color: #007bff">Espaço dos Fornecedores</h4>
             <hr style="background-color: #007bff">
             <h5>Lista de Fornecedores:</h5>
-            <a style="text-decoration: none; margin-left: 900px;" href="/funcoes/cadastros/cadastroFornecedor.php">
+            <a style="text-decoration: none; margin-left: 900px;" href="/view/cadastros/cadastroFornecedor.php">
                 <button   type="button" class="btn btn-info">Novo
                     fornecedor
                 </button>

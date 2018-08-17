@@ -24,7 +24,7 @@ require 'vendor/autoload.php';
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="funcoes/listagem/listagem.php">
+                        <a class="nav-link" href="view/listagem/listagem.php">
                             <i class="material-icons">
                                 monetization_on
                             </i>
@@ -32,14 +32,14 @@ require 'vendor/autoload.php';
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="funcoes/espacos/espacoFornecedor.php">
+                        <a class="nav-link" href="view/espacos/espacoFornecedor.php">
                             <i class="material-icons">
                                 face
                             </i>
                             <span>Fornecedor</span>
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="funcoes/espacos/espacoCategoria.php">
+                        <a class="nav-link" href="view/espacos/espacoCategoria.php">
                             <i class="material-icons">
                                 shopping_cart
                             </i>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="Refatorando os campos 'option', DB e mudando as GRIDS">
+    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,8 +78,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -272,11 +272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534187456038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Alterando '.gitignote'">
+      <created>1534516682160</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1534516682160</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189691000" />
+    <option name="totallyTimeSpent" value="189894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -354,7 +361,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refatorando os campos 'option', DB e mudando as GRIDS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refatorando os campos 'option', DB e mudando as GRIDS" />
+    <MESSAGE value="Alterando '.gitignote'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterando '.gitignote'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -626,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>

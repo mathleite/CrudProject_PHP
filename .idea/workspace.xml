@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="Refatorando os campos 'option', DB e mudando as GRIDS">
+    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ConexaoBanco.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Categoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Categoria.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Fornecedor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fornecedor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,46 +86,28 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Categoria.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Categoria.php">
+    <leaf>
+      <file leaf-file-name="Produto.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Produto.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding>
-                <element signature="n#cadastrarCategoria#0;n#Categoria#0;n#!!top" />
-                <element signature="n#atualizarCategoria#0;n#Categoria#0;n#!!top" />
-                <element signature="n#excluir#0;n#Categoria#0;n#!!top" />
-                <element signature="n#receberCategoria#0;n#Categoria#0;n#!!top" />
-                <element signature="n#listarCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
+                <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
+                <element signature="n#excluir#0;n#Produto#0;n#!!top" />
+                <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
+                <element signature="n#getId#0;n#Produto#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fornecedor.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Fornecedor.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            <state relative-caret-position="300">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="n#cadastrarFornecedor#0;n#Fornecedor#0;n#!!top" />
                 <element signature="n#listarFornecedor#0;n#Fornecedor#0;n#!!top" />
@@ -128,25 +120,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Produto.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Produto.php">
+      <file leaf-file-name="Categoria.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Categoria.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+            <state relative-caret-position="280">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
-                <element signature="n#setId#0;n#Produto#0;n#!!top" />
-                <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
-                <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
-                <element signature="n#excluir#0;n#Produto#0;n#!!top" />
-                <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
+                <element signature="n#cadastrarCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#atualizarCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#excluir#0;n#Categoria#0;n#!!top" />
+                <element signature="n#idCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#receberCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#listarCategoria#0;n#Categoria#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="ConexaoBanco.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ConexaoBanco.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+              <folding>
+                <element signature="e#6#95#0#PHP" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -182,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classes/listagemSemEditar.php" />
         <option value="$PROJECT_DIR$/classes/espacoCategoria.php" />
         <option value="$PROJECT_DIR$/classes/espacoFornecedor.php" />
         <option value="$PROJECT_DIR$/classes/listagem/listagemSemEditar.php" />
@@ -229,10 +228,11 @@
         <option value="$PROJECT_DIR$/funcoes/editar/editar.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/src/Produto.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Categoria.php" />
         <option value="$PROJECT_DIR$/src/Fornecedor.php" />
+        <option value="$PROJECT_DIR$/src/Produto.php" />
+        <option value="$PROJECT_DIR$/src/ConexaoBanco.php" />
       </list>
     </option>
   </component>
@@ -290,7 +290,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -342,39 +342,59 @@
       <option name="project" value="LOCAL" />
       <updated>1534187456038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Alterando '.gitignote'">
+      <created>1534516682160</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1534516682160</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189601000" />
+    <option name="totallyTimeSpent" value="195626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.26606876" />
-      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32884902" />
       <window_info anchor="bottom" id="Run" order="9" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="6" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32884902" />
+      <window_info anchor="bottom" id="Run" order="9" />
       <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" visible="true" weight="0.19730942" />
       <window_info anchor="right" x="0" y="0" width="280" height="584" id="Documentation" order="4" side_tool="true" weight="0.3297546" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.26606876" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32884902" />
       <window_info anchor="bottom" id="Messages" order="14" />
+      <window_info id="Favorites" order="0" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +431,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refatorando os campos 'option', DB e mudando as GRIDS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refatorando os campos 'option', DB e mudando as GRIDS" />
+    <MESSAGE value="Alterando '.gitignote'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterando '.gitignote'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -419,11 +440,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2908" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/cadastro.css" />
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/html/cadastro.html" />
@@ -446,13 +462,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Deletar.php" />
     <entry file="file://$PROJECT_DIR$/src/Inserir.php" />
@@ -621,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -640,43 +642,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Produto.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-          <folding>
-            <element signature="n#setId#0;n#Produto#0;n#!!top" />
-            <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
-            <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
-            <element signature="n#excluir#0;n#Produto#0;n#!!top" />
-            <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Categoria.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        <state relative-caret-position="280">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="n#cadastrarCategoria#0;n#Categoria#0;n#!!top" />
             <element signature="n#atualizarCategoria#0;n#Categoria#0;n#!!top" />
             <element signature="n#excluir#0;n#Categoria#0;n#!!top" />
+            <element signature="n#idCategoria#0;n#Categoria#0;n#!!top" />
             <element signature="n#receberCategoria#0;n#Categoria#0;n#!!top" />
             <element signature="n#listarCategoria#0;n#Categoria#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
+    <entry file="file://$PROJECT_DIR$/src/Produto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
+            <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
+            <element signature="n#excluir#0;n#Produto#0;n#!!top" />
+            <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
+            <element signature="n#getId#0;n#Produto#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="n#cadastrarFornecedor#0;n#Fornecedor#0;n#!!top" />
             <element signature="n#listarFornecedor#0;n#Fornecedor#0;n#!!top" />
@@ -684,6 +701,16 @@
             <element signature="n#idFornecedor#0;n#Fornecedor#0;n#!!top" />
             <element signature="n#updateFornecedor#0;n#Fornecedor#0;n#!!top" />
             <element signature="n#excluir#0;n#Fornecedor#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConexaoBanco.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+          <folding>
+            <element signature="e#6#95#0#PHP" />
           </folding>
         </state>
       </provider>

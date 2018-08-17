@@ -4,14 +4,19 @@
 class Categoria
 {
     private $id;
+
     public function setId($id)
     {
         $this->id = $id;
     }
+
     private $conexao;
+    private $bd;
+
     public function __construct()
     {
-        $this->conexao = new PDO("mysql:host=database;dbname=sistema_cadastro","root","secret");
+        $this->bd = new ConexaoBanco();
+        $this->conexao = $this->bd->conectaBanco();
     }
 
     public function cadastrarCategoria($novaCategoria)
@@ -49,7 +54,7 @@ class Categoria
 
     public function atualizarCategoria($id, $descricao)
     {
-        if(empty($id) || empty($descricao)){
+        if (empty($id) || empty($descricao)) {
             echo json_encode([
                 'tipo' => 'error',
                 'message' => 'Sem dados !'

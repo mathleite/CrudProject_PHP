@@ -1,0 +1,26 @@
+version: '3.0'
+services:
+    php:
+        build: .
+        ports:
+            - "80:80"
+        volumes:
+            - /C/work/CrudProject_PHP:/var/www/html
+        networks:
+            - backend
+    mysql:
+        image: mariadb
+        container_name: database
+        expose:
+            - 3306
+        ports:
+            - "3306:3306"
+        networks:
+            - backend
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+            - MYSQL_USER=api
+            - MYSQL_PASSWORD=secret
+            - MYSQL_DATABASE=sistema_cadastro
+networks:
+    backend:

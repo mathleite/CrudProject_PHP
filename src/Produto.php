@@ -12,7 +12,7 @@ class Produto
 
     public function __construct()
     {
-        $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
+        $this->conexao = new PDO("mysql:host=database;dbname=sistema_cadastro","root","secret");
     }
 
     public function cadastar($nomeProduto, $categoria, $fornecedor, $diaLancamento, $precoVenda, $precoUnitario)

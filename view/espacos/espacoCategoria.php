@@ -61,7 +61,7 @@ $arrayCategorias = $lista->listarCategoria();
             <h4 style="color: #007bff">Espaço das Categorias</h4>
             <hr style="background-color: #007bff">
             <h5>Lista de categorias:</h5>
-            <a style="margin-left: 915px; text-decoration: none;" href="/funcoes/cadastros/cadastroCategoria.php">
+            <a style="margin-left: 915px; text-decoration: none;" href="/view/cadastros/cadastroCategoria.php">
                 <button  type="button" class="btn btn-info">Nova
                     categoria
                 </button>

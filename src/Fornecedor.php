@@ -4,7 +4,7 @@ class Fornecedor
 {
     private $id;
 
-    public function setId($id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -13,7 +13,7 @@ class Fornecedor
 
     public function __construct()
     {
-        $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
+        $this->conexao = new PDO("mysql:host=database;dbname=sistema_cadastro","root","secret");
     }
 
 

@@ -4,14 +4,14 @@
 class Categoria
 {
     private $id;
-    public function setId($id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
     private $conexao;
     public function __construct()
     {
-        $this->conexao = new PDO("mysql: host=localhost; dbname=sistema_cadastro", "root", "");
+        $this->conexao = new PDO("mysql:host=database;dbname=sistema_cadastro","root","secret");
     }
 
     public function cadastrarCategoria($novaCategoria)

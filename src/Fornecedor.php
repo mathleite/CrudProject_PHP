@@ -10,10 +10,12 @@ class Fornecedor
     }
 
     private $conexao;
+    private $bd;
 
     public function __construct()
     {
-        $this->conexao = new PDO("mysql:host=database;dbname=sistema_cadastro","root","secret");
+        $this->bd = new ConexaoBanco();
+        $this->conexao = $this->bd->conectaBanco();
     }
 
 

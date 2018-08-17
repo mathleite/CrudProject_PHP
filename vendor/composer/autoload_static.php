@@ -8,6 +8,7 @@ class ComposerStaticInitc986576fb13194ba58ac60e48af57b97
 {
     public static $classMap = array (
         'Categoria' => __DIR__ . '/../..' . '/src/Categoria.php',
+        'ConexaoBanco' => __DIR__ . '/../..' . '/src/ConexaoBanco.php',
         'Fornecedor' => __DIR__ . '/../..' . '/src/Fornecedor.php',
         'Produto' => __DIR__ . '/../..' . '/src/Produto.php',
     );

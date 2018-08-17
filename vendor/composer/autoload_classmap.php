@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Categoria' => $baseDir . '/src/Categoria.php',
+    'ConexaoBanco' => $baseDir . '/src/ConexaoBanco.php',
     'Fornecedor' => $baseDir . '/src/Fornecedor.php',
     'Produto' => $baseDir . '/src/Produto.php',
 );

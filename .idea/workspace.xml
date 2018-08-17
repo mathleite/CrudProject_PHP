@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ConexaoBanco.php" afterDir="false" />
+    <list default="true" id="97179ef1-9aca-43fa-b6c1-d69d1345f54d" name="Default" comment="Refatorando os campos 'option', DB e mudando as GRIDS">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Categoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Categoria.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Fornecedor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fornecedor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,7 +76,80 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Categoria.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Categoria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <folding>
+                <element signature="n#cadastrarCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#atualizarCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#excluir#0;n#Categoria#0;n#!!top" />
+                <element signature="n#receberCategoria#0;n#Categoria#0;n#!!top" />
+                <element signature="n#listarCategoria#0;n#Categoria#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fornecedor.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Fornecedor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <folding>
+                <element signature="n#cadastrarFornecedor#0;n#Fornecedor#0;n#!!top" />
+                <element signature="n#listarFornecedor#0;n#Fornecedor#0;n#!!top" />
+                <element signature="n#receberFornecedor#0;n#Fornecedor#0;n#!!top" />
+                <element signature="n#idFornecedor#0;n#Fornecedor#0;n#!!top" />
+                <element signature="n#updateFornecedor#0;n#Fornecedor#0;n#!!top" />
+                <element signature="n#excluir#0;n#Fornecedor#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Produto.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Produto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+              <folding>
+                <element signature="n#setId#0;n#Produto#0;n#!!top" />
+                <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
+                <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
+                <element signature="n#excluir#0;n#Produto#0;n#!!top" />
+                <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -105,7 +175,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="branch_02" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -160,9 +230,9 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/Produto.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Categoria.php" />
         <option value="$PROJECT_DIR$/src/Fornecedor.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -272,58 +342,39 @@
       <option name="project" value="LOCAL" />
       <updated>1534187456038</updated>
     </task>
-    <task id="LOCAL-00002" summary="Alterando '.gitignote'">
-      <created>1534516682160</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1534516682160</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189998000" />
+    <option name="totallyTimeSpent" value="189601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="4" sideWeight="0.5007669" side_tool="true" visible="true" weight="0.32884902" />
-      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49923313" weight="0.32884902" />
-      <window_info anchor="bottom" id="Run" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.26606876" />
       <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32884902" />
+      <window_info anchor="bottom" id="Run" order="9" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15107362" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32884902" />
-      <window_info anchor="bottom" id="Run" order="9" />
       <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" visible="true" weight="0.19730942" />
       <window_info anchor="right" x="0" y="0" width="280" height="584" id="Documentation" order="4" side_tool="true" weight="0.3297546" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.26606876" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32884902" />
       <window_info anchor="bottom" id="Messages" order="14" />
-      <window_info id="Favorites" order="0" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,8 +411,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refatorando os campos 'option', DB e mudando as GRIDS" />
-    <MESSAGE value="Alterando '.gitignote'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterando '.gitignote'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refatorando os campos 'option', DB e mudando as GRIDS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -588,6 +638,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+          <folding>
+            <element signature="n#setId#0;n#Produto#0;n#!!top" />
+            <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
+            <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
+            <element signature="n#excluir#0;n#Produto#0;n#!!top" />
+            <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Categoria.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -614,27 +685,6 @@
             <element signature="n#updateFornecedor#0;n#Fornecedor#0;n#!!top" />
             <element signature="n#excluir#0;n#Fornecedor#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-          <folding>
-            <element signature="n#setId#0;n#Produto#0;n#!!top" />
-            <element signature="n#cadastar#0;n#Produto#0;n#!!top" />
-            <element signature="n#atualizar#0;n#Produto#0;n#!!top" />
-            <element signature="n#excluir#0;n#Produto#0;n#!!top" />
-            <element signature="n#listarTabela#0;n#Produto#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>

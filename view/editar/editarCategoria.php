@@ -83,7 +83,7 @@ $arrayCategoria = $lista->idCategoria();
         </main>
     </div>
 </div>
-<script src="/js/jquery-3.0.0.min.js"></script>
-<script src="/js/editarCategoria.js"></script>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/editarCategoria.js"></script>
 </body>
 </html>

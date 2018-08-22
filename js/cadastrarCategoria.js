@@ -2,7 +2,7 @@ $('#formularioCategoria').submit(function () {
     // var formulario = $('#formularioCategoria').serializeArray();
     // console.log(formulario.split('&'));
     $.ajax({
-        url: '/control/categoriaControl.php',
+        url: '../../control/categoriaControl.php',
         type: 'POST',
         datatype: 'json',
         data: {

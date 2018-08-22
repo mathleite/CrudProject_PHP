@@ -113,7 +113,7 @@ $arrayFornecedor = $listaFornecedor->listarFornecedor();
         </main>
     </div>
 </div>
-<script src="/js/jquery-3.0.0.min.js"></script>
-<script src="/js/cadastrarProdutos.js"></script>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/cadastrarProdutos.js"></script>
 </body>
 </html>

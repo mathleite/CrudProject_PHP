@@ -61,7 +61,7 @@ $arrayCategorias = $lista->listarCategoria();
             <h4 style="color: #007bff">Espaço das Categorias</h4>
             <hr style="background-color: #007bff">
             <h5>Lista de categorias:</h5>
-            <a style="margin-left: 915px; text-decoration: none;" href="/view/cadastros/cadastroCategoria.php">
+            <a style="margin-left: 915px; text-decoration: none;" href="../cadastros/cadastroCategoria.php">
                 <button  type="button" class="btn btn-info">Nova
                     categoria
                 </button>
@@ -96,7 +96,7 @@ $arrayCategorias = $lista->listarCategoria();
         </main>
     </div>
 </div>
-<script src="/js/jquery-3.0.0.min.js"></script>
-<script src="/js/excluirCategoria.js"></script>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/excluirCategoria.js"></script>
 </body>
 </html>

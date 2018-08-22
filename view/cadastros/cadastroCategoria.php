@@ -69,7 +69,7 @@ require '../../vendor/autoload.php';
         </main>
     </div>
 </div>
-<script src="/js/jquery-3.0.0.min.js"></script>
-<script src="/js/cadastrarCategoria.js"></script>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/cadastrarCategoria.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 function excluir(id) {
     if (confirm("Deseja realmente fazer esta exclusão ?")) {
         $.ajax({
-            url: '/control/fornecedorControl.php',
+            url: '../../control/fornecedorControl.php',
             type: 'POST',
             data: {
                 'id': id,

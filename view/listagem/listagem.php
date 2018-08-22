@@ -107,7 +107,7 @@ $arrayProdutos = $comando->listarTabela();
         </main>
     </div>
 </div>
-<script src="/js/jquery-3.0.0.min.js"></script>
-<script src="/js/excluirProduto.js"></script>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/excluirProduto.js"></script>
 </body>
 </html>

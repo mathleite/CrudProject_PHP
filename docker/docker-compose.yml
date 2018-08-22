@@ -5,7 +5,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - /C/work/CrudProject_PHP:/var/www/html
+            - /home/matheus/Área de Trabalho/Projeto/CrudProject_PHP:/var/www/html
         networks:
             - backend
     mysql:

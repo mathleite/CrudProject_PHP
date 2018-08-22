@@ -1,6 +1,6 @@
 $('#formulario').submit(function () {
     $.ajax({
-        url: '/control/fornecedorControl.php',
+        url: '../../control/fornecedorControl.php',
         type: 'POST',
         datatype: 'json',
         data: {

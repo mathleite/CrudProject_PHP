@@ -129,7 +129,7 @@ $categoriaId = $categoria->receberCategoria();
         </main>
     </div>
 </div>
-<script src="/js/jquery-3.0.0.min.js"></script>
-<script src="/js/editarProduto.js"></script>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/editarProduto.js"></script>
 </body>
 </html>

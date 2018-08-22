@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="icon" href="cloud.ico/favicon.ico">
-    <title>Projeto - Sistema - TESTE BRANCH </title>
+    <title>Projeto - Sistema</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -28,7 +28,7 @@ require 'vendor/autoload.php';
                             <i class="material-icons">
                                 monetization_on
                             </i>
-                            <span>Produtos</span>
+                            <span>Produto</span>
                         </a>
                     </li>
                     <li class="nav-item">

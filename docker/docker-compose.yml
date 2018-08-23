@@ -22,5 +22,18 @@ services:
             - MYSQL_USER=api
             - MYSQL_PASSWORD=secret
             - MYSQL_DATABASE=sistema_cadastro
+    postgres:
+        image: postgres
+        container_name: databasePostgres
+        expose:
+            - 5432
+        ports:
+            - "5432:5432"
+        networks:
+            - backend
+        environment:
+            - POSTGRES_USER=root
+            - POSTGRES_PASSWORD=secret
+            - POSTGRES_DB=sistema_cadastro
 networks:
     backend:

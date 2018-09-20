@@ -8,16 +8,15 @@
     }
   ],
   "require": {
-    "php": ">=7.2"
+    "php": ">=7.2",
+    "ext-PDO": "^7.2"
   },
   "autoload": {
     "classmap": [
-      "funcoes",
+      "view",
       "css",
       "src",
       "control"
-
-
     ]
   }
 }
